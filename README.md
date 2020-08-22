@@ -1,5 +1,4 @@
-# bc
-# basisCode
+# bc---basisCode
 
 #### Introduction
 Today’s society is changing with each passing day, and so is the corresponding technology.
@@ -23,9 +22,3 @@ Because of this, the library-bc was created
 #### Participate in contribution
 1.  ym1907
 2.  Harry-wh
-
-
-
-
-
-\
