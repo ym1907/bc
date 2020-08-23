@@ -32,6 +32,11 @@ func myWeb(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", myWeb)
 
+	//	staticHandle := http.FileServer(http.Dir("./static"))
+	//	http.Handle("/js/", staticHandle)
+	//	http.Handle("/js/", http.FileServer(http.Dir("./static")))
+	http.Handle("/js/", http.StripPrefix("/js", http.FileServer(http.Dir("./static"))))
+
 	fmt.Println("server start")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
