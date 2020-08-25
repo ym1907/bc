@@ -28,6 +28,6 @@ func testStruct() {
 		fmt.Println("error ", err)
 		return
 	}
-	fmt.Printf("json.Marshal : %v\n", data)
-	fmt.Printf("string: %v \n", string(data))
+	fmt.Printf("\njson.Marshal: %v\n\n", data)
+	fmt.Printf("string: %v \n\n", string(data))
 }
