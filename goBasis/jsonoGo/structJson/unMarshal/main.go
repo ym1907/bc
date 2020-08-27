@@ -18,8 +18,9 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Printf("json: %v\n", dataJson)
-
-	var dataUnJson interface{}
+	fmt.Println("string: ", string(dataJson))
+	//	var dataUnJson interface{}
+	var dataUnJson People
 	err = json.Unmarshal(dataJson, &dataUnJson)
 	fmt.Printf("unjson: %v\n", dataUnJson)
 
