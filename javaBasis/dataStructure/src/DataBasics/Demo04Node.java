@@ -9,9 +9,14 @@ public class Demo04Node {
         this.num = num;
     }
 
-    public void add(){
+    public void add(int num){
 
     }
+
+    public void delNext(){
+
+    }
+
 
 
 
