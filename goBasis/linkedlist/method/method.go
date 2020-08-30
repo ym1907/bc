@@ -1,5 +1,7 @@
 package method
 
+import "fmt"
+
 func link(head *List, tail *List) *List {
 	head.Next = tail
 	return head
@@ -19,6 +21,10 @@ func add(data int, name *List) *List {
 
 func del(data int, name *List) {}
 
-func out(a *List) {
+func Output(a *List) {
+	for a != nil {
+		fmt.Println(a.Data)
+		a = a.Next
+	}
 
 }

@@ -6,4 +6,5 @@ type List struct {
 }
 
 type ListWay interface {
+	Output(*List)
 }
