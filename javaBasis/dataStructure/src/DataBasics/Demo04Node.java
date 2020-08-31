@@ -9,15 +9,19 @@ public class Demo04Node {
         this.num = num;
     }
 
-    public void add(int num){
-
+    public void add(Demo04Node node){
+        Demo04Node oldNode = this.node;
+        this.node = node;
+        node.node = oldNode;
     }
 
     public void delNext(){
-
+        this.node = this.node.node;
     }
 
-
+    public void showNext(){
+        System.out.println(node.num);
+    }
 
 
 }
