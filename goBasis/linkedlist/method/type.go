@@ -7,4 +7,5 @@ type List struct {
 
 type ListWay interface {
 	Output(*List)
+	Add(int, *List)
 }

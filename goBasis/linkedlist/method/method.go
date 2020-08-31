@@ -13,13 +13,15 @@ func unlink(a *List) (head, tail *List) {
 	return head, tail
 }
 
-func add(data int, name *List) *List {
+func Add(data int, name *List) *List {
 	dataList := new(List)
 	dataList.Data = data
-	return link(dataList, name)
+	return link(name, dataList)
 }
 
-func del(data int, name *List) {}
+func del(data int, name *List) {
+
+}
 
 func Output(a *List) {
 	for a != nil {
