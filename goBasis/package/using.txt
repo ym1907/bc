@@ -1,0 +1,7 @@
+当前目录下有俩个项目 
+lang   other
+俩个项目都要进行go mod init
+
+若要在 lang 项目你导入 other 的包
+就要在 lang目录下的 go.mod 文件里进行 replace 设置 (aa 为自定义包名)
+replace aa => ../other 
