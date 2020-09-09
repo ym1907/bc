@@ -18,4 +18,5 @@ func main() {
 		b = append(b, x)
 	}
 	fmt.Println("b", b)
+
 }
