@@ -17,6 +17,10 @@ func main() {
 	w.redius = 5
 	w.spokes = 20
 	fmt.Println("Wheel: ", w)
+	fmt.Println("---------------- ")
+
+	var ww Newwheel
+	ww.cir.xay.x = 10
 }
 
 type Circle struct {
@@ -29,6 +33,11 @@ type Wheel struct {
 	//x, y, redius, spokes int
 	xay    Point
 	redius int
+	spokes int
+}
+
+type Newwheel struct {
+	cir    Circle
 	spokes int
 }
 
