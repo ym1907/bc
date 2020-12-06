@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type tree struct {
 	value       int
 	left, right *tree
@@ -21,12 +23,13 @@ func appendValues(values []int, t *tree) []int {
 		values = append(values, t.value)
 		values = appendValues(values, t.right)
 	}
+	fmt.Println("----------", values)
 	return values
 }
 
 func add(t *tree, value int) *tree {
 	if t == nil {
-		// return &tree{value: value}
+		// 等价于返回 return &tree{value: value}
 		t = new(tree)
 		t.value = value
 		return t
@@ -39,4 +42,18 @@ func add(t *tree, value int) *tree {
 	return t
 }
 
-func main() {}
+func main() {
+	fmt.Println("利用二叉树来实现插入排序")
+	var tra *tree
+	tra = new(tree)
+	tra.value = 50
+	add(tra, 30)
+	add(tra, 70)
+	fmt.Printf("%v %v \n", tra.value, tra.right.value)
+
+	a := []int{500, 22, 55}
+	appendValues(a, tra)
+
+	fmt.Println("sort")
+	Sort(a)
+}
