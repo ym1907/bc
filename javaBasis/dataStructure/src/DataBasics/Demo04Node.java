@@ -9,6 +9,14 @@ public class Demo04Node {
         this.num = num;
     }
 
+    public int getNum(){
+        return this.num;
+    }
+
+    public Demo04Node getNode(){
+        return this.node;
+    }
+
     public void add(Demo04Node node){
         Demo04Node oldNode = this.node;
         this.node = node;
@@ -19,8 +27,16 @@ public class Demo04Node {
         this.node = this.node.node;
     }
 
-    public void showNext(){
-        System.out.println(node.num);
+    public boolean hasNext(){
+        if(this.node!= null){
+            return true;
+        }
+        return false;
+    }
+
+    public int next(){
+
+        return this.node.num;
     }
 
 
