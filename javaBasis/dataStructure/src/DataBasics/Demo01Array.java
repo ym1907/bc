@@ -99,7 +99,6 @@ public class Demo01Array {
     //二分法查找
     public int binarySearch(int element){
         int begin = 0;
-        int a = 0;
         int end = arr.length - 1;
         int mid = (end + begin)/2;
         int index = -1;
