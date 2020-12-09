@@ -32,6 +32,7 @@ public class Demo01Array {
 
     //删除元素
     public void delete(int index){
+
         if(index < 0 && index > arr.length-1){
             throw new RuntimeException("下表越界异常");
         }
