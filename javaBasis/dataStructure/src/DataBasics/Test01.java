@@ -2,7 +2,7 @@ package DataBasics;
 
 import java.util.Arrays;
 
-public class Test {
+public class Test01 {
     public static void main(String[] args) throws InterruptedException {
         int[] nums = {3,4,5,6,7,8,9,10,11,12,13,14,15};
         int numToFind = 11;
