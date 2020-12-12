@@ -11,16 +11,28 @@ public class Demo04Node {
         this.num = num;
     }
 
+
+    public Demo04Node append(Demo04Node node){
+        //当前节点
+        Demo04Node currentNode = this;
+        //获取到最后一个节点
+        while(currentNode.hasNext()){
+            //取出下一个节点
+            Demo04Node nextNode = currentNode.next();
+            //赋值给当前节点
+            currentNode = nextNode;
+        }
+        //追加节点
+        currentNode.node = node;
+        return this;
+    }
+
     public int getNum(){
         return this.num;
     }
 
-    public Demo04Node getNode(){
+    public Demo04Node next(){
         return this.node;
-    }
-
-    public void append(Demo04Node node){
-        this.node = node;
     }
 
     public void add(Demo04Node node){
@@ -29,19 +41,19 @@ public class Demo04Node {
         node.node = oldNode;
     }
 
+//    删除下一个节点
     public void delNext(){
         this.node = this.node.node;
     }
 
+//    是否有下一个节点
     public boolean hasNext(){
-        if(this.node!= null){
-            return true;
-        }
-        return false;
+        return this.node != null;
     }
 
-    public int next(){
-        return this.node.num;
+//    是否是最后一个节点
+    public boolean isLast(){
+        return this.node == null;
     }
 
 
