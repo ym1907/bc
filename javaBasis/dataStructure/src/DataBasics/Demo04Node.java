@@ -19,6 +19,10 @@ public class Demo04Node {
         return this.node;
     }
 
+    public void append(Demo04Node node){
+        this.node = node;
+    }
+
     public void add(Demo04Node node){
         Demo04Node oldNode = this.node;
         this.node = node;
@@ -37,7 +41,6 @@ public class Demo04Node {
     }
 
     public int next(){
-
         return this.node.num;
     }
 
