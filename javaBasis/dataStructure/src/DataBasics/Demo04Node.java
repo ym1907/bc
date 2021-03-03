@@ -2,7 +2,7 @@ package DataBasics;
 
 public class Demo04Node {
 
-    int a = 0;
+    int a = 2;
 
 //    节点内容
     private int num;
