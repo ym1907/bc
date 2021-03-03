@@ -2,7 +2,9 @@ package DataBasics;
 
 public class Demo04Node {
 
-    int a = 2;
+    String s = "";
+
+    String aa = "";
 
 //    节点内容
     private int num;
@@ -18,6 +20,7 @@ public class Demo04Node {
         Demo04Node oldNode = this.node;
         this.node = node;
         node.node = oldNode;
+
     }
 
 //    在链表末端追加节点
