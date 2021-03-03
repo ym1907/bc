@@ -5,6 +5,7 @@ public class Demo04Node {
     String s = "";
 
     String aa = "";
+    String b = "";
 
 //    节点内容
     private int num;
