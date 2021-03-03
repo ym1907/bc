@@ -10,6 +10,7 @@ public class Demo04Node {
         this.num = num;
     }
 
+
 //    在当前节点后追加节点
     public void add(Demo04Node node){
         Demo04Node oldNode = this.node;
