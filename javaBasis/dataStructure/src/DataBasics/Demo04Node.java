@@ -9,7 +9,6 @@ public class Demo04Node {
     String test = "";
 
 
-
 //    节点内容
     private int num;
 //    下一个节点
