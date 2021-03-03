@@ -8,6 +8,7 @@ public class Demo04Node {
     String b = "";
     String test = "";
 
+
 //    节点内容
     private int num;
 //    下一个节点
