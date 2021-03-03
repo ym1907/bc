@@ -16,6 +16,7 @@ public class Demo04Node {
         Demo04Node oldNode = this.node;
         this.node = node;
         node.node = oldNode;
+
     }
 
 //    在链表末端追加节点
