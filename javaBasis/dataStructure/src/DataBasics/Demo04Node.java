@@ -1,6 +1,7 @@
 package DataBasics;
 
 public class Demo04Node {
+    String a = "";
 //    节点内容
     private int num;
 //    下一个节点
