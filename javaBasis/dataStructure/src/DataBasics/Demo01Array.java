@@ -37,20 +37,11 @@ public class Demo01Array {
             throw new RuntimeException("下表越界异常");
         }
         int[] newArr = new int[arr.length - 1];
-//        for(int i = 0; i < arr.length; i++){
-//            if(i < index){
-//                newArr[i] = arr[i];
-//            }else if(i > index){
-//                newArr[i-1] = arr[i];
-//            }
-//        }
-        //少遍历一次，提高效率
         for(int i = 0; i < newArr.length; i++){
             if(i < index){
                 newArr[i] = arr[i];
-            }else{
-                //复制目标删除数组后面的数据
-                newArr[i] = arr[i + 1];
+            }else{//少遍历一次，提高效率
+                newArr[i] = arr[i + 1];//复制目标元素后面的数据
             }
         }
         arr = newArr;
@@ -71,7 +62,7 @@ public class Demo01Array {
             if(i < index){
                 newArr[i] = arr[i];
             }else{
-                newArr[i + 1] = arr[i];
+                newArr[i + 1] = arr[i];//少遍历一次，提高效率
             }
         }
         newArr[index] = element;
@@ -97,7 +88,7 @@ public class Demo01Array {
         return index;
     }
 
-    //二分法查找
+    //二分法查找（有序数组才可使用）
     public int binarySearch(int element){
         int begin = 0;
         int end = arr.length - 1;

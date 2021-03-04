@@ -26,7 +26,7 @@ public class Demo02Stack {
         }
         int element = elements[elements.length - 1];
         int[] newArr = new int[elements.length - 1];
-        for (int i = 0; i < elements.length-1; i++) {
+        for (int i = 0; i < newArr.length; i++) {
             newArr[i] = elements[i];
         }
         elements = newArr;

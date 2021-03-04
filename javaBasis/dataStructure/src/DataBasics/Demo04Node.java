@@ -11,14 +11,14 @@ public class Demo04Node {
         this.num = num;
     }
 
-//    在当前节点后追加节点
+//    当前节点后追加节点
     public void add(Demo04Node node){
         Demo04Node oldNode = this.node;
         this.node = node;
         node.node = oldNode;
     }
 
-//    在链表末端追加节点
+//    链表末端追加节点
     public Demo04Node append(Demo04Node node){
         //当前节点
         Demo04Node currentNode = this;
@@ -34,30 +34,7 @@ public class Demo04Node {
         return this;
     }
 
-    public int getNum(){
-        return this.num;
-    }
-
-    public Demo04Node next(){
-        return this.node;
-    }
-
-//    删除下一个节点
-    public void delNext(){
-        this.node = this.node.node;
-    }
-
-//    是否有下一个节点
-    public boolean hasNext(){
-        return this.node != null;
-    }
-
-//    是否是最后一个节点
-    public boolean isLast(){
-        return this.node == null;
-    }
-
-//    显示所有节点信息
+//    显示所有节点值
     public void show(){
         Demo04Node currentNode = this;
         System.out.print("[");
@@ -70,5 +47,30 @@ public class Demo04Node {
             currentNode = currentNode.node;
         }
         System.out.println("]");
+    }
+
+    //    当前节点值
+    public int getNum(){
+        return this.num;
+    }
+
+    //    返回下一个节点
+    public Demo04Node next(){
+        return this.node;
+    }
+
+    //    删除下一个节点
+    public void delNext(){
+        this.node = this.node.node;
+    }
+
+    //    是否有下一个节点
+    public boolean hasNext(){
+        return this.node != null;
+    }
+
+    //    是否是最后一个节点
+    public boolean isLast(){
+        return this.node == null;
     }
 }

@@ -13,7 +13,7 @@ public class Demo01Test {
         arr.show();
         System.out.println("数组的长度为：" + arr.size());
         System.out.println("索引位置为3的是：" + arr.get(3));
-        arr.insert(2,22);
+        arr.insert(5,22);
         System.out.println("索引位置为3的是：" + arr.get(3));
         arr.set(4,41);
         arr.show();
