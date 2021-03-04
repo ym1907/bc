@@ -3,6 +3,7 @@ package DataBasics;
 public class Demo04Node {
 //    节点内容
     private int num;
+
 //    下一个节点
     private Demo04Node node;
 
