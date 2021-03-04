@@ -71,5 +71,4 @@ public class Demo04Node {
         }
         System.out.println("]");
     }
-
 }
