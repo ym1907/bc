@@ -9,6 +9,7 @@ public class Demo06Test {
 
         node1.after(node2);
         node2.after(node3);
+        node3.after(node4);
 
         System.out.println(node1.getData());
         System.out.println(node1.getNext().getData());
