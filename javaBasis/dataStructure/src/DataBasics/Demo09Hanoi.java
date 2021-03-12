@@ -4,7 +4,7 @@ package DataBasics;
 public class Demo09Hanoi {
     public static void main(String[] args) {
         long t1 = System.currentTimeMillis();
-        hanoi(2,'A','B','C');
+        hanoi(20,'A','B','C');
         long t2 = System.currentTimeMillis();
         System.out.println("耗时：" + (t2-t1) + "毫秒");
     }

@@ -16,12 +16,12 @@ public class Demo11QuickSort {
             int high = end;
 
             while(low<high){
-                while(low<high&&sta<=arr[high]){
+                while(low<high && sta<=arr[high]){
                     high--;
                 }
                 arr[low] = arr[high];
 
-                while (low<high&&sta>=arr[low]){
+                while (low<high && sta>=arr[low]){
                     low++;
                 }
                 arr[high] = arr[low];
