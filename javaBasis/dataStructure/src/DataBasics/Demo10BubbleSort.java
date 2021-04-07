@@ -3,6 +3,10 @@ package DataBasics;
 import java.util.Arrays;
 
 //冒泡排序
+/**
+ * 挨个遍历对比，找出最大的放在最右边
+ * 比较次数逐个减少
+ */
 public class Demo10BubbleSort {
     public static void main(String[] args) {
         int[] arr = {9,8,7,6,5,4,3,2,1};
@@ -18,6 +22,7 @@ public class Demo10BubbleSort {
                     arr[j+1] = temp;
                 }
             }
+            return arr;
         }
         return arr;
     }
