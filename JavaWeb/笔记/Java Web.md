@@ -100,6 +100,8 @@ web容器启动的时候，它会为每个web程序都创建一个对应的Servl
 //        this.getServletContext()      Servlet上下文
 ```
 
+##### 数据共享
+
 在servlet 1中保存的数据，可以在servlet 2中取到。（先运行servlet 2 取到的值为null）
 
 ```java
