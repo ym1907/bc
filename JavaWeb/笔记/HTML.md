@@ -8,7 +8,7 @@ W3C：World Wide Web Consortium（万维网联盟）
 
 W3C标准包括：结构化标准语言（HTML、XML配置文件）、表现语言标准（CSS）、行为标准（DOM文档对象模型、ECMAScript）
 
-### 基本标签
+### 标签
 
 ##### 基础标签
 
@@ -267,7 +267,6 @@ method：提交方式（get/post）
 ##### 表单
 
 ```html
-
 <h1>注册</h1>
 <!--form标签
 action：表单提交位置，可以是网站，也可以是一个请求处理地址
@@ -276,20 +275,16 @@ method：提交方式（get/post）
     post比较安全，可传输大文件get
 -->
 <form action="1.第一个html.html" method="get">
-    <!--文本输入框：input type="text"（name属性必须要加，提交起到键值对的键的作用）
+    <!--文本输入框（input中的name属性必须要加，提交起到键值对的键的作用）
     value="默认值"       默认值
     maxlength="8"       做多输入的字符
     size="30"           文本框长度
-    readonly            只读
-    disabled            不可用-->
+    -->
     <p>名字：<input type="text" name="username" value="admin" maxlength="8" size="30" readonly disable></p>
-
-    <!--密码框：input type="password"
-    hidden：隐藏-->
-    <p>密码：<input type="password" name="password" value="123456" hidden/></p>
+    <!--密码框：input type="password"-->
+    <p>密码：<input type="password" name="password"/></p>
 
     <!--单选框标签
-    input type="radio"
     value：单选框的值
     name：表示组-->
     <p>性别：
@@ -298,7 +293,6 @@ method：提交方式（get/post）
     </p>
 
     <!--多选框
-    input type="checkbox"
     checked：默认勾选内容-->
     <p>爱好：
         <input type="checkbox" value="sleep" name="hobby">睡觉
@@ -334,12 +328,11 @@ method：提交方式（get/post）
     <!--文本框
     cols：初始列
     rows：初始行-->
-    <p>反馈：
+    <p>文本框：
         <textarea name="textarea" cols="30" rows="10">默认文本内容</textarea><!--文本框的大小可通过右下角的标记拖拽-->
     </p>
 
-    <!--文件域
-    input type="file"-->
+    <!--文件域-->
     <p>文件提交：
         <input type="file" name="files">
     </p>
@@ -377,6 +370,32 @@ method：提交方式（get/post）
     </p>
 
 </form>
+```
+
+##### 表单应用
+
+```html
+<!--hidden：隐藏-->
+<p>密码：<input type="password" name="password" value="123456" hidden/></p>
+
+<!--readonly：只读-->
+    <p>名字：<input type="text" name="username" value="admin" readonly></p>
+
+<!--disabled：不可用-->
+    <p>名字：<input type="text" name="username" disable></p>
+```
+
+##### 表单初级验证
+
+```html
+<!--placeholder：用户提示
+	required：非空判断-->
+    <p>提示消息：<input type="text" name="reminder" placeholder="请输入姓名" required></p>
+
+<!--pattern：正则验证-->
+<p>邮箱2：
+    <input type="email" name="email" pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
+</p>
 ```
 
 

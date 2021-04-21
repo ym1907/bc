@@ -19,9 +19,12 @@ method：提交方式（get/post）
     maxlength="8"       做多输入的字符
     size="30"           文本框长度
     readonly            只读
-    disabled            不可用-->
+    disabled            不可用
+    placeholder         提示信息
+    required            非空判断
+    -->
     <p>名字：<input type="text" name="username" value="admin" maxlength="8" size="30" readonly disable></p>
-
+    <p>提示消息：<input type="text" name="reminder" placeholder="请输入姓名" required></p>
     <!--密码框：input type="password"
     hidden：隐藏-->
     <p>密码：<input type="password" name="password" value="123456" hidden/></p>
@@ -85,6 +88,12 @@ method：提交方式（get/post）
     <!--邮箱验证-->
     <p>邮箱：
         <input type="email" name="email"><!--有简单的验证，xxx@xx格式即可提交-->
+    </p>
+
+    <!--自定义邮箱验证
+    pattern：正则验证-->
+    <p>邮箱2：
+        <input type="email" name="email" pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$">
     </p>
 
     <!--URL-->
