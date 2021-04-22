@@ -1,6 +1,6 @@
-### Java Web
+## Java Web
 
-#### 创建部署
+### 基本概念
 
 课件笔记地址：https://blog.csdn.net/qq_32145097/article/details/108449583
 
@@ -24,13 +24,44 @@ C/S: 客户端和服务器
 -  HTTP/1.0：客户端可以与web服务器连接后，只能获得一个web资源，断开连接
 -  HTTP/1.1：客户端可以与web服务器连接后，可以获得多个web资源。
 
-IDEA中的Artifact，属于一种工具包
+服务器 -- 响应 -- 客户端
 
-Java默认编码：ISO-8859-1
+```properties
+百度
+cache-control:private		缓存控制
+Connection : Keep-Alive		连接
+content-Encoding:gzip		编码
+content-Type : text/html	类型
+```
 
-GBK		UTF-8		GB2312
+响应体
+
+```properties
+Accept:告诉浏览器，它所支持的数据类型
+Accept-Encoding:支持哪种编码格式GBK UTF-8 GB2312 IS08859-1(Java默认编码)
+Accept-Language:告诉浏览器，它的语言环境
+cache-contro1:缓存控制
+connection:告诉浏览器，请求完成是断开还是保持连接
+HOST:主机..../ .
+Refresh:告诉客户端，多久刷新一次;
+Location:让网页重新定位;
+```
+
+HTTP的响应状态码由5段组成： 
+
+```properties
+1xx 消息，一般是告诉客户端，请求已经收到了，正在处理，别急...
+2xx 处理成功，一般表示：请求收悉、我明白你要的、请求已受理、已经处理完成等信息.
+3xx 重定向到其它地方。它让客户端再发起一个请求以完成整个处理。
+4xx 处理发生错误，责任在客户端，如客户端的请求一个不存在的资源，客户端未被授权，禁止访问等。
+5xx 处理发生错误，责任在服务端，如服务端抛出异常，路由出错，HTTP版本不支持等。
+```
 
 
+
+
+
+### 创建部署
 
 Maven：项目架构管理工具
 
@@ -38,7 +69,7 @@ Maven：项目架构管理工具
 
 web.xml中配置URL地址时，首位“/”必须加，否则会启动组件失败
 
-IEDA项目 Project Structre 配置：https://www.cnblogs.com/deng-cc/p/6416332.html
+IEDA 的项目配置和 Web 部署：https://www.cnblogs.com/deng-cc/p/6416332.html
 
 servlet：请求+响应，是一个服务
 
@@ -46,9 +77,11 @@ Session、Cookie：会话和缓存机制
 
 JSP：html+java
 
+IDEA中的Artifact，属于一种工具包
 
 
-#### Servlet
+
+### Servlet
 
 开发两步骤： 编写一个类，实现Servlet接口，把开发好的Java类部署到web服务器中。 
 
@@ -60,7 +93,7 @@ Servlet 类 -->  GenericServlet 类 -->  HttpServlet 类 --> 自己实现的类
 
 
 
-#### Mapping
+### Mapping
 
 ```xml
 <!--一个映射路径-->
@@ -100,7 +133,7 @@ web容器启动的时候，它会为每个web程序都创建一个对应的Servl
 //        this.getServletContext()      Servlet上下文
 ```
 
-##### 数据共享
+##### 1、数据共享
 
 在servlet 1中保存的数据，可以在servlet 2中取到。（先运行servlet 2 取到的值为null）
 
@@ -114,4 +147,184 @@ context.setAttribute("userName",userName);//将一个数据保存在ServletConte
 ServletContext context = this.getServletContext();
 String name = (String)context.getAttribute("userName");
 ```
+
+##### 2、获取初始化参数
+
+```xml
+<!--web.xml中配置一些web应用初始化参数-->
+<context-param>
+    <param-name>url</param-name>
+    <param-value>jdbc:mysql://localhost:3306/</param-value>
+</context-param>
+```
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext context = this.getServletContext();
+    String url = context.getInitParameter("url");
+    resp.getWriter().print(url);
+}
+```
+
+##### 3、请求转发
+
+```xml
+<servlet>
+    <servlet-name>demo04</servlet-name>
+    <servlet-class>com.harry.servlet.Demo04</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>demo04</servlet-name>
+    <url-pattern>/demo04</url-pattern>
+</servlet-mapping>
+```
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    ServletContext context = this.getServletContext();
+    System.out.println("运行了demo04");
+    RequestDispatcher requestDispatcher = context.getRequestDispatcher("/gp");//转发的请求路径
+    requestDispatcher.forward(req,resp);//调用forward实现请求转发
+}
+```
+
+转发路径不会变化，状态为200
+
+##### 4、读取资源文件
+
+Peoperties
+
+- 在java目录下新建properties
+- 在resources目录下新建properties
+
+发现：都被打包到了同一个路径下: classes，这个路径俗称为classpath
+
+首先需要一个文件流
+
+```properties
+username=harry
+password=123456
+```
+
+```java
+@Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
+        Properties prop = new Properties();
+        prop.load(is);
+        String user = prop.getProperty("username");
+        String pwd = prop.getProperty("password");
+
+        resp.getWriter().print(user + ":" + pwd);
+    }
+```
+
+访问测试即可
+
+#### HttpServletResponse
+
+web服务器接收到客户端的http请求，会针对这个请求分别创建一个代表请求的HttpServletResponse对象，和一个代表响应的HttpServletResponse；
+
+- 如果要获取客户端请求过来的参数：找HttpServletRequest
+- 如果要给客户端响应一些信息：找HttpServletResponse
+
+##### 1、简单分类
+
+发送数据
+
+```java
+public ServletOutputStream getOutputStream() throws IOException;//多用于一般的
+public PrintWriter getWriter() throws IOException;//多用于写中文，其他易造成字符丢失
+```
+
+发送响应头
+
+```java
+void setCharacterEncoding(String var1);
+void setContentLength(int var1);
+void setContentLengthLong(long var1);
+void setContentType(String var1);
+void setDateHeader(String var1, 1ong var2);
+void addDateHeader(String var1, 1ong var2);
+void setHeader(String var1, String var2);
+void addHeader(String var1, String var2);
+void setIntHeader(String var1, int var2);
+void addIntHeader(String var1, int var2);
+```
+
+响应状态码
+
+```java
+public static final int SC_OK = 200;
+public static final int SC_MULTIPLE_CHOICES = 300;
+public static final int SC_BAD_REQUEST = 400;
+public static final int SC_NOT_FOUND = 404;
+public static final int SC_INTERNAL_SERVER_ERROR = 500;//等
+```
+
+##### 2、常见应用
+
+1. 向浏览器输出消息
+2. 下载文件
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    //1. 要获取下载文件的路径
+    String realPath = "D:\\bc\\JavaWeb\\Kuang\\javaweb-02-servlet\\servlet-03-response\\src\\main\\resources\\图片2.jpg";
+    System.out.println("下载文件的路径：" + realPath);
+    //2. 下载的文件名是啥？
+    String fileName = realPath.substring(realPath.lastIndexOf("\\") + 1);
+    //3. 设置让浏览器能支持(Content-Disposition)下载所需的东西，中文文件名使用 URLEncoder.encode 编码，否则可能乱码
+    resp.setHeader("Content-Disposition","attachment;filename=" + URLEncoder.encode(fileName,"UTF-8"));
+    //4. 获取下载文件的输入流
+    FileInputStream in = new FileInputStream(realPath);
+    //5. 创建缓冲区
+    int len = 0;
+    byte[] buffer = new byte[1024];
+    //6. 获取OutputStream对象
+    ServletOutputStream out = resp.getOutputStream();
+    //7. 将FileOutputStream流写入到buffer缓冲区，使用OutputStream将缓冲区中的数据输出到客户端
+    while((len = in.read(buffer)) > 0){
+        out.write(buffer,0,len);
+    }
+
+    in.close();
+    out.close();
+}
+```
+
+##### 3、验证码功能
+
+
+
+
+
+
+
+
+
+#### HttpServletRequest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

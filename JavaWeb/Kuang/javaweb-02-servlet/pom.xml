@@ -13,6 +13,7 @@
     <modules>
         <module>servlet-01</module>
         <module>servlet-02</module>
+        <module>servlet-03-response</module>
     </modules>
 
     <dependencies>

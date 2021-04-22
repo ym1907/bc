@@ -6,6 +6,11 @@
          version="4.0"
          metadata-complete="true">
 
+    <!--配置一些web应用初始化参数-->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/</param-value>
+    </context-param>
 
     <servlet>
         <servlet-name>hello</servlet-name>
@@ -24,4 +29,33 @@
         <servlet-name>getServlet</servlet-name>
         <url-pattern>/getServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>gp</servlet-name>
+        <servlet-class>com.harry.servlet.Demo03_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>gp</servlet-name>
+        <url-pattern>/gp</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demo04</servlet-name>
+        <servlet-class>com.harry.servlet.Demo04</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo04</servlet-name>
+        <url-pattern>/demo04</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demo05io</servlet-name>
+        <servlet-class>com.harry.servlet.Demo05IO</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo05io</servlet-name>
+        <url-pattern>/demo05</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

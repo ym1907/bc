@@ -19,7 +19,7 @@ W3C标准包括：结构化标准语言（HTML、XML配置文件）、表现语�
 
 <!--网页头部-->
 <head>
-    <!--描述标签，用来描述网站的一些信息。一般用来做SEO-->
+    <!--描述标签，用来描述网站的一些信息。（一般用来做SEO：Search Engine Optimization 搜索引擎优化）-->
     <meta charset="UTF-8">
     <meta name="keywords" content="关键词">
     <meta name="description" content="内容描述">
@@ -399,6 +399,138 @@ method：提交方式（get/post）
 ```
 
 
+
+### 总结
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>?</title>
+</head>
+
+<body>
+    <h1>一级标签</h1>
+    <p>1. 负责公司MES系统开发，系统维护等工作；</p>
+    <p>2. 负责与业务部门沟通，讨论业务需求，编写设计文档；</p>
+    <hr/>
+    1. 负责公司MES系统开发，系统维护等工作；<br/>
+    <strong>i love *</strong>
+    <em>i love *</em>
+    A&nbsp;&nbsp;&nbsp;B<br/>
+    &gt;<br/>
+    &lt;<br/>
+    &copy;<br/>
+	<img src="../resource/image/1.jpg" alt="图片" title="鼠标悬停显示文字" width="300" height="200">
+    
+    <a href="1.第一个html.html" target="_blank">第一个页面</a>
+    <a href="https://baidu.com" target="_self">百度</a>
+    <br/>
+
+    <a href="https://baidu.com" title="">
+        <img src="../resource/image/1.jpg" alt="" width="200" height="200">
+    </a>
+    
+    <a href="666.html#down">3</a>
+</body>
+</html>
+
+<!--666.html-->
+<body>
+    <a name="top">1</a>
+
+    <p><a href="https://baidu.com" title="">
+        <img src="../resource/image/1.jpg" alt="">
+    </a></p>
+    <p><a href="https://baidu.com" title="">
+        <img src="../resource/image/1.jpg" alt="">
+    </a></p>
+
+    <a href="#top">2</a>
+    <a name="down">2</a>
+</body>
+
+<a href="mailto:1093876434@qq.com">邮箱链接：malito</a>
+
+<ol>
+    <li>java</li>
+    <li>qw</li>
+</ol>
+<ul>
+    <li>xzc</li>
+    <li>dasd</li>
+</ul>
+<dl>
+    <dt>A</dt>
+        <dd>1</dd>
+        <dd>2</dd>
+    <dt>B</dt>
+        <dd>a</dd>
+        <dd>b</dd>
+</dl>
+
+<table border="xx">
+    <tr>
+        <td colspan="2">1-1</td>
+        <td rowspan="2">1-2</td>
+    </tr>
+    <tr>
+        <td rowspan="2">2-1</td>
+        <td>2-2</td>
+    </tr>
+    <tr>
+        <td colspan="2">3-1</td>
+    </tr>
+</table>
+<video src="../resource/video/视频1.mp4" controls autoplay></video>
+<audio src="../resource/audio/猴叫.mp3" controls></audio>
+
+header、footer、ection、article、aside、nav标签
+
+<iframe src="https://baidu.com" frameborder="0" height="500" width="700"></iframe>
+<iframe src="" name="hello" height="500" width="700"></iframe>
+<a href="4.列表.html" target="hello">内联框架</a>
+
+<form action="1.第一个html.html" method="get">
+    <p>xx：<input type="text" name="username" value="admin" maxlength="8" size="30" readonly disable></p>
+    <p>xx：<input type="password" name="password"/></p>
+    <p>xx：<input type="radio" value="boy" name="sex"/>x
+        <input type="radio" value="girl" name="sex"/>x</p>
+    <p>xx：<input type="checkbox" value="sleep" name="hobby">睡觉
+        <input type="checkbox" value="code" name="hobby">代码
+        <input type="checkbox" value="chat" name="hobby" checked>聊天
+        <input type="checkbox" value="game" name="hobby">游戏</p>
+    <p>xx：<input type="button" name="btn1" value="x">
+        <input type="image" src="../resource/image/2.jpg"></p>
+    <input type="submit">
+    <input type="reset">
+    <p>xx：<select name="xx" id="city">
+            <option value="sh">上海</option>
+            <option value="sz">苏州</option>
+            <option value="tj">天津</option>
+            <option value="gz" selected>广州</option>
+            <option value="zh">珠海</option>
+            <option value="bj">北京</option>
+        </select></p>
+    <p>xx：<textarea name="textarea" cols="xx" rows="xx">xx</textarea></p>
+    <p>xx：<input type="file" name="files"></p>
+    <p>xx：<input type="email" name="email"></p>
+    <p>xx：<input type="url" name="url"></p>
+    <p>xx：<input type="number" name="num" max="100" min="0" step="  "></p>
+    <p>xx：<input type="range" name="range" max="100" min="0" step="xx"></p>
+    <p>xx：<input type="search" name="search"></p>
+    <p><label for="mark">xx</label>
+        <input type="text" id="mark"></p>
+    <p>xx：<input type="password" name="password" value="xx" hidden/></p>
+    <p>xx：<input type="text" name="username" value="xx" readonly></p>
+    <p>xx：<input type="text" name="username" disable></p>
+    <p>xx：<input type="text" name="reminder" placeholder="xx" required></p>
+    <p>xx：<input type="email" name="email" pattern="^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"></p>
+```
 
 
 
