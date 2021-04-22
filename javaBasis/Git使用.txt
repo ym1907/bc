@@ -63,3 +63,11 @@ sudo vi /private/etc/hosts
 github网站打开慢的问题
 https://blog.csdn.net/xshiyi110/article/details/105245857
 
+github提交异常
+fatal: unable to access 'https://github.com/.......': OpenSSL SSL_read: Connection was reset, errno 10054
+一般是这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错
+参考网上解决办法：解除ssl验证后，再次git即可
+git config --global http.sslVerify "false"
+
+
+
