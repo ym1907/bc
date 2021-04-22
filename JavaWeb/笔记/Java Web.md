@@ -2,8 +2,6 @@
 
 ### 基本概念
 
-课件笔记地址：https://blog.csdn.net/qq_32145097/article/details/108449583
-
 - 一个web应用由多部分组成 （静态web，动态web）
 
 B/S：浏览和服务器
@@ -298,7 +296,8 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 ##### 3、验证码功能
 
-
+- 前端实现
+- 后端实现，需要用到Java的图片类，生成一个图片
 
 
 
