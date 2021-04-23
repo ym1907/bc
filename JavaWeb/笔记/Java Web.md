@@ -4,7 +4,7 @@
 
 - 一个web应用由多部分组成 （静态web，动态web）
 
-B/S：浏览和服务器
+B/S：浏览器和服务器
 
 C/S: 客户端和服务器
 
@@ -26,30 +26,30 @@ C/S: 客户端和服务器
 
 ```properties
 百度
-cache-control:private		缓存控制
+Cache-control : private		缓存控制
 Connection : Keep-Alive		连接
-content-Encoding:gzip		编码
-content-Type : text/html	类型
+Content-Encoding : gzip		编码
+Content-Type : text/html	类型
 ```
 
 响应体
 
 ```properties
-Accept:告诉浏览器，它所支持的数据类型
-Accept-Encoding:支持哪种编码格式GBK UTF-8 GB2312 IS08859-1(Java默认编码)
-Accept-Language:告诉浏览器，它的语言环境
-cache-contro1:缓存控制
-connection:告诉浏览器，请求完成是断开还是保持连接
-HOST:主机..../ .
-Refresh:告诉客户端，多久刷新一次;
-Location:让网页重新定位;
+Accept : 数据类型
+Accept-Encoding : 编码格式GBK UTF-8 GB2312 IS08859-1(Java默认编码)
+Accept-Language : 语言环境
+Cache-control : 缓存控制
+Connection : 请求完成是断开还是保持连接
+HOST : 主机..../ .
+Refresh : 多久刷新一次
+Location : 网页重新定位
 ```
 
 HTTP的响应状态码由5段组成： 
 
 ```properties
-1xx 消息，一般是告诉客户端，请求已经收到了，正在处理，别急...
-2xx 处理成功，一般表示：请求收悉、我明白你要的、请求已受理、已经处理完成等信息.
+1xx 消息，一般是告诉客户端，请求已经收到了，正在处理。
+2xx 处理成功，一般表示：请求收悉、我明白你要的、请求已受理、已经处理完成等信息。
 3xx 重定向到其它地方。它让客户端再发起一个请求以完成整个处理。
 4xx 处理发生错误，责任在客户端，如客户端的请求一个不存在的资源，客户端未被授权，禁止访问等。
 5xx 处理发生错误，责任在服务端，如服务端抛出异常，路由出错，HTTP版本不支持等。
@@ -121,7 +121,7 @@ Servlet 类 -->  GenericServlet 类 -->  HttpServlet 类 --> 自己实现的类
 
 
 
-#### ServletContext
+### ServletContext
 
 web容器启动的时候，它会为每个web程序都创建一个对应的ServletContext对象，它代表了 当前的web应用，整个服务中，ServletContext有且仅有一个，相当于单例模式
 
@@ -131,7 +131,7 @@ web容器启动的时候，它会为每个web程序都创建一个对应的Servl
 //        this.getServletContext()      Servlet上下文
 ```
 
-##### 1、数据共享
+#### 1、数据共享
 
 在servlet 1中保存的数据，可以在servlet 2中取到。（先运行servlet 2 取到的值为null）
 
@@ -146,7 +146,7 @@ ServletContext context = this.getServletContext();
 String name = (String)context.getAttribute("userName");
 ```
 
-##### 2、获取初始化参数
+#### 2、获取初始化参数
 
 ```xml
 <!--web.xml中配置一些web应用初始化参数-->
@@ -165,18 +165,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 }
 ```
 
-##### 3、请求转发
-
-```xml
-<servlet>
-    <servlet-name>demo04</servlet-name>
-    <servlet-class>com.harry.servlet.Demo04</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>demo04</servlet-name>
-    <url-pattern>/demo04</url-pattern>
-</servlet-mapping>
-```
+#### 3、请求转发
 
 ```java
 @Override
@@ -190,7 +179,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 转发路径不会变化，状态为200
 
-##### 4、读取资源文件
+#### 4、读取资源文件
 
 Peoperties
 
@@ -219,16 +208,38 @@ password=123456
     }
 ```
 
-访问测试即可
+```xml
+<!--在pom.xml的build中配置resources，来防止资源导出失败的问题-->
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+        <resource><!--主要是java目录下的文件-->
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+        </resource>
+    </resources>
+</build>
+```
 
-#### HttpServletResponse
+
+
+### HttpServletResponse
 
 web服务器接收到客户端的http请求，会针对这个请求分别创建一个代表请求的HttpServletResponse对象，和一个代表响应的HttpServletResponse；
 
 - 如果要获取客户端请求过来的参数：找HttpServletRequest
 - 如果要给客户端响应一些信息：找HttpServletResponse
 
-##### 1、简单分类
+#### 1、简单分类
 
 发送数据
 
@@ -262,7 +273,7 @@ public static final int SC_NOT_FOUND = 404;
 public static final int SC_INTERNAL_SERVER_ERROR = 500;//等
 ```
 
-##### 2、常见应用
+#### 2、常见应用
 
 1. 向浏览器输出消息
 2. 下载文件
@@ -294,18 +305,80 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 }
 ```
 
-##### 3、验证码功能
+#### 3、验证码功能
 
 - 前端实现
 - 后端实现，需要用到Java的图片类，生成一个图片
 
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    //让浏览器3秒自动刷新一次
+    resp.setHeader("refresh","0.5");
+
+    //在内存中创建一个图片
+    BufferedImage image = new BufferedImage(100, 20, BufferedImage.TYPE_INT_BGR);
+    //得到图片
+    Graphics2D g = (Graphics2D) image.getGraphics();//笔
+    //设置图片的背景颜色
+    g.setColor(Color.white);
+    g.fillRect(0,0,100,30);
+    //给图片写数据
+    g.setColor(Color.BLUE);
+    g.setFont(new Font(null,Font.BOLD,20));
+    g.drawString(makeNum(),0,20);
+
+    //告诉浏览器，该请求用浏览器的方式打开
+    resp.setContentType("image/jpeg");
+    //网站存在缓存，不让浏览器缓存
+    resp.setDateHeader("expires",-1);
+    resp.setHeader("Cache-Control","no-cache");
+    resp.setHeader("Pragma","no-cache");
+
+    //把图片写给浏览器
+    ImageIO.write(image, "jpg", resp.getOutputStream());
+}
+
+//生成随机数
+private String makeNum(){
+    Random r = new Random();
+    String num = r.nextInt(99999999) + "";
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < 8 - num.length(); i++) {//保证能够输出8位数字
+        sb.append("0");
+    }
+    num = sb.toString() + num;
+    return num;
+}
+```
+
+
+
+#### 4、重定向
+
+一个Web资源 B 收到客户端 A 的请求后，通知 A 去访问Web资源 C，该过程称为重定向。
+
+![1619164589122](D:\bc\JavaWeb\笔记\Java Web.assets\1619164589122.png)
+
+常见场景：
+
+- 用户登录
+
+```java
+void sendRedirect(String var1) throws IOException
+```
 
 
 
 
 
+#### 
 
-#### HttpServletRequest
+
+
+
+
+### HttpServletRequest
 
 
 
