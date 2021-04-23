@@ -64,10 +64,12 @@ github网站打开慢的问题
 https://blog.csdn.net/xshiyi110/article/details/105245857
 
 github提交异常
-fatal: unable to access 'https://github.com/.......': OpenSSL SSL_read: Connection was reset, errno 10054
-一般是这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错
-参考网上解决办法：解除ssl验证后，再次git即可
+
+异常1：fatal: unable to access '.......': OpenSSL SSL_read: Connection was reset, errno 10054
+一般是这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错，解除ssl验证后，再次git即可
 git config --global http.sslVerify "false"
 
-
+异常2： ! [rejected]        master -> master (fetch first)
+出现这个问题是因为github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并
+git pull --rebase github master
 
