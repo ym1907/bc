@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="717785ab-7ce1-48e9-838b-0db3b58cb942" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/com/harry/servlet/FileServlet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../项目说明.txt的替身" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/java/com/harry/servlet/ImageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/java/com/harry/servlet/ImageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/com/harry/servlet/ImageServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/com/harry/servlet/ImageServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/图片2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/图片2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/FileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/FileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/ImageServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/ImageServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/图片2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/图片2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/servlet-03-response-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/HTML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/HTML.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/1.第一个html.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/1.第一个html.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/2.图像标签.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/2.图像标签.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/3.链接标签.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/3.链接标签.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/4.列表.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/4.列表.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/5.表格.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/5.表格.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/6.媒体元素.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/6.媒体元素.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/7.页面元素.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/7.页面元素.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/8.内联框架.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/8.内联框架.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/html/9.表单.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/html/9.表单.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/resource/audio/猴叫.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/resource/audio/猴叫.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/resource/image/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/resource/image/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/resource/image/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/resource/image/2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/HTML/resource/video/视频1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/resource/video/视频1.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/Maven-01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-01/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/Maven-simple.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/src/main/java/com/kuang/servlet/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/src/main/java/com/harry/servlet/HelloServlet2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/src/main/webapp/hander.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/classes/com/kuang/servlet/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/classes/com/kuang/servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/classes/com/kuang/servlet/HelloServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/classes/com/kuang/servlet/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/lib/javax.servlet.jsp-api-2.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/lib/junit-4.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/hander.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/javaweb-01-maven/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/Maven-simple/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/javaweb-02-servlet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/note.md" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/note.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/src/main/java/com/harry/servlet/ErrorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/src/main/java/com/harry/servlet/ErrorServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/src/main/java/com/harry/servlet/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/src/main/java/com/harry/servlet/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/classes/com/harry/servlet/ErrorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/classes/com/harry/servlet/ErrorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/classes/com/harry/servlet/HelloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/classes/com/harry/servlet/HelloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01.war" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/WEB-INF/classes/com/harry/servlet/ErrorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/WEB-INF/classes/com/harry/servlet/ErrorServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/WEB-INF/classes/com/harry/servlet/HelloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/WEB-INF/classes/com/harry/servlet/HelloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/WEB-INF/lib/javax.servlet-api-4.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-01/target/servlet-01/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-01/target/servlet-01/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/Demo03_Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/Demo03_Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/Demo04.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/Demo04.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/Demo05IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/Demo05IO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/GetServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/GetServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/java/com/harry/servlet/helloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/java/com/harry/servlet/helloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/Demo03_Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/Demo03_Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/Demo04.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/Demo04.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/Demo05IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/Demo05IO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/Demo05PropertiesServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/Demo05PropertiesServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/GetServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/GetServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/com/harry/servlet/helloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/com/harry/servlet/helloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo03_Servlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo03_Servlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo04.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo04.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo05IO.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo05IO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo05PropertiesServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/Demo05PropertiesServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/GetServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/GetServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/helloServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/helloServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-02/target/servlet-02-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/src/main/java/com/harry/servlet/FileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/java/com/harry/servlet/FileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/src/main/java/com/harry/servlet/ImageServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/src/main/resources/图片2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/resources/图片2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/classes/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/classes/com/harry/servlet/FileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/classes/com/harry/servlet/FileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/classes/com/harry/servlet/ImageServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/classes/com/harry/servlet/ImageServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/classes/图片2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/classes/图片2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/FileServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/FileServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/ImageServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/com/harry/servlet/ImageServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/图片2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/classes/图片2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet-api-4.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response.war" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/classes/com/harry/servlet/FileServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/lib/javax.servlet-api-4.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/lib/javax.servlet-api-4.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/lib/javax.servlet.jsp-api-2.3.3.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javaweb-01-servlet/servlet-03-response/target/servlet-03-response/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/javaweb-02-servlet/servlet-03-response/target/servlet-03-response/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kuang/untitled1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../文件夹说明.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../项目说明.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../笔记/Plan1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../javaBasis/Git使用.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaBasis/Git使用.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../Maven/apache-maven-3.6.3-bin/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.3-bin\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1rjbwR7UsEpFcbJ90Hfead4puaZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="717785ab-7ce1-48e9-838b-0db3b58cb942" name="Default Changelist" comment="" />
+      <created>1619492683092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619492683092</updated>
+      <workItem from="1619492684319" duration="53000" />
+      <workItem from="1619492749810" duration="2000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

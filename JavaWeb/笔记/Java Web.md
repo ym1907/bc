@@ -358,7 +358,7 @@ private String makeNum(){
 
 一个Web资源 B 收到客户端 A 的请求后，通知 A 去访问Web资源 C，该过程称为重定向。
 
-![1619164589122](D:\bc\JavaWeb\笔记\Java Web.assets\1619164589122.png)
+![1619494228634](resources/Java Web.assets/1619494228634.png)
 
 常见场景：
 
@@ -368,11 +368,26 @@ private String makeNum(){
 void sendRedirect(String var1) throws IOException
 ```
 
+测试：
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    //resp.setHeader("Location","./img");
+    //resp.setStatus(HttpServletResponse.SC_MOVED_TEMPORARILY); <-- 常量值为302
+
+    resp.sendRedirect("./img");//重定向
+}
+```
 
 
 
+![1](resources/Java Web.assets/1.jpg)
 
-#### 
+重定向和转发的区别?
+
+相同点：页面都会实现跳转
+不同点：请求转发的时候，url不会产生变化；重定向时候，url地址栏会发生变化；
 
 
 

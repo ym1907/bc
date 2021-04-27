@@ -197,7 +197,7 @@ W3C标准包括：结构化标准语言（HTML、XML配置文件）、表现语�
 </table>
 ```
 
-![1618977009943](D:\bc\JavaWeb\笔记\HTML.assets\1618977009943.png)
+![2](resources/HTML.assets/2.jpg)
 
 ##### 媒体元素
 
