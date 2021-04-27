@@ -33,4 +33,13 @@
         <url-pattern>/red</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>RequestServlet</servlet-name>
+        <servlet-class>com.harry.servlet.RequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RequestServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
 </web-app>

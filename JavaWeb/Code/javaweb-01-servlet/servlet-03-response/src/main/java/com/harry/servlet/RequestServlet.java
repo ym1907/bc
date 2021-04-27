@@ -9,7 +9,11 @@ import java.io.IOException;
 public class RequestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("进入请求");
+        String userName = req.getParameter("username");
+        String password = req.getParameter("password");
+        System.out.println(userName+" : "+password);
+
+        resp.sendRedirect("Success.jsp");
     }
 
     @Override

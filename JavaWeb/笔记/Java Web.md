@@ -389,11 +389,53 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 相同点：页面都会实现跳转
 不同点：请求转发的时候，url不会产生变化；重定向时候，url地址栏会发生变化；
 
+实践：
 
+```jsp
+<%--Jsp页面--%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><%--该段代码，定义了web端的编码，避免乱码--%>
+<html>
+<body>
+<%--这里提交的路径，需要寻找到项目的路径--%>
+<%--${pageContext.request.contextPath} 代表当前的项目--%>
+<form action="${pageContext.request.contextPath}/login" method="get">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    <input type="submit">
+</form>
+</body>
+</html>
+```
+
+```xml
+<servlet>
+  <servlet-name>RequestServlet</servlet-name>
+  <servlet-class>com.harry.servlet.RequestServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>RequestServlet</servlet-name>
+  <url-pattern>/login</url-pattern>
+</servlet-mapping>
+```
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+  String userName = req.getParameter("username");
+  String password = req.getParameter("password");
+  System.out.println(userName+" : "+password);
+
+  resp.sendRedirect("Success.jsp");
+}
+```
 
 
 
 ### HttpServletRequest
+
+HttpServletRequest代表客户端的请求，用户通过Http协议访问服务器，Http请求中的所有信息会被封装到HttpServletRequest，通过这个HTTPServletRequest的方法，获取客户端的所有信息。
+
+
 
 
 
