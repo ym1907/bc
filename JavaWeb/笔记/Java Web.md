@@ -387,7 +387,8 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 重定向和转发的区别?
 
 相同点：页面都会实现跳转
-不同点：请求转发的时候，url不会产生变化；重定向时候，url地址栏会发生变化；
+不同点：请求转发的时候，url不会产生变化；307
+			   重定向时候，url地址栏会发生变化；302
 
 实践：
 
@@ -435,7 +436,52 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 HttpServletRequest代表客户端的请求，用户通过Http协议访问服务器，Http请求中的所有信息会被封装到HttpServletRequest，通过这个HTTPServletRequest的方法，获取客户端的所有信息。
 
+#### 1、获取前端传递的参数
 
+![1619575486(resources/Java Web.assets/1619575486(1).jpg)](C:/Users/10938/Desktop/1619575486(1).jpg)
+
+#### 2、请求转发
+
+```jsp
+<div>
+    <%--以post的方式提交表单，提交到login请求--%>
+    <form action="${pageContext.request.contextPath}/login" method="post">
+        用户名：<input type="text" name="name"><br>
+        密码：<input type="password" name="password"><br>
+        爱好：
+        <input type="checkbox" name="hobbies" value="女孩">女孩
+        <input type="checkbox" name="hobbies" value="代码">代码
+        <input type="checkbox" name="hobbies" value="吃">吃
+        <input type="checkbox" name="hobbies" value="喝">喝
+        <br>
+        <input type="submit">
+    </form>
+</div>
+```
+
+
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    req.setCharacterEncoding("utf-8");//处理接收到内容的编码格式
+    resp.setCharacterEncoding("utf-8");
+
+    String name = req.getParameter("name");
+    String password = req.getParameter("password");
+    String[] hobbies = req.getParameterValues("hobbies");
+
+    System.out.println("=============================");
+    System.out.println(name+" : "+password);
+    System.out.println(Arrays.toString(hobbies));
+    System.out.println("=============================");
+
+    System.out.println(req.getContextPath());
+    //通过请求转发
+    //这里的'/'代表的是当前的Web应用
+    req.getRequestDispatcher("/success.jsp").forward(req,resp);
+}
+```
 
 
 

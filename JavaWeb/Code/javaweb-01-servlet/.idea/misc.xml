@@ -5,6 +5,7 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet-01" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-02" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-03-response" />
+    <file type="web" url="file://$PROJECT_DIR$/servlet-04-request" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />

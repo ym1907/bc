@@ -14,6 +14,7 @@
         <module>servlet-01</module>
         <module>servlet-02</module>
         <module>servlet-03-response</module>
+        <module>servlet-04-request</module>
     </modules>
 
     <dependencies>
@@ -28,6 +29,7 @@
             <artifactId>javax.servlet.jsp-api</artifactId>
             <version>2.3.3</version>
         </dependency>
+
 
 
 
