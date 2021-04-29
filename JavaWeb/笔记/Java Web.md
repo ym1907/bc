@@ -438,7 +438,10 @@ HttpServletRequest代表客户端的请求，用户通过Http协议访问服务�
 
 #### 1、获取前端传递的参数
 
-![1619575486(resources/Java Web.assets/1619575486(1).jpg)](C:/Users/10938/Desktop/1619575486(1).jpg)
+```pro
+req.getParameter()									//String
+req.getParameterValues(String s)		//String[]
+```
 
 #### 2、请求转发
 
@@ -482,8 +485,6 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
     req.getRequestDispatcher("/success.jsp").forward(req,resp);
 }
 ```
-
-
 
 
 
