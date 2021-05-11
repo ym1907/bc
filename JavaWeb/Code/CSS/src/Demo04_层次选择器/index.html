@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    /*后代选择器*/
+    <style>
+        body p{
+            background:red;
+        }
+    </style>
+
+    /*子选择器*/
+    <style>
+        body>p{
+            background:orange;
+        }
+    </style>
+
+    /*相邻兄弟选择器：只选择一个，相邻（向下）*/
+    <style>
+        .active+p{
+            background: red
+        }
+    </style>
+
+    /*通用兄弟选择器，当前选中元素的向下的所有兄弟元素*/
+    <style>
+        .active~p{
+            background:red;
+        }
+
+        .aa~li{
+            background:blueviolet;
+        }
+    </style>
+
+</head>
+<body>
+    <p class="active">p1<p>
+    <p>p2</p>
+
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <ul>
+        <li class="aa">
+            <p>p4</p>
+        </li>
+        <li>
+            <p>p5</p>
+        </li>
+        <li>
+            <p>p6</p>
+        </li>
+    </ul>
+
+    <p>p7</p>
+</body>
+</html>

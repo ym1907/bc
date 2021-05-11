@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*id选择器：id必须保证全局唯一
+            #id名称{}
+            不遵循就近原则，优先级是固定的
+            id选择器 > class类选择器  >  标签选择器
+        */
+        #demo1{
+            color: red;
+        }
+        .demo2{
+            color: green;
+        }
+        #demo2{
+            color: orange;
+        }
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo1" class="demo2">id选择器：demo1</h1>
+    <h1 class="demo2" id = "demo2">id选择器：demo2</h1>
+    <h1 class="demo2">id选择器：demo3</h1>
+    <h1 >id选择器：demo4</h1>
+    <h1>id选择器：demo5</h1>
+</body>

@@ -4,7 +4,7 @@ CSS选择器（重点）、美化网页、盒子模型、浮动、定位、网�
 
 菜鸟教程、W2CSchool
 
-### SCC介绍
+### CSS介绍
 
 Cascading Style Sheet：层叠级样式表
 
@@ -81,7 +81,119 @@ CSS3.0：圆角，阴影，动画... 浏览器兼容性
 
 
 
+### 选择器
 
+作用：选择页面上的某一个后者某一类元素
+
+#### 标签选择器
+
+ 选择一类标签
+ 格式： 标签 { }
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    h1{
+      color: orange;
+      background: blue;
+      border-radius: 10px;
+    }
+    h3{
+      color: orange;
+      background: blue;
+      border-radius: 10px;
+    }
+    p{
+      font-size: 80px;
+    }
+</style>
+</head>
+	<body>
+	<h1>标签选择器</h1>
+	<p>我爱学习</p>
+	<h3>学习JAVA</h3>
+</body>
+```
+
+
+
+#### 类选择器class
+
+ 选择所有class一致的标签，跨标签
+
+ 格式： .类名{}
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*类选择器的格式 .class的名称{}
+            好处：可以多个标签归类，是同一个class，可以复用*/
+        .demo1{
+            color: blue;
+        }
+        .demo2{
+            color: red;
+        }
+        .demo3{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+  <h1 class = "demo1">类选择器：demo1</h1>
+	<h1 class="demo2">类选择器：demo2</h1>
+	<h1 class="demo3">类选择器：demo3</h1>
+	<p class="demo3">p标签</p>
+</body>
+```
+
+
+
+#### id 选择器
+
+全局唯一
+
+格式： #id名{}
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*id选择器：id必须保证全局唯一
+            #id名称{}
+            不遵循就近原则，优先级是固定的
+            id选择器 > class类选择器  >  标签选择器
+        */
+        #demo1{
+            color: red;
+        }
+        .demo2{
+            color: green;
+        }
+        #demo2{
+            color: orange;
+        }
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo1" class="demo2">id选择器：demo1</h1>
+    <h1 class="demo2" id = "demo2">id选择器：demo2</h1>
+    <h1 class="demo2">id选择器：demo3</h1>
+    <h1 >id选择器：demo4</h1>
+    <h1>id选择器：demo5</h1>
+</body>
+```
+
+优先级：id > class > 标签
 
 
 
