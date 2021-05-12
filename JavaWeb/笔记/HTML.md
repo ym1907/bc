@@ -534,6 +534,491 @@ header、footer、ection、article、aside、nav标签
 
 
 
+# CSS
+
+CSS选择器（重点）、美化网页、盒子模型、浮动、定位、网页动画
+
+菜鸟教程、W2CSchool
+
+### CSS介绍
+
+Cascading Style Sheet：层叠级样式表
+
+CSS：表现（美化网页：字体、颜色、边距、高度、宽度、背景图片、网页定位、网页浮动...）
+
+CSS2.0：DIV块+CSS，HTML与CSS结构分离的思想，网页变得简单，SEO
+CSS2.1：浮动，定位
+CSS3.0：圆角，阴影，动画... 浏览器兼容性
+
+### 简单的样式
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--规范，<style>中可以编写CSS代码，每一个声明最好使用';'结尾
+选择器{
+    声明1;
+    声明2;
+}-->
+  	<!--内部样式表-->
+    <style> 
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>标题</h1>
+</body>
+</html>
+```
+
+![image-20210430044615036](resources/HTML.assets/image-20210430044615036.png)
+
+注：建议使用以上的外部样式表
+
+### css优势
+
+1、内容的表现分离
+2、网页结构表现统一
+3、样式丰富
+4、建议使用独立于HTML的出售商文件
+5、利用SEO，容易被搜索引擎收录！
+
+行内元素
+
+```html
+<body>
+<!--行内样式：在标签元素中，编写一个style属性，编写样式即可-->
+<h1 style="color: red">AAA</h1>
+</body>
+```
+
+优先级：就近原则（行内样式 > 内部样式 <==> 外部样式）
+
+外部样式的两种写法：
+
+- 链接式：
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
+
+- 导入式：
+
+```html
+<style><!--CSS2.0使用，先显示框架，再渲染-->
+  	@import url("CSS/style.css");
+</style>
+```
+
+
+
+### 选择器
+
+作用：选择页面上的某一个后者某一类元素
+
+##### 标签选择器
+
+ 选择一类标签
+ 格式： 标签 { }
+
+```html
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    h1{
+      color: orange;
+      background: blue;
+      border-radius: 10px;
+    }
+    h3{
+      color: orange;
+      background: blue;
+      border-radius: 10px;
+    }
+    p{
+      font-size: 80px;
+    }
+</style>
+</head>
+	<body>
+	<h1>标签选择器</h1>
+	<p>我爱学习</p>
+	<h3>学习JAVA</h3>
+</body>
+```
+
+
+
+##### 类选择器
+
+ 选择所有class一致的标签，跨标签
+
+ 格式： .类名{}
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*类选择器的格式 .class的名称{}
+            好处：可以多个标签归类，是同一个class，可以复用*/
+        .demo1{
+            color: blue;
+        }
+        .demo2{
+            color: red;
+        }
+        .demo3{
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+  <h1 class = "demo1">类选择器：demo1</h1>
+	<h1 class="demo2">类选择器：demo2</h1>
+	<h1 class="demo3">类选择器：demo3</h1>
+	<p class="demo3">p标签</p>
+</body>
+```
+
+
+
+##### id 选择器
+
+全局唯一
+
+格式： #id名{}
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*id选择器：id必须保证全局唯一
+            #id名称{}
+            不遵循就近原则，优先级是固定的
+            id选择器 > class类选择器  >  标签选择器
+        */
+        #demo1{
+            color: red;
+        }
+        .demo2{
+            color: green;
+        }
+        #demo2{
+            color: orange;
+        }
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="demo1" class="demo2">id选择器：demo1</h1>
+    <h1 class="demo2" id = "demo2">id选择器：demo2</h1>
+    <h1 class="demo2">id选择器：demo3</h1>
+    <h1 >id选择器：demo4</h1>
+    <h1>id选择器：demo5</h1>
+</body>
+```
+
+优先级：id > class > 标签
+
+
+
+##### 层次选择器
+
+- 后代选择器：在某个元素的后面
+
+```html
+/*后代选择器*/
+<style>
+body p{
+	background:red;
+}
+</style>
+```
+
+- 子选择器，一代
+
+```html
+/*子选择器*/
+<style>
+body>p{
+	background:orange;
+}
+</style>
+
+```
+
+- 相邻的兄弟选择器 同辈
+
+```html
+/*相邻兄弟选择器：只选择一个，相邻（向下）*/
+<style>
+.active+p{
+background: red
+}
+</style>
+<body>
+	<p class="active">p1<p>
+	<p>p2</p>
+</body>
+
+```
+
+- 通用选择器
+
+```html
+<style>
+/*通用兄弟选择器，当前选中元素的向下的所有兄弟元素*/
+	.active~p{
+	background:red;
+}
+</style>
+<body>
+	<p class="active">p1<p>
+	<p>p2</p>
+</body>
+
+```
+
+
+
+##### 结构伪类选择器
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        ul li:first-child{/*ul的第一个子元素*/
+            background: aqua;
+        }
+        ul li:last-child{/*ul的最后一个子元素*/
+            background: blue;
+        }
+        /*选中p1：定位到父元素，选择当前的第一个元素*/
+        p:nth-child(1){     /*注：若当前p元素是其父级元素的第一个元素，才会生效！！（按顺序选择）*/
+            background: #badb27;
+        }
+        p:nth-of-type(2){/*选中父元素下的，第2个p元素（按类型选择）*/
+            background: red;
+        }
+        a:hover{/* hover:鼠标移动到该区域才显示的属性 */
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<!--<a href="">123</a>-->
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <h3>h3</h3>
+    <ul>
+        <li>1li1</li>
+        <li>1li2</li>
+        <li>1li3</li>
+    </ul>
+    <a href="www.baidu.com">百度</a>
+</body>
+
+```
+
+![1620789900343](resources/HTML.assets/1620789900343.png)
+
+
+
+##### 属性选择器（常用）
+
+ id + class结合 
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .demo a{
+            float: left;
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            background: aquamarine;
+            text-align: center;
+            color: gray;
+            text-decoration: none;
+            margin-right: 5px;
+            /*line-height:50px;*/
+            font: bold 20px/50px Arial;
+        }
+        /*属性名，属性名=属性值（正则）
+         = 表示绝对等于
+         *= 表示包含
+         ^= 表示以...开头
+         $= 表示以...结尾
+         存在id属性的元素
+            a[]{}
+         */
+        a[id]{/* a标签中存在id属性的元素 */
+            background: yellow;
+        }
+        a[id=first]{/*id=first的元素*/
+            background: green;
+        }
+
+        a[class*="links"]{/*class 中有links的元素*/
+            background: bisque;
+        }
+
+        a[href^=http]{/*选中href中以http开头的元素*/
+            background: aquamarine;
+        }
+        a[href$=pdf]{/*选中href中以pdf结尾的元素*/
+            background: #837fff;
+        }
+    </style>
+</head>
+<body>
+    <p class="demo">
+        <a href="http:www.baidu.com" class="links item first" id="first">1</a>
+        <a href="" class="links item active" target="_blank " title="test">2</a>
+        <a href="images/123.html" class="links item">3</a>
+        <a href="images/1.png" class="links item">4</a>
+        <a href="images/1.jpg" class="links item">5</a>
+        <a href="abc" class="links item">6</a>
+        <a href="/a.pdf" class="links item">7</a>
+        <a href="/abc.pdf" class="links item">8</a>
+        <a href="abc.doc" class="links item">9</a>
+        <a href="abcd.doc" class="links item last">10</a>
+    </p>
+</body>
+```
+
+
+
+## ![1620806843685](resources/HTML.assets/1620806843685.png)
+
+
+
+### 美化网页元素
+
+##### 为什么要美化网页
+
+1. 有效的传递页面信息
+2. 美化网页，页面漂亮才能吸引客户
+3. 凸显页面的主题
+4. 提高用户的体验
+
+**span标签**：重点要突出的字，使用span标签套起来
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #title1{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+学习语言<span id="title1">JAVA</span>
+</body>
+```
+
+
+
+##### 字体样式
+
+- font-family：字体
+- font-size：字体大小
+- font-weight：字体粗细
+- color：字体颜色
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family:"Arial Black",楷体;
+            color: red;
+        }
+        h1{
+            font-size: 50px;
+        }
+        .p1{
+            font-weight: 600;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<h1>标题</h1>
+<p>正文11111</p>
+<p class="p1">正文2222222</p>
+<p>i love study java</p>
+</body>
+```
+
+常用写法：
+
+```html
+<style>
+    p{
+        font-weight:bolder;/*也可以填px，但不能超过900,相当于bloder*/
+        /*常用写法：*/
+        font:oblique bolder 30px "楷体" ;
+    }
+</style>
+```
+
+
+
+##### 文本样式
+
+1. 颜色–>color:agb / rgba()
+2. 文本对齐方式–>text-align：center
+3. 首行缩进–>text-indent：2em
+4. 行高–>line-height：300px；
+5. 下划线–>text-decoration
+
+```html
+text-decoration:underline/*下划线*/
+text-decoration:line-through/*中划线*/
+text-decoration:overline/*上划线*/
+text-decoration:none/*超链接去下划线*/
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

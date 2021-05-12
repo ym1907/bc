@@ -3,33 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    /*后代选择器*/
-    <style>
-        body p{
-            background:red;
-        }
-    </style>
 
-    /*子选择器*/
     <style>
+        /*后代选择器*/
+        body p{
+            background: #77ff00;
+        }
+
+        /*子选择器*/
         body>p{
             background:orange;
         }
-    </style>
 
-    /*相邻兄弟选择器：只选择一个，相邻（向下）*/
-    <style>
+        /*相邻兄弟选择器：只选择一个，相邻（向下）*/
         .active+p{
             background: red
         }
-    </style>
 
-    /*通用兄弟选择器，当前选中元素的向下的所有兄弟元素*/
-    <style>
-        .active~p{
-            background:red;
-        }
-
+        /*通用兄弟选择器，当前选中元素的向下的所有兄弟元素*/
         .aa~li{
             background:blueviolet;
         }
@@ -37,13 +28,11 @@
 
 </head>
 <body>
-    <p class="active">p1<p>
-    <p>p2</p>
-
+    <p class="active">p0<p>
     <p>p1</p>
     <p>p2</p>
     <p>p3</p>
-    <ul>
+    <ul >
         <li class="aa">
             <p>p4</p>
         </li>
@@ -54,7 +43,6 @@
             <p>p6</p>
         </li>
     </ul>
-
     <p>p7</p>
 </body>
 </html>

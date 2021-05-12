@@ -43,3 +43,16 @@ DB
 数据结构和算法
 计算机网络
 操作系统
+
+
+
+|    内容     |                    地址                     |    时长     | 进度 |
+| :---------: | :-----------------------------------------: | :---------: | :--: |
+|    HTML     | https://www.bilibili.com/video/BV1x4411V75C | 2 时 11 分  | 100% |
+|     CSS     | https://www.bilibili.com/video/BV1YJ411a7dy | 6 时 09 分  |      |
+| JavaScript  | https://www.bilibili.com/video/BV1JJ41177di | 7 时 24 分  |  0%  |
+| JavaWeb入门 | https://www.bilibili.com/video/BV12J411M7Sj | 24 时 59 分 |      |
+|             |                                             |             |      |
+|             |                                             |             |      |
+|             |                                             |             |      |
+
