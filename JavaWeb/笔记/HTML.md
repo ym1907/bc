@@ -1179,9 +1179,25 @@ border：粗细 样式 颜色
 
 
 
-##### 外边距----妙用：居中
+##### 外边距
 
+妙用：居中
 margin-left/right/top/bottom–>表示四边，可分别设置，也可以同时设置如下
 
+```java
+margin:0 0 0 0/*分别表示上、右、下、左；从上开始顺时针*/
+/*例1：居中*/
+margin:0 auto /*auto表示左右自动*/
+/*例2：*/
+margin:4px/*表示上、右、下、左都为4px*/
+/*例3*/
+margin:10px 20px 30px/*表示上为10px，左右为20px，下为30px*/
+```
 
+盒子的计算方式：
+margin+border+padding+内容的大小
+
+总结：
+body总有一个默认的外边距 margin:0
+常见操作：初始化
 
