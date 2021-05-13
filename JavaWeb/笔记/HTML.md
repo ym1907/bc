@@ -988,10 +988,10 @@ background: red
 
 ##### 文本样式
 
-1. 颜色–>color:agb / rgba()
-2. 文本对齐方式–>text-align：center
-3. 首行缩进–>text-indent：2em
-4. 行高–>line-height：300px；
+1. 颜色–>color:rgb / rgba()
+2. **文本对齐方式–>text-align：center**
+3. **首行缩进–>text-indent：2em**
+4. **行高–>line-height：300px；**
 5. 下划线–>text-decoration
 
 ```html
@@ -1001,29 +1001,187 @@ text-decoration:overline/*上划线*/
 text-decoration:none/*超链接去下划线*/
 ```
 
+图片、文字水平对齐
+
+```html
+<style>
+    img, span{/*前者为后者参照物 a, b*/
+        vertical-align: middle;
+    }
+</style>
+------------------------------------------
+<p>
+    <img src="image/1314.png" alt="">
+    <span>人潮汹涌</span>
+</p>
+```
 
 
 
+##### 文本，阴影和超链接伪类
+
+```html
+<style>
+	a{/*超链接有默认的颜色*/
+		text-decoration:none;
+		color:#000000;
+	}
+	a:hover{/*鼠标悬浮的状态*/
+		color:orange;
+	}
+	a:active{/*鼠标按住未释放的状态*/
+		color:green
+	}
+	a:visited{/*点击之后的状态*/
+		color:red
+	}
+	a:link{/*链接自未点击上去时候*/
+        background: bisque;
+    }
+</style>
+```
 
 
 
+阴影
+
+```html
+/*	第一个参数：表示水平偏移
+	第二个参数：表示垂直偏移
+	第三个参数：表示模糊半径
+	第四个参数：表示颜色
+*/
+text-shadow:5px 5px 5px 颜色
+```
 
 
 
+##### 列表
+
+css
+
+```css
+#nav{
+    width: 300px;
+    background: antiquewhite;
+}
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 1em;/*缩进*/
+    line-height: 35px;
+    background: red;
+}
+/*ul li*/
+/*
+list-style:
+    non 去掉实心圆
+    circle 空心圆
+    square 正方形
+*/
+/*ul{!*nav替换效果*!
+    background: antiquewhite;
+}*/
+ul li{
+    height: 30px;
+    list-style: none;
+    text-indent: 1em;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+a:hover{
+    color: burlywood;
+    text-decoration: underline;
+}
+```
+
+html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="nav">
+    <h2 class="title">全部商品分类</h2>
+    <ul>
+        <li>
+            <a href="#">图书</a>
+            <a href="#">音像</a>
+            <a href="#">数字商品</a>
+        </li>
+        <li>
+            <a href="#">服饰鞋帽</a>
+            <a href="#">个性化妆</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+```
 
 
 
+##### 背景
+
+1. 背景颜色：background
+2. 背景图片
+
+```html
+background-image:url("");/*默认是全部平铺的*/
+background-repeat:repeat-x/*水平平铺*/
+background-repeat:repeat-y/*垂直平铺*/
+background-repeat:no-repeat/*不平铺*/
+```
 
 
 
+ div标签：相当于一个容器，只是把单独的逻辑给放在div中，这样看起来更加的清晰， div要独占一行 。 
+
+##### 渐变
+
+ 渐变背景网址：https://www.grabient.com
+径向渐变、圆形渐变 
+
+```html
+body{
+	background-color: #4158D0;
+	background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+```
 
 
 
+### 盒子模型
+
+ ![img](https://img-blog.csdnimg.cn/20201030095724647.png#pic_center) 
+
+margin：外边距
+padding：内边距
+border：边框
 
 
 
+##### 边框
+
+border：粗细 样式 颜色
+
+边框的粗细
+边框的样式
+边框的颜色
 
 
+
+##### 外边距----妙用：居中
+
+margin-left/right/top/bottom–>表示四边，可分别设置，也可以同时设置如下
 
 
 
