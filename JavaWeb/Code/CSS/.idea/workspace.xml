@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca2e48e7-e5b7-41da-b3cc-c8f57ce8b7d6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo01/CSS/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo01/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo02_导入方式/CSS/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo02_导入方式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/1.标签选择器.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/2.类选择器.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/3.id选择器.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo04_层次选择器/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo05_结构伪类选择器/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson1/Demo06_属性选择器/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/1/span/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/2/字体样式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/2/字体样式/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/image/1314.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/index2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/4/超链接伪类/image/1314.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/4/超链接伪类/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/CSS/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/images/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/images/222.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/6/背景$渐变/images/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson2/6/背景$渐变/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/HTML.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/1.第一个html.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/2.图像标签.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/3.链接标签.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/4.列表.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/5.表格.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/6.媒体元素.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/7.页面元素.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/8.内联框架.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/html/9.表单.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/resource/audio/猴叫.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/resource/image/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/resource/image/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HTML/resource/video/视频1.mp4" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1sPmoJvtO8eQywV3pre9bM8lXLS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HTML" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\6\背景\image" />
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\3\文本样式\image" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\5\列表\images" />
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\5\列表" />
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\6\背景\image" />
+      <recent name="D:\bc\JavaWeb\Code\CSS\Lesson2\4\超链接伪类" />
+      <recent name="D:\bc\JavaWeb\Code\CSS\src\Demo05_结构伪类选择器" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca2e48e7-e5b7-41da-b3cc-c8f57ce8b7d6" name="Default Changelist" comment="" />
+      <created>1620782772825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620782772825</updated>
+      <workItem from="1620782774006" duration="7553000" />
+      <workItem from="1620802494342" duration="6147000" />
+      <workItem from="1620869116331" duration="14749000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2475" y="171" key="FileChooserDialogImpl" timestamp="1620980775168">
+      <screen x="1920" y="0" width="1549" height="831" />
+    </state>
+    <state x="2475" y="171" key="FileChooserDialogImpl/0.0.1549.831/1920.0.1549.831@1920.0.1549.831" timestamp="1620980775168" />
+  </component>
+</project>
