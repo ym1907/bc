@@ -253,7 +253,7 @@ method：提交方式（get/post）
     get中可在url地址中看到提交的信息，不安全，但高效
     post比较安全，可传输大文件
 -->
-<form action="1.第一个html.html" method="post">
+<form action="1.第一个html.html" method="post">target
     <!--文本输入框：input type="text"-->
     <p>名字：<input type="text" name="username"></p>
     <!--密码框：input type="password"-->
@@ -1187,7 +1187,7 @@ margin-left/right/top/bottom–>表示四边，可分别设置，也可以同时
 ```java
 margin:0 0 0 0/*分别表示上、右、下、左；从上开始顺时针*/
 /*例1：居中*/
-margin:0 auto /*auto表示左右自动*/
+margin:0 auto /*auto表示左右自动 注：需要指定当前容器宽度才可使其中元素居中*/
 /*例2：*/
 margin:4px/*表示上、右、下、左都为4px*/
 /*例3*/
@@ -1200,4 +1200,396 @@ margin+border+padding+内容的大小
 总结：
 body总有一个默认的外边距 margin:0
 常见操作：初始化
+
+
+
+##### 圆角边框----border-radius
+
+```html
+<style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            /*一个border-radius只管一个圆的1/4*/
+            border-radius: 50px 20px 20px 30px;/*左上 右上 右下 左下 ,顺时针方向*/
+        }
+</style>
+```
+
+
+
+##### 盒子阴影
+
+```html
+box-shadow: 100px 10px 100px green; /*x轴 y轴 阴影模糊半径 颜色*/
+```
+
+
+
+### 浮动
+
+##### 标准文档流
+
+块级元素：独占一行 h1~h6 、p、div、 列表…
+行内元素：不独占一行 span、a、img、strong
+
+注： 行内元素可以包含在块级元素中，反之则不可以
+
+
+##### display（重要）
+
+1. block：块元素
+2. inline：行内元素
+3. inline-block：是块元素，但是可以内联，在一行
+
+ 这也是一种实现行内元素排列的方式，但是我们很多情况用float 
+
+none：消失
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--block 块元素
+        inline 行内元素
+        inline-block 是块元素，但是可以内联 ，在一行
+    -->
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div>div块元素</div>
+<span>span行内元素</span>
+</body>
+</html>
+```
+
+
+
+##### float：left/right左右浮动
+
+ clear：both 
+
+
+
+##### overflow及父级边框塌陷问题
+
+clear：
+right：右侧不允许有浮动元素
+left：左侧不允许有浮动元素
+both：两侧不允许有浮动元素
+none：
+
+解决塌陷问题方案：
+方案一：增加父级元素的高度；
+方案二：增加一个空的div标签，清除浮动
+
+```html
+<div class = "clear"></div>
+<style>
+	.clear{
+		clear:both;
+		margin:0;
+		padding:0;
+}
+</style>
+```
+
+方案三：在父级元素中增加一个overflow属性
+
+```html
+overflow:hidden/*隐藏超出部分*/
+overflow：scoll/*滚动*/
+```
+
+ 方案四：父类添加一个伪类:after 
+
+```html
+#father:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+```
+
+小结：
+
+浮动元素增加空div----> 简单、代码尽量避免空div
+设置父元素的高度-----> 简单，但是元素假设有了固定的高度，可能就会超出范围
+overflow----> 简单，下拉的一些场景避免使用
+父类添加一个伪类:after（推荐）----> 写法稍微复杂，但是没有副作用，**推荐使用**
+
+
+
+##### display与float对比
+
+1. display：方向不可以控制
+2. float：浮动起来的话会脱离标准文档流，所以要解决父级边框塌陷的问题。
+
+
+
+### 定位
+
+##### 相对定位
+
+相对定位：**positon：relstive；**
+相对于原来的位置，进行指定的偏移，相对定位的话，它仍然在标准文档流中！原来的位置会被保留 
+
+```html
+top:-20px;/*向上偏移20px*/
+left:20px;/*向右偏移20px*/
+bottom:10px;/*向上偏移10px*/
+right:20px;/*向左偏移20px*/
+```
+
+代码：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <!--相对定位
+            相对于自己原来的位置进行偏移
+    -->
+    <style>
+        body{
+            padding: 20px;
+        }
+        div{
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        #father{
+            border: #ffa538 1px solid;
+            padding: 0;
+        }
+        #first{
+            border: #b3ff38 1px solid;
+            background-color: #ffa538;
+            position: relative;/*相对定位：上下左右*/
+            top: -20px;/*向上偏移20px*/
+            left: 20px;/*向右偏移20px*/
+        }
+        #second{
+            border: #427b11 1px solid;
+            background-color: #66c77f;
+        }
+        #third{
+            background-color: #b3ff38;
+            border: #38d7ff 1px solid;
+            position: relative;
+            bottom: 10px;/*向上偏移10px*/
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <div id="first">第一个盒子</div>
+    <div id="second">第二个盒子</div>
+    <div id="third">第三个盒子</div>
+</div>
+</body>
+</html>
+```
+
+ 练习： 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201030095804693.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTE0NTcyNg==,size_16,color_FFFFFF,t_70#pic_center) 
+
+ 实现代码： 
+
+```html
+<style>
+        #box{
+            height: 300px;
+            width: 300px;
+            border: 2px red solid;
+            padding: 10px;
+        }
+        a{
+            height: 100px;
+            width: 100px;
+            background-color: #ee73b7;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            line-height: 100px;/*设置行距100px*/
+            display: block;/*设置方块*/
+        }
+        a:hover{
+            background: #4158D0;
+        }
+        .a2{
+            position: relative;
+            left: 200px;
+            top: -100px;
+        }
+        .a4{
+            position: relative;
+            left: 200px;
+            top: -100px;
+        }
+        .a5{
+            position: relative;
+            left: 100px;
+            top: -300px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="a1"><a href="" >连接1</a></div>
+    <div class="a2"><a href="" >连接2</a></div>
+    <div class="a3"><a href="" >连接3</a></div>
+    <div class="a4"><a href="" >连接4</a></div>
+    <div class="a5"><a href="" >连接5</a></div>
+</div>
+</body>
+```
+
+
+
+##### 绝对定位-absolute和固定定位-fixed
+
+ 定位：基于xxx定位，上下左右~
+1、没有父级元素定位的前提下，相对于浏览器定位
+2、假设父级元素存在定位，我们通常会相对于父级元素进行偏移
+3、在父级元素范围内移动
+总结：相对一父级或浏览器的位置，进行指定的偏移，绝对定位的话，它不在标准文档流中，原来的位置不会被保留 
+
+```html
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 1000px;
+        }
+        div:nth-of-type(1){
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;/*absolute 绝对定位*/
+            right: 0;
+            bottom: 0;
+        }
+        div:nth-of-type(2){
+            width: 50px;
+            height: 50px;
+            background-color: #b3ff38;
+            position: fixed;/*fixed 固定定位*/
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+</body>
+```
+
+
+
+##### z-index
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20201030095842713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTE0NTcyNg==,size_16,color_FFFFFF,t_70#pic_center) 
+
+图层-z-index：默认是0，最高无限~999
+
+index.html代码：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <style></style>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li><img src="images/2020.jpg" alt=""/></li>
+        <li class="tipText">学习微服务，找狂神</li>
+        <li class="tipBg"></li>
+        <li>时间：2099-01-01</li>
+        <li>地点：月球一号基地</li>
+    </ul>
+</div>
+</body>
+</html>
+```
+
+ css代码： 
+
+```html
+#content{
+    width: 380px;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 25px;
+    border: 1px solid yellow;
+}
+ul,li{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+/*父级元素相对定位*/
+#content ul{
+    position: relative;
+}
+.tipText,.tipBg{
+    position: absolute;
+    width: 380px;
+    height: 25px;
+    top:216px
+}
+.tipText{
+    color: white;
+    z-index: 999;
+}
+.tipBg{
+    background: orange;
+    opacity: 0.5;/*背景透明度*/
+    filter: alpha(opacity=50);
+}
+```
+
+### 动画及视野拓展
+
+css做动画过于繁琐，已有很多工具间接性做出
+
+百度搜索canvas动画、[卡巴斯基监控站](https://cybermap.kaspersky.com/cn)（仅作了解）
+
+
+
+### 总结
+
+ ![CSS导图](https://img-blog.csdnimg.cn/20201030100754543.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTE0NTcyNg==,size_16,color_FFFFFF,t_70#pic_center) 
+
+
 

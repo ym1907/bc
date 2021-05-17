@@ -1,55 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:gitee" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca2e48e7-e5b7-41da-b3cc-c8f57ce8b7d6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo01/CSS/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo01/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo02_导入方式/CSS/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo02_导入方式/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/1.标签选择器.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/2.类选择器.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo03_基本选择器/3.id选择器.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo04_层次选择器/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo05_结构伪类选择器/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson1/Demo06_属性选择器/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/1/span/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/2/字体样式/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/2/字体样式/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/image/1314.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/3/文本样式/index2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/4/超链接伪类/image/1314.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/4/超链接伪类/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/CSS/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/images/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/images/222.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/5/列表/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/6/背景$渐变/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson2/6/背景$渐变/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/HTML.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/1.第一个html.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/2.图像标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/3.链接标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/4.列表.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/5.表格.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/6.媒体元素.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/7.页面元素.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/8.内联框架.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/html/9.表单.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/resource/audio/猴叫.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/resource/image/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/resource/image/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HTML/resource/video/视频1.mp4" beforeDir="false" />
-    </list>
+    <list default="true" id="ca2e48e7-e5b7-41da-b3cc-c8f57ce8b7d6" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
