@@ -382,7 +382,7 @@ method：提交方式（get/post）
     <p>名字：<input type="text" name="username" value="admin" readonly></p>
 
 <!--disabled：不可用-->
-    <p>名字：<input type="text" name="username" disable></p>
+    <p>名字：<input type="text" name="username" disable></p> 
 ```
 
 ##### 表单初级验证
