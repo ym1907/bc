@@ -1,3 +1,7 @@
+
+
+
+
 # HTML
 
 HTML：Hyper Text Markup Language（超文本标记语言）
@@ -1306,7 +1310,7 @@ none：
 		clear:both;
 		margin:0;
 		padding:0;
-}
+	}
 </style>
 ```
 
@@ -1327,7 +1331,7 @@ overflow：scoll/*滚动*/
 }
 ```
 
-小结：
+**小结**：
 
 浮动元素增加空div----> 简单、代码尽量避免空div
 设置父元素的高度-----> 简单，但是元素假设有了固定的高度，可能就会超出范围
@@ -1542,6 +1546,7 @@ index.html代码：
 ```
 
  css代码： 
+opacity: 0.5  背景透明度
 
 ```html
 #content{
@@ -1574,8 +1579,8 @@ ul,li{
 }
 .tipBg{
     background: orange;
-    opacity: 0.5;/*背景透明度*/
-    filter: alpha(opacity=50);
+    opacity: 0.5;/*背景透明度 (所有浏览器都支持该属性)*/
+    filter: alpha(opacity=50);/*IE8及更早版本支持该属性*/
 }
 ```
 
@@ -1587,9 +1592,218 @@ css做动画过于繁琐，已有很多工具间接性做出
 
 
 
-### 总结
+### CSS3  总结
 
  ![CSS导图](https://img-blog.csdnimg.cn/20201030100754543.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTE0NTcyNg==,size_16,color_FFFFFF,t_70#pic_center) 
+
+
+
+# JavaScript
+
+### 概述
+
+##### 前端知识体系
+
+想要成为真正的“互联网Java全栈工程师”还有很长的一段路要走，其中前端是绕不开的一门必修课。本阶段课程的主要目的就是带领Java后台程序员认识前端、了解前端、掌握前端，为实现成为“互联网Java全栈工程师”再向前迈进一步。
+
+
+
+##### 前端三要素
+
+- HTML（结构）：超文本标记语言（Hyper Text Markup Language），决定网页的结构和内容
+- CSS（表现）：层叠样式表（Cascading Style Sheets），设定网页的表现样式。
+- JavaScript（行为）：是一种弱类型脚本语言，其源码不需经过编译，而是由浏览器解释运行，用于控制网页的行为
+
+
+
+##### 结构层（HTML）
+
+太简单，略
+
+
+
+##### 表现层（CSS）
+
+CSS层叠样式表是一门标记语言，并不是编程语言，因此不可以自定义变量，不可以引用...
+
+换句话说就是不具备任何语法支持，它主要缺陷如下：
+
+- 语法不够强大，比如无法嵌套书写，导致模块化开发中需要书写很多重复的选择器；
+
+- 没有变量和合理的样式复用机制，使得逻辑上相关的属性值必须以字面量的形式重复输出，导致难以维护；
+
+  这就导致了我们在工作中无端增加了许多工作量。为了解决这个问题，前端开发人员会使用一种称之为【CSS预处理器】的工具,提供CSS缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。大大的提高了前端在样式上的开发效率。
+
+
+
+**什么是CSS预处理器**
+
+CSS预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就只需要使用这种语言进行CSS的编码工作。转化成通俗易懂的话来说就是“**用一种专门的编程语言，进行Web页面样式设计，再通过编译器转化为正常的CSS文件，以供项目使用**”。
+
+
+
+**常用的CSS预处理器有哪些**
+
+SASS：基于Ruby ，通过服务端处理，功能强大。解析效率高。需要学习Ruby语言，上手难度高于LESS。
+LESS：基于NodeJS，通过客户端处理，使用简单。功能比SASS简单，解析效率也低于SASS，但在实际开发中足够了，所以如果我们后台人员如果需要的话，建议使用LESS。
+
+
+
+##### 行为层（JavaScript）
+
+JavaScript一门弱类型脚本语言，其源代码在发往客户端运行之前不需要经过编译，而是将文本格式的字符代码发送给浏览器，由浏览器解释运行。
+
+**JavaScript框架**
+
+- JQuery：大家熟知的JavaScript库，优点就是简化了DOM操作，缺点就是DOM操作太频繁，影响前端性能；在前端眼里使用它仅仅是为了兼容IE6，7，8；
+- Angular：Google收购的前端框架，由一群Java程序员开发，其特点是将后台的MVC模式搬到了前端并增加了模块化开发的理念，与微软合作，采用了TypeScript语法开发；对后台程序员友好，对前端程序员不太友好；最大的缺点是版本迭代不合理（如1代–>2 代，除了名字，基本就是两个东西；截止发表博客时已推出了Angular6）
+- React：Facebook 出品，一款高性能的JS前端框架；特点是提出了新概念 【虚拟DOM】用于减少真实 DOM 操作，在内存中模拟 DOM操作，有效的提升了前端渲染效率；缺点是使用复杂，因为需要额外学习一门【JSX】语言；
+- Vue：一款渐进式 JavaScript 框架，所谓渐进式就是逐步实现新特性的意思，如实现模块化开发、路由、状态管理等新特性。其特点是综合了 Angular（模块化）和React(虚拟 DOM) 的优点；
+- Axios：前端通信框架；因为 Vue 的边界很明确，就是为了处理 DOM，所以并不具备通信能力，此时就需要额外使用一个通信框架与服务器交互；当然也可以直接选择使用jQuery 提供的AJAX 通信功能；
+
+**UI框架**
+
+- Ant-Design：阿里巴巴出品，基于React的UI框架
+- ElementUI、iview、ice：饿了么出品，基于Vue的UI框架
+- BootStrap：Teitter推出的一个用于前端开发的开源工具包
+- AmazeUI：又叫“妹子UI”，一款HTML5跨屏前端框架
+
+**JavaScript构建工具**
+
+- Babel：JS编译工具，主要用于浏览器不支持的ES新特性，比如用于编译TypeScript
+
+- WebPack：模块打包器，主要作用就是打包、压缩、合并及按序加载
+  **注：以上知识点已将WebApp开发所需技能全部梳理完毕**
+
+  
+
+##### 三端同一
+
+**混合开发（Hybrid App）**
+主要目的是实现一套代码三端统一（PC、Android：.apk、iOS：.ipa）并能够调用到设备底层硬件（如：传感器、GPS、摄像头等），打包方式主要有以下两种：
+
+云打包：HBuild -> HBuildX，DCloud 出品；API Cloud
+本地打包： Cordova（前身是 PhoneGap）
+
+**微信小程序**
+详见微信官网，这里就是介绍一个方便微信小程序UI开发的框架：WeUI
+
+
+
+##### 什么是Javascript
+
+**概述**
+
+javaScript是一门世界上最流行的脚本语言
+Java，JavaScript
+10天
+一个合格的后端人员，必须精通JavaScript
+
+**历史**
+
+见百度：  https://blog.csdn.net/kese7952/article/details/79357868
+
+**ECMAScript**：可以理解为JavaScript的一个标准
+最新版本已经到es6版本~
+但是大部分浏览器还只停留在支持es5代码上！
+开发环境–线上环境，版本不一致
+
+
+
+### 快速入门
+
+##### 引入JavaScript
+
+ 内部标签 
+
+```html
+<script> 
+	alert("hello,world");<!--弹出框-->
+</script>
+
+```
+
+外部引入
+
+```html
+ <!--外部引入
+        注意：script必须成对出现-->
+    <script src="js/hj.js"></script>
+
+    <!--不用显示定义type，也默认就是javaScript-->
+    <script type="text/javascript"></script>
+
+```
+
+##### 基本语法
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--JavaScript严格区分大小写-->
+    <script>
+        // 1. 定义变量   变量类型 变量名 = 变量值
+        var score = 1 ;
+        //alert(num)
+        // 2. 条件控制
+
+        if (score > 60 && score < 70){
+            alert("60~70");
+        }else if(score > 70 && score < 80){
+            alert("70~80");
+        }else{
+            alert("other")
+        }
+        
+        //console.log(sorce) 在浏览器控制台打印变量 等同于System.out.println();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+```
+
+浏览器调试须知：
+
+![1622109295856](resources/HTML.assets/1622109295856.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
