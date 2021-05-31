@@ -1815,15 +1815,558 @@ true，false
 须知：
 
 - NaN === NaN，这个与所有的数值都不相等，包括自己
+
 - 只能通过isNaN（NaN）来判断这个数是否是NaN
 
- 浮点数问题 
+  
+
+ **浮点数问题** 
 
  console.log((1/3) === (1-2/3))  ==> flase
 
  尽量避免使用浮点数进行运算，存在精度问题！ 
 
  console.log(Math.abs(1/3-(1-2/3))<0.00000001) ==> flase
+
+
+
+ **null 和 undefined** 
+
+- null 空
+- undefined 未定义
+
+
+
+ **数组**
+Java的数组必须是相同类型的对象~，JS中不需要这样 
+
+```javascript
+//保证代码的可读性，尽量使用[]
+var arr = [1,2,3,4,5,'hello',null,true];
+//第二种定义方法
+new Array(1,2,3,4,5,'hello');
+```
+
+ 取数字下标：如果越界了，就会 报undefined 
+
+
+
+ **对象**
+对象是大括号，数组是中括号 
+
+```javascript
+// Person person = new Person(1,2,3,4,5);
+var person = {
+	name:'Tom',
+	age:3,
+	tags:['js','java','web','...']
+}
+```
+
+ 取对象值 
+
+```javascript
+person.name
+> "Tom"
+person.age
+> 3
+```
+
+
+
+##### 严格检查格式
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508105351996.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+    前提：IDEA需要设置支持ES6语法
+        'use strict';严格检查模式，预防JavaScript的随意性导致产生的一些问题
+        必须写在JavaScript的第一行！
+        局部变量建议都使用let去定义~
+    -->
+    <script>
+        'use strict';
+        //局部变量
+         let i=1
+        //ES6 let
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+
+
+### 数据类型
+
+##### 字符串
+
+1、正常字符串我们使用 单引号，或者双引号包裹
+2、注意转义字符 \ 
+
+```html
+\'
+\n		换行
+\t		Tab
+\u4e2d    \u##### Unicode字符
+
+\x41	//A Ascall字符
+```
+
+3、多行字符串编写 
+
+```javascript
+//tab 上面 esc下面
+var msg =`hello
+        world
+        你好呀
+        nihao`
+```
+
+ 4、模板字符串 
+
+```javascript
+//tab 上面 esc下面
+let name = 'Tom';
+var msg = `你好，${name}`
+```
+
+5、字符串长度 
+
+```javascript
+str.length
+```
+
+6、字符串的可变性，不可变 
+
+![1622443237375](resources/HTML.assets/1622443237375.png)
+
+ 7、大小写转换 
+
+```javascript
+//注意，这里是方法，不是属性了
+student.toUpperCase();
+student.toLowerCase();
+```
+
+8、student.indexof(‘t’) 
+
+9、substring，从0开始 
+
+```javascript
+student.substring(1)//从第一个字符串截取到最后一个字符串
+student.substring(1,3)//[1,3)
+```
+
+##### 数组
+
+ Array可以包含任意的数据类型 
+
+```javascript
+var arr = [1,2,3,4,5,6];//通过下标取值和赋值
+arr[0] = 0
+```
+
+ **1、长度** 
+
+ ```javascript
+arr.length
+ ```
+
+ 注意：假如给arr.lennth赋值，数组大小就会发生变化~，如果赋值过小，元素就会丢失 
+
+ **2、indexOf**，通过元素获得下标索引 
+
+```javascript
+arr.indexOf(2)
+1
+```
+
+ 字符串的"1"和数字 1 是不同的 
+
+ **3、slice（）**截取Array的一部分，返回的一个新数组，类似于String中substring 
+
+ **4、push()，pop()尾部** 
+
+```javascript
+push：压入到尾部
+pop：弹出尾部的一个元素
+```
+
+ **5、unshift(),shift() 头部** 
+
+```javascript
+unshift：压入到头部
+shift：弹出头部的一个元素
+```
+
+ 6、排序sort() 
+
+```javascript
+(3)["B","C","A"]
+arr.sort()
+(3)["A","B","C"]
+```
+
+ 7、元素反转reverse() 
+
+```javascript
+(3)["A","B","C"]
+arr.reverse()
+(3)["C","B","A"]
+```
+
+ **8、concat()**  数组拼接
+
+![1622445672422](resources/HTML.assets/1622445672422.png)
+
+注意：concat()并没有修改数组，只是会返回一个新的数组
+
+9、连接符join
+打印拼接数组，使用特定的字符串连接
+
+![1622445691504](resources/HTML.assets/1622445691504.png)
+
+ 10、多维数组 
+
+![1622445709190](resources/HTML.assets/1622445709190.png)
+
+ 数组：存储数据（如何存，如何取，方法都可以自己实现！） 
+
+
+
+##### 对象
+
+ 若干个键值对 
+
+```javascript
+var 对象名 = {
+	属性名：属性值，
+	属性名：属性值，
+	属性名：属性值
+}
+//定义了一个person对象，它有四个属性
+var person = {
+	name:"Tom",
+	age:3,
+	email:"123456798@QQ.com",
+	score:66
+}
+```
+
+ Js中对象，{…}表示一个对象，键值对描述属性xxx：xxx，多个属性之间用逗号隔开，最后一个属性不加逗号！
+JavaScript中的所有的键都是字符串，值是任意对象！
+1、对象赋值 
+
+![1622445839787](resources/HTML.assets/1622445839787.png)
+
+ 2、使用一个不存在的对象属性，不会报错！undefined 
+
+![1622445854653](resources/HTML.assets/1622445854653.png)
+
+ 3、动态的删减属性，通过delete删除对象的属性 
+
+![1622445997901](resources/HTML.assets/1622445997901.png)
+
+ 4、动态的添加，直接给新的属性添加值即可 
+
+![1622446016439](resources/HTML.assets/1622446016439.png)
+
+ 5、判断属性值是否在这个对象中！xxx in xxx 
+
+![1622446041891](resources/HTML.assets/1622446041891.png)
+
+ 6、判断一个属性是否是这个对象自身拥有的 hasOwnProperty() 
+
+![1622446061616](resources/HTML.assets/1622446061616.png)
+
+
+
+##### 流程控制
+
+ if判断 
+
+![1622446107053](resources/HTML.assets/1622446107053.png)
+
+ while循环，避免程序死循环 
+
+![1622446125015](resources/HTML.assets/1622446125015.png)
+
+ for循环 
+
+![1622446135839](resources/HTML.assets/1622446135839.png)
+
+ forEach循环  ( ES5.1特性 )
+
+![1622446158464](resources/HTML.assets/1622446158464.png)
+
+ for …in-------下标 
+
+![1622446195610](resources/HTML.assets/1622446195610.png)
+
+
+
+##### Map和Set
+
+ ES6的新特性~ 
+
+ Map 
+
+![1622452314718](resources/HTML.assets/1622452314718.png)
+
+ Set：无序不重复的集合 
+
+![1622452331948](resources/HTML.assets/1622452331948.png)
+
+
+
+##### iterator
+
+ es6新特性 
+
+ 作业：使用iterator来遍历迭代我们Map，Set！
+遍历数组 
+
+![1622452372655](resources/HTML.assets/1622452372655.png)
+
+ 遍历Map 
+
+![1622452404635](resources/HTML.assets/1622452404635.png)
+
+ 遍历set 
+
+![1622452416213](resources/HTML.assets/1622452416213.png)
+
+
+
+### 函数
+
+##### 定义函数
+
+ 方式一 ： 绝对值函数 
+
+![1622452463813](resources/HTML.assets/1622452463813.png)
+
+ 一旦执行到return代表函数结束，返回结果！
+如果没有执行return，函数执行完也会返回结果，结果就是undefined 
+
+ 方式二 
+
+![1622452486458](resources/HTML.assets/1622452486458.png)
+
+ function(x){…}这是一个匿名函数。但是可以吧结果赋值给abs，通过abs就可以调用函数！
+方式一和方式二等价！ 
+
+ 调用函数 
+
+```javascript
+abs(10)//10
+abs(-10) //10
+```
+
+参数问题：javaScript可以传任意个参数，也可以不传递参数~
+参数进来是否存在问题？
+假设不存在参数，如何规避？ 
+
+![1622452531135](resources/HTML.assets/1622452531135.png)
+
+
+
+arguments：一个JS免费赠送的关键字；
+代表，传递进来的所有参数，是一个数组！ 
+
+![1622452559268](resources/HTML.assets/1622452559268.png)
+
+ 问题：arguments包含所有的参数，我们有时候想使用多余的参数来进行附加操作。需要排除已有参数~ 
+
+```javascript
+rest
+```
+
+ 以前： 
+
+![1622452662395](resources/HTML.assets/1622452662395.png)
+
+ ES6引入的新特性，获取除了已经定义的参数之外的所有参数~… 
+
+![1622452674817](resources/HTML.assets/1622452674817.png)
+
+ rest参数只能写在最后面，必须用…标识。 
+
+
+
+##### 变量的作用域
+
+在javascript中，var定义变量实际是有作用于的。
+假设在函数体重声明，则在函数体外不可以使用~（闭包）
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/202005081843310.png) 
+
+如果两个函数使用了相同的变量名，只要在函数内部就不冲突
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508213017794.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+内部函数可以访问外部函数的成员，反之则不行
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050821304022.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+假设，内部函数变量和外部函数变量，重名！
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508214742767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+假设在JavaScript中，函数查找变量从自身函数开始~， 由“内”向“外”查找，假设外部存在这个同名的函数变量，则内部函数会屏蔽外部函数的变量。
+
+提升变量的作用域
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508215241301.png) 
+
+结果：x undefined
+说明：js执行引擎，自动提升了y的声明，但是不会提升变量y的赋值；
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508215909640.png) 
+
+这个是在javascript建立之初就存在的特性。 养成规范：所有 的变量定义都放在函数的头部，不要乱放，便于代码维护；
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050822470141.png) 
+
+
+全局变量
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508224905458.png) 
+
+全局对象window
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508225326543.png) 
+
+alert() 这个函数本身也是一个window的变量；
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508225810801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+javascript实际上只有一个全局作用域，任何变量（函数也可以视为变量），假设没有在函数作用范围内找到，就会向外查找，如果在全局作用域都没有找到，就会报错 Refrence
+
+规范
+
+由于我们的所有变量都会绑定到window上，。如果不同的js文件，使用了相同的全局变量，就会产生冲突—>如何减少这样的冲突？
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508230620266.png) 
+
+把自己的代码全部放入自己定义的唯一空间名字中，降低全局命名冲突问题~
+jQuery中就是使用的该方法：jQuery.name，简便写法：$()
+
+局部作用域
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231056855.png) 
+
+ES6的let关键字，解决了局部作用域冲突的问题！
+
+ ![img](https://img-blog.csdnimg.cn/20200508231207856.png) 
+
+建议大家都用let去定义局部作用域的变量；
+
+常量
+
+在ES6之前，怎么定义常量：只有用全部大写字母命名的变量就是常量；建议不要修改这样的值。
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231525623.png) 
+
+在ES6引入了常量关键字 const
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508232049107.png) 
+
+
+
+##### 方法
+
+> 定义方法
+
+方法就是把函数放在对象的里面，对象只有两个东西：属性和方法
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508232559873.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
+this.代表什么？拆开上main的代码看看
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508232827102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
+this是无法指向的，是默认指向调用它的那个对象的；
+
+> apply
+
+在js中可以控制this指向
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508233222629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
+
+
+
+### 内部对象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
