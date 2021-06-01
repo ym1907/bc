@@ -2112,6 +2112,12 @@ JavaScript中的所有的键都是字符串，值是任意对象！
 
 ![1622446195610](resources/HTML.assets/1622446195610.png)
 
+for of
+
+![1622452372655](resources/HTML.assets/1622452372655.png)
+
+
+
 
 
 ##### Map和Set
@@ -2122,28 +2128,21 @@ JavaScript中的所有的键都是字符串，值是任意对象！
 
 ![1622452314718](resources/HTML.assets/1622452314718.png)
 
- Set：无序不重复的集合 
+ ![1622452404635](resources/HTML.assets/1622452404635.png)
+
+Set：**无序、不重复**的集合 
 
 ![1622452331948](resources/HTML.assets/1622452331948.png)
 
-
+![1622452416213](resources/HTML.assets/1622452416213.png)
 
 ##### iterator
 
  es6新特性 
 
  作业：使用iterator来遍历迭代我们Map，Set！
-遍历数组 
 
-![1622452372655](resources/HTML.assets/1622452372655.png)
 
- 遍历Map 
-
-![1622452404635](resources/HTML.assets/1622452404635.png)
-
- 遍历set 
-
-![1622452416213](resources/HTML.assets/1622452416213.png)
 
 
 
@@ -2180,7 +2179,7 @@ abs(-10) //10
 
 
 
-arguments：一个JS免费赠送的关键字；
+**arguments**：一个JS免费赠送的关键字；
 代表，传递进来的所有参数，是一个数组！ 
 
 ![1622452559268](resources/HTML.assets/1622452559268.png)
@@ -2195,7 +2194,7 @@ rest
 
 ![1622452662395](resources/HTML.assets/1622452662395.png)
 
- ES6引入的新特性，获取除了已经定义的参数之外的所有参数~… 
+ **ES6引入的新特性**，获取除了已经定义的参数之外的所有参数~… 
 
 ![1622452674817](resources/HTML.assets/1622452674817.png)
 
@@ -2254,7 +2253,7 @@ javascript实际上只有一个全局作用域，任何变量（函数也可以�
 
 规范
 
-由于我们的所有变量都会绑定到window上，。如果不同的js文件，使用了相同的全局变量，就会产生冲突—>如何减少这样的冲突？
+由于我们的所有变量都会绑定到window上，如果不同的js文件，使用了相同的全局变量，就会产生冲突—>如何减少这样的冲突？
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508230620266.png) 
 
@@ -2265,19 +2264,19 @@ jQuery中就是使用的该方法：jQuery.name，简便写法：$()
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231056855.png) 
 
-ES6的let关键字，解决了局部作用域冲突的问题！
+ES6的**let关键字**，解决了局部作用域冲突的问题！
 
  ![img](https://img-blog.csdnimg.cn/20200508231207856.png) 
 
 建议大家都用let去定义局部作用域的变量；
 
-常量
+**常量**  **const**
 
 在ES6之前，怎么定义常量：只有用全部大写字母命名的变量就是常量；建议不要修改这样的值。
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231525623.png) 
 
-在ES6引入了常量关键字 const
+在ES6引入了常量关键字 **const**
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508232049107.png) 
 
@@ -2302,31 +2301,530 @@ this是无法指向的，是默认指向调用它的那个对象的；
 
 ### 内部对象
 
+>  标准对象 
+
+ ![img](https://img-blog.csdnimg.cn/20200508233500524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
 
 
 
+##### Date
+
+**基本使用**
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050823390552.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+ 转换 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508233954136.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+##### JSON
+
+JSON是什么
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508234238700.png) 
+
+在javascript中，一切皆为对象，任何js支持的类型都可以用JSON表示
+格式
+
+- 对象都用{}
+- 数组都用[]
+- 所有的键值对 都是用key:value
+
+JSON字符串和js对象转化
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508234804502.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+很多人搞不清楚，JSON和JS对象的区别
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508235017515.png) 
 
 
 
+##### AJAX
+
+- 原生的js写法 xhr异步请求
+- jQuery封装好的方法$(#name).ajax("")
+- axios请求
 
 
 
+### 面向对象编程
+
+> 原型对象
+> javascript、java、c#------面向对象；但是javascript有些区别！
+
+- 类：模板
+- 对象：具体实例
+
+在javascript中，需要大家转换一下思维方式！
+原型：
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210303742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210627825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+> class集继承
+
+class关键字，是在ES6引入的
+1、定义一个类、属性、方法
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210756344.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+2、继承
+
+
+```html
+<script>
+	//ES6之后========================
+	//定义一个学生的类
+	class Student{
+		constructor(name){
+			this.name = name;
+		}
+		hello(){
+			alert('hello');
+		}
+	}
+
+	class XiaoStudent extends Student{
+		constructor(name,grade){
+			super(name);
+			this.grade = grade;
+		}
+		myGrade(){
+			alert('我是一名小学生');
+		}
+	}
+
+	var xiaoming = new Student("xiaoming");
+	var xiaohong = new XiaoStudent("xiaohong",1);
+</script>
+```
+ 本质：查看对象原型 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509211811667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+> 原型链
+
+proto:
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509212115371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
 
 
 
+### 操作BOM对象（重点）
+
+> 浏览器介绍
+
+javascript和浏览器关系？
+BOM：浏览器对象模型
+
+- IE6~11
+- Chrome
+- Safari
+- FireFox
+- Opera
+
+三方
+
+- QQ浏览器
+- 360浏览器
+
+> window
+
+window代表浏览器窗口
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509224733766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+>
+> Navigator（不建议使用）
+>
+
+Navigator封装了浏览器的信息
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225010877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+大多数时候，我们不会使用navigator对象，因为会被认为修改!
+不建议使用这些属性来判断和编写代码
+
+> screen
+>
+
+代表屏幕尺寸
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225316614.png) 
+
+> location(重要)
+>
+
+location代表当前页面的URL信息
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225614305.png) 
+
+>
+> document（内容DOM）
+>
+
+document代表当前的页面，HTML DOM文档树
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225911170.png) 
+
+获取具体的文档树节点
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225947396.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+获取cookie
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509230037645.png) 
+
+劫持cookie原理
+www.taobao.com
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050923025532.png) 
+
+服务器端可以设置cookie为httpOnly
+
+> history（不建议使用 ）
+>
+
+history代表浏览器的历史记录
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509230639949.png) 
 
 
 
+### 操作DOM对象（重点）
+
+DOM：文档对象模型
+
+> 核心
+>
+
+浏览器网页就是一个Dom树形结构！
+
+- 更新：更新Dom节点
+- 遍历Dom节点：得到Dom节点
+- 删除：删除一个Dom节点
+- 添加：添加一个新的节点
+
+要操作一个Dom节点，就必须要先获得这个Dom节点
+
+> 获得Dom节点
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509231806822.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+这是原生代码，之后我们尽量都使用jQuery();
+
+> 更新节点
+>
+
+操作文本
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232232560.png) 
+
+操作css
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232439513.png) 
+
+>
+> 删除节点
+>
+
+删除节点的步骤：先获取父节点，再通过父节点删除自己
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232903448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+注意：删除多个节点的时候，children是在时刻变化的，删除节点的时候一定要注意。
+
+> 插入节点
+>
+
+我们获得了某个Dom节点，假设这个dom节点是空的，我们通过innerHTML就可以增加一个元素了，但是这个Dom节点已经存在元素了，我们就不能这么干了！会产生覆盖
+
+追加
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509233556254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050923363290.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+
+>  创建一个新的标签 
+
+```html
+<script>
+	var js = document.getElementById('js');//已经存在的节点
+    var list = document.getElementById('list');
+    //通过JS创建一个新的节点
+    var newP = document.creatElement('p');//创建一个p标签
+    newP.id = 'newP';
+    newP.innerText = 'Hello,Kuangshen';
+    //创建一个标签节点
+    var myScript = document.creatElement('script');
+    myScript.setAttribute('type','text/javascript');
+    
+    //可以创建一个style标签
+    var myStyle = document.creatElement('style');//创建了一个空style标签
+    myStyle.setAttribute('type','text/css');
+    myStyle.innerHTML = 'body{background-color:chartreuse;}';//设置标签内容
+    
+    document.getElementByTagName('head')[0].appendChild(myStyle);
+</script>
+```
+
+>  insertBefore 
+
+```javascript
+var ee = document.getElementById('ee');
+var js = document.getElementById('js');
+var list = document.getElementById('list');
+//要包含的节点.insertBefore(newNode,targetNode)
+list.insertBefore(js,ee);
+```
 
 
 
+### 操作表单
+
+> 表单是什么？form-----DOM树
+
+- 文本框----text
+- 下拉框----select
+- 单选框----radio
+- 多选框----checkbox
+- 隐藏域----hidden
+- 密码框----password
+- …
+
+表单的目的提交信息
+
+> 获得要提交的信息
+>
+
+```html
+<body>
+    <form action = "post">
+        <p>
+            <span>用户名：</span><input type="text" id = "username" />
+        </p>
+        <!--多选框的值就是定义好的value-->
+        <p>
+            <span>性别：</span>
+            <input type = "radio" name = "sex" value = "man" id = "boy"/>男
+           	<input type = "radio" name = "sex" value = "woman" id = "girl"/>女
+        </p>
+    </form>
+    <script>
+    	var input_text = document.getElementById("username");
+        var boy_radio = document.getElementById("boy");
+        var girl_radio = document.getElementById("girl");
+        //得到输入框的值
+        input_text.value 
+        //修改输入框的值
+        input_text.value  = "value";
+        
+        //对于单选框，多选框等等固定的值，boy_radio.value只能取到当前的值
+        boy_radio.checked;//查看返回的结果，是否为true，如果为true，则被选中。
+        girl_radio.checked = true;//赋值
+        
+    </script>
+</body>
+```
+>
+> 提交表单。md5加密密码，表单优化
 
 
+```html
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Title</title>
+        <!--MD5加密工具类-->
+        <script src = "https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js">
+        	
+        </script>
+    </head>
+    <body>
+        <!--表达绑定提交事件
+			οnsubmit= 绑定一个提交检测的函数，true，false
+			将这个结果返回给表单，使用onsubmit接收
+		-->
+        <form action = "https://www.baidu.com" method = "post" onsubmit = "return aaa()">
+            <p>
+            	<span>用户名：</span><input type="text" id = "username" name = "username"/>
+        	</p>
+            <p>
+            	<span>密码：</span><input type="password" id = "password" />
+        	</p>
+            <input type = "hidden" id = "md5-password" name = "password"> 
+            
+            <!--绑定事件 onclick 被点击-->
+            <button type = "submit">提交</button>
+        </form>
+        
+        <script>
+        	function aaa(){
+                alert(1);
+                var username = document.getElementById("username");
+                var pwd = document.getElementById("password");
+                var md5pwd = document.getElementById("md5-password");
+                //pwd.value = md5(pwd,value);
+                md5pwd.value = mad5(pwd.value);
+                //可以校验判断表单内容，true就是通过提交，false就是阻止提交
+                return false;
+            }
+        </script>
+    </body>
+</html>
+```
 
 
+### jQuery
 
+javaScript和jQuery的关系？
 
+jQuery库，里面存在大量的JavaScript函数
 
+> 获取jQuery
+>
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020051021540896.png) 
+
+**公式：$(selector).action()**
+
+```html
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Title</title>
+        <script src="lib/jquery-3.4.1.js"></script>
+    </head>
+    <body>
+        <a href="" id = "test-jquery">点我</a>
+        <script>
+            //选择器就是css选择器
+            $('#test-jquery').click(function(){
+                alert('hello,jQuery!');
+            });
+        </script>
+    </body>
+</html>
+```
+
+>  选择器 
+
+```javascript
+//原生js，选择器少，麻烦不好记
+//标签
+document.getElementByTagName();
+//id
+document.getElementById();
+//class
+document.getElementByClassName();
+
+//jQuery css中的选择器它全部都能用！
+$('p').click();//标签选择器
+$('#id1').click();//id选择器
+$('.class1').click;//class选择器
+```
+
+ 文档工具站：http://jquery.cuishifeng.cn/ 
+
+>  事件 
+
+ 鼠标事件、键盘事件，其他事件 
+
+```javascript
+mousedown()(jQuery)----按下
+mouseenter()(jQuery)
+mouseleave()(jQuery)
+mousemove()(jQuery)----移动
+mouseout()(jQuery)
+mouseover()(jQuery)
+mouseup()(jQuery)
+```
+
+```html
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>Title</title>
+        <script src="lib/jquery-3.4.1.js"></script>
+        <style>
+            #divMove{
+                width:500px;
+                height:500px;
+                border:1px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <!--要求：获取鼠标当前的一个坐标-->
+        mouse：<span id = "mouseMove"></span>
+        <div id = "divMove">
+            在这里移动鼠标试试
+        </div>
+        <script>
+        	//当网页元素加载完毕之后，响应事件
+            //$(document).ready(function(){})
+            $(function(){
+                $('#divMove').mousemove(function(e){
+                    $('#mouseMove').text('x:'+e.pageX+"y:"+e.pageY)
+                })
+            });
+        </script>
+    </body>
+</html>
+```
+
+>  操作DOM 
+
+ 节点文本操作 
+
+```javascript
+$('#test-ul li[name=python]').text();//获得值
+$('#test-ul li[name=python]').text('设置值');//设置值
+$('#test-ul').html();//获得值
+$('#test-ul').html('<strong>123</strong>');//设置值
+```
+
+ CSS的操作 
+
+```javascript
+$('#test-ul li[name=python]').css({"color","red"});
+```
+
+ 元素的显示和隐藏，：本质display:none 
+
+```javascript
+$('#test-ul li[name=python]').show();
+$('#test-ul li[name=python]').hide();
+```
+
+ 娱乐测试 
+
+```javascript
+$(window).width()
+$(window).height()
+$('#test-ul li[name=python]').toggle();
+```
+
+ 未来ajax()； 
+
+```javascript
+$('#form').ajax()
+
+$.ajax({url:"test.html",context:document.body,success:function(){
+	$(this).addClass("done");
+}})
+```
+
+> 小技巧
+
+1、如何巩固JS（看jQuery源码，看游戏源码！）
+
+2、巩固HTML、CSS（扒网站，全部down下来，然后对应修改看效果~）
 
 
 
