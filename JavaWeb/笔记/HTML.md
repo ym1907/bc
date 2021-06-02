@@ -2352,7 +2352,8 @@ JSON字符串和js对象转化
 ### 面向对象编程
 
 > 原型对象
-> javascript、java、c#------面向对象；但是javascript有些区别！
+
+javascript、java、c#------面向对象；但是javascript有些区别！
 
 - 类：模板
 - 对象：具体实例
@@ -2360,11 +2361,11 @@ JSON字符串和js对象转化
 在javascript中，需要大家转换一下思维方式！
 原型：
 
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210303742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
-
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210627825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210303742.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)  
 
 > class集继承
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509210627825.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
 
 class关键字，是在ES6引入的
 1、定义一个类、属性、方法
@@ -2403,11 +2404,11 @@ class关键字，是在ES6引入的
 ```
  本质：查看对象原型 
 
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509211811667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
+![1622614770867](resources/HTML.assets/1622614770867.png)
 
 > 原型链
 
-proto:
+_ proto _:
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509212115371.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70) 
 
@@ -2483,7 +2484,7 @@ www.taobao.com
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050923025532.png) 
 
-服务器端可以设置cookie为httpOnly
+服务器端可以设置cookie为httpOnly(只读)
 
 > history（不建议使用 ）
 >
@@ -2516,20 +2517,24 @@ DOM：文档对象模型
 
 这是原生代码，之后我们尽量都使用jQuery();
 
-> 更新节点
->
+> **更新节点**
 
 操作文本
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232232560.png) 
 
-操作css
+```html
+id1.innerText='456'//操作文本内容
+id1.innerHTML='<strong>123</strong>' //可以解析HTML文本标签
+```
+
+操作js
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232439513.png) 
 
->
-> 删除节点
->
+
+
+> **删除节点**
 
 删除节点的步骤：先获取父节点，再通过父节点删除自己
 
@@ -2537,8 +2542,9 @@ DOM：文档对象模型
 
 注意：删除多个节点的时候，children是在时刻变化的，删除节点的时候一定要注意。
 
-> 插入节点
->
+
+
+> **插入节点**
 
 我们获得了某个Dom节点，假设这个dom节点是空的，我们通过innerHTML就可以增加一个元素了，但是这个Dom节点已经存在元素了，我们就不能这么干了！会产生覆盖
 
@@ -2558,7 +2564,7 @@ DOM：文档对象模型
     var newP = document.creatElement('p');//创建一个p标签
     newP.id = 'newP';
     newP.innerText = 'Hello,Kuangshen';
-    //创建一个标签节点
+    //创建一个标签节点 （通过这个标签属性，可以设置任意的值）
     var myScript = document.creatElement('script');
     myScript.setAttribute('type','text/javascript');
     
@@ -2567,7 +2573,7 @@ DOM：文档对象模型
     myStyle.setAttribute('type','text/css');
     myStyle.innerHTML = 'body{background-color:chartreuse;}';//设置标签内容
     
-    document.getElementByTagName('head')[0].appendChild(myStyle);
+    document.getElementByTagName('head')[0].appendChild(myStyle);//将标签放入head中
 </script>
 ```
 
@@ -2577,7 +2583,7 @@ DOM：文档对象模型
 var ee = document.getElementById('ee');
 var js = document.getElementById('js');
 var list = document.getElementById('list');
-//要包含的节点.insertBefore(newNode,targetNode)
+//要包含的节点（targetNode的父节点）.insertBefore(newNode,targetNode)
 list.insertBefore(js,ee);
 ```
 
@@ -2624,8 +2630,7 @@ list.insertBefore(js,ee);
         
         //对于单选框，多选框等等固定的值，boy_radio.value只能取到当前的值
         boy_radio.checked;//查看返回的结果，是否为true，如果为true，则被选中。
-        girl_radio.checked = true;//赋值
-        
+        girl_radio.checked = true;//赋值=
     </script>
 </body>
 ```
