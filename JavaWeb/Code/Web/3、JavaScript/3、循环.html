@@ -21,6 +21,30 @@
         function a(){
             console.log(B)
         }
+
+        //ES6之后========================
+        //定义一个学生的类
+        class Student{
+            constructor(name){
+                this.name = name;
+            }
+            hello(){
+                alert('hello');
+            }
+        }
+
+        class XiaoStudent extends Student{
+            constructor(name,grade){
+                super(name);
+                this.grade = grade;
+            }
+            myGrade(){
+                alert('我是一名小学生');
+            }
+        }
+
+        var xiaoming = new Student("xiaoming");
+        var xiaohong = new XiaoStudent("xiaohong",1);
     </script>
 
 </head>

@@ -2295,7 +2295,7 @@ this是无法指向的，是默认指向调用它的那个对象的；
 
 > apply
 
-在js中可以控制this指向（被动调用）
+在js中可以控制this指向（主动调用）
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508233222629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
 
 
@@ -2324,7 +2324,7 @@ JSON是什么
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508234238700.png) 
 
-在javascript中，一切皆为对象，任何js支持的类型都可以用JSON表示
+在javascript中，一切皆为对象，任何 js 支持的类型都可以用JSON表示
 格式
 
 - 对象都用{}
@@ -2674,7 +2674,7 @@ list.insertBefore(js,ee);
                 var pwd = document.getElementById("password");
                 var md5pwd = document.getElementById("md5-password");
                 //pwd.value = md5(pwd,value);
-                md5pwd.value = mad5(pwd.value);
+                md5pwd.value = md5(pwd.value);
                 //可以校验判断表单内容，true就是通过提交，false就是阻止提交
                 return false;
             }
@@ -2695,7 +2695,9 @@ jQuery库，里面存在大量的JavaScript函数
 
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020051021540896.png) 
 
-**公式：$(selector).action()**
+搜索：jQuery官网CDN
+
+**使用公式：$(selector).action()** （选择器 + 事件）
 
 ```html
 <!DOCTYPE html>
@@ -2703,6 +2705,7 @@ jQuery库，里面存在大量的JavaScript函数
     <head>
         <meta charset = "UTF-8">
         <title>Title</title>
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
         <script src="lib/jquery-3.4.1.js"></script>
     </head>
     <body>
@@ -2798,7 +2801,7 @@ $('#test-ul').html('<strong>123</strong>');//设置值
  CSS的操作 
 
 ```javascript
-$('#test-ul li[name=python]').css({"color","red"});
+$('#test-ul li[name=python]').css({"color":"red","background":"yellow"});
 ```
 
  元素的显示和隐藏，：本质display:none 
@@ -2834,59 +2837,20 @@ $.ajax({url:"test.html",context:document.body,success:function(){
 
 
 
+JS 教程： https://www.liaoxuefeng.com/wiki/1022910821149312
 
+jQuery API文档：https://jquery.cuishifeng.cn/
 
+前端组件
 
+- Element ui
+- Layui
+- Ant Design
 
+框架
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Vue
+- Node.js
 
 
 

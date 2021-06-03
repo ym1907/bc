@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.6.0.js"></script>
+    <style>
+        #divMove{
+            width:500px;
+            height:500px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--要求：获取鼠标当前的一个坐标-->
+mouse：<span id = "mouseMove"></span>
+<div id = "divMove">
+    在这里移动鼠标试试
+</div>
+<ul id="test-ul">
+    <li id="python">python2</li>
+    <li id="Java">Java2</li>
+</ul>
+<script>
+    //当网页元素加载完毕之后，响应事件
+    // $(document).ready(function(){})  缩写后 ==> $(function(){});
+    $(function(){
+        $('#divMove').mousemove(function(e){
+            $('#mouseMove').text('x:'+e.pageX+"y:"+e.pageY)
+        })
+        $('#test-ul li[id=python]').css({"color":"red","background":"yellow"});
+    });
+
+
+</script>
+</body>
+</html>
