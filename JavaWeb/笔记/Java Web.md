@@ -79,6 +79,22 @@ IDEA中的Artifact，属于一种工具包
 
 
 
+**创建一个Maven项目**
+
+![1623043505681](resources/Java Web.assets/1623043505681.png)
+
+![1623043770606](resources/Java Web.assets/1623043770606.png)
+
+![1623043951261](resources/Java Web.assets/1623043951261.png)
+
+![1623044428813](resources/Java Web.assets/1623044428813.png)
+
+![1623044302941](resources/Java Web.assets/1623044302941.png)
+
+![1623044283175](resources/Java Web.assets/1623044283175.png)
+
+
+
 ### Servlet
 
 开发两步骤： 编写一个类，实现Servlet接口，把开发好的Java类部署到web服务器中。 
@@ -119,6 +135,15 @@ Servlet 类 -->  GenericServlet 类 -->  HttpServlet 类 --> 自己实现的类
 
 
 
+配置初始化后进入的页面
+
+```xml
+<!--web.xml文件-->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+```
+
 
 
 ### ServletContext
@@ -136,6 +161,11 @@ web容器启动的时候，它会为每个web程序都创建一个对应的Servl
 在servlet 1中保存的数据，可以在servlet 2中取到。（先运行servlet 2 取到的值为null）
 
 ```java
+// this.getInitParameter(0)      初始化参数
+// this.getServletConfig()       Servlet配置
+// this.getServletContext()      Servlet上下文
+// 整个服务中，ServletContext有且仅有一个，相当于单例模式
+
 //Servlet 1
 ServletContext context = this.getServletContext();
 String userName = "Harry";
@@ -198,6 +228,8 @@ password=123456
 ```java
 @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //.getResourceAsStream 把资源变成一个流
+        // 第一个/代表当前项目
         InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
         Properties prop = new Properties();
         prop.load(is);

@@ -5,10 +5,14 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
          metadata-complete="true">
+    <welcome-file-list>
+        <welcome-file>Success.jsp</welcome-file>
+    </welcome-file-list>
+    
 
     <servlet>
         <servlet-name>fs</servlet-name>
-        <servlet-class>com.harry.servlet.FileServlet</servlet-class>
+        <servlet-class>com.harry.servlet.Demo01_FileServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>fs</servlet-name>

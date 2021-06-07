@@ -9,7 +9,7 @@
         <module name="servlet-04-request" />
         <module name="servlet-03-response" />
         <module name="servlet-01" />
-        <module name="servlet-02" />
+        <module name="servlet-02-ServletContext" />
       </profile>
     </annotationProcessing>
   </component>
