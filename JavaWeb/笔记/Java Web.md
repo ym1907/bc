@@ -135,7 +135,7 @@ Servlet 类 -->  GenericServlet 类 -->  HttpServlet 类 --> 自己实现的类
 
 
 
-配置初始化后进入的页面
+配置项目**默认进入的页面**
 
 ```xml
 <!--web.xml文件-->
@@ -146,7 +146,7 @@ Servlet 类 -->  GenericServlet 类 -->  HttpServlet 类 --> 自己实现的类
 
 
 
-### ServletContext
+### ServletContext对象
 
 web容器启动的时候，它会为每个web程序都创建一个对应的ServletContext对象，它代表了 当前的web应用，整个服务中，ServletContext有且仅有一个，相当于单例模式
 
@@ -171,7 +171,7 @@ ServletContext context = this.getServletContext();
 String userName = "Harry";
 context.setAttribute("userName",userName);//将一个数据保存在ServletContext中
 
-//Servlet 2 
+//Servlet 2
 ServletContext context = this.getServletContext();
 String name = (String)context.getAttribute("userName");
 ```
@@ -190,7 +190,7 @@ String name = (String)context.getAttribute("userName");
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     ServletContext context = this.getServletContext();
-    String url = context.getInitParameter("url");
+    String url = context.getInitParameter("url");//获取初始化参数
     resp.getWriter().print(url);
 }
 ```
@@ -202,7 +202,8 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     ServletContext context = this.getServletContext();
     System.out.println("运行了demo04");
-    RequestDispatcher requestDispatcher = context.getRequestDispatcher("/gp");//转发的请求路径
+  	//请求调度程序
+    RequestDispatcher requestDispatcher = context.getRequestDispatcher("/demo03");//转发的请求路径
     requestDispatcher.forward(req,resp);//调用forward实现请求转发
 }
 ```
