@@ -180,7 +180,7 @@ String name = (String)context.getAttribute("userName");
 
 ```xml
 <!--web.xml中配置一些web应用初始化参数-->
-<context-param>
+<context-param><!--环境参数-->
     <param-name>url</param-name>
     <param-value>jdbc:mysql://localhost:3306/</param-value>
 </context-param>

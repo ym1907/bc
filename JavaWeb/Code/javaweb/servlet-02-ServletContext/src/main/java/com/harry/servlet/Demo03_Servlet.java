@@ -15,8 +15,6 @@ public class Demo03_Servlet extends HttpServlet {
 
         String url = context.getInitParameter("url");
         resp.getWriter().print(url);
-
-        Properties properties = new Properties();
     }
 
     @Override

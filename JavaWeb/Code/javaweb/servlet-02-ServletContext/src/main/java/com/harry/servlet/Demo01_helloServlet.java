@@ -12,7 +12,7 @@ public class Demo01_helloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        this.getInitParameter(0)      初始化参数
 //        this.getServletConfig()       Servlet配置
-//        this.getServletContext()      Servlet上下文
+//        this.getServletContext()      Servlet环境
 
         //整个服务中，ServletContext有且仅有一个，相当于单例模式
         ServletContext context = this.getServletContext();
