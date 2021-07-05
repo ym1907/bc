@@ -132,6 +132,16 @@ sudo vi /private/etc/hosts
 刷新DNS解析缓存：ipconfig /flushdns
 ```
 
+#### git push/pull 时总需要输入用户名密码
+
+```p
+先执行命令：git config --global credential.helper store
+然后再提交、输入密码，以后再提交将不再需要输入密码
+检验方式：C:\Users\电脑名 这个文件夹下面是否能找到.git-credentials文件
+文件的内容是有关gitlab的设置，格式为：http://{用户名}:{密码}@{git 网址}
+https://Harry-wh:zwh13952737877@gitee.com
+```
+
 #### 分支操作
 
 ```pro
