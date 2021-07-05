@@ -60,21 +60,14 @@ git config --global http.sslVerify "false"
 git push --force origin master
 ```
 
-#### 三、master -> master (fetch first)
-
-```pro
-github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并
-git pull --rebase origin master
-```
-
-#### 四、rebase in process; onto
+#### 三、rebase in process; onto
 
 ```pro
 使用强制推送后，提交新的内容后出现该红色异常，以下操作可直接取消强制推送的进程
 git rebase --abort 
 ```
 
-#### 五、There is no tracking information for the current branch.
+#### 四、There is no tracking information for the current branch.
 
 ```pro
 提示当前branch没有跟踪信息，对于这种情况有两种解决办法，就比如说要操作master吧，一种是直接指定远程master。
@@ -82,6 +75,30 @@ git pull origin master
 另外一种方法就是先指定本地master到远程的master，然后再去pull。
 git branch --set-upstream-to=origin/master master
 git pull
+```
+
+#### 五、 fatal: The current branch master has no upstream branch. 
+
+![1625457248387](resources/Git.assets/1625457248387.png)
+
+```pro
+git push的时候出现的异常
+本地当前分支没有和远端的分支进行相关联
+git push --set-upstream origin master(可能会出现问题六)
+```
+
+#### 六、master -> master(fetch first)   或   
+
+#### 		error: failed to push some refs to 'https://gitee.com/harry-wh/bc.git'
+
+![1625457281383](resources/Git.assets/1625457281383.png)
+
+```pro
+解决问题五时会出现的异常
+原因是远程仓库中的文件和我们本地的仓库有差异
+如github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并
+git pull --rebase origin master
+git pull命令用于从另一个存储库或本地分支获取并集成(整合)，取回远程主机某个分支的更新，再与本地的指定分支合并。
 ```
 
 
