@@ -29,7 +29,7 @@ public class Demo01_FileServlet extends HttpServlet {
         ServletOutputStream out = resp.getOutputStream();
         //7. 将FileOutputStream流写入到buffer缓冲区，使用OutputStream将缓冲区中的数据输出到客户端
         while((len = in.read(buffer)) > 0){
-            out.write(buffer,0,len); 
+            out.write(buffer,0,len);
         }
 
         in.close();

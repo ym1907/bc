@@ -267,7 +267,7 @@ password=123456
 
 ### HttpServletResponse
 
-web服务器接收到客户端的http请求，会针对这个请求分别创建一个代表请求的HttpServletResponse对象，和一个代表响应的HttpServletResponse；
+web服务器接收到客户端的http请求，会针对这个请求分别创建一个代表请求的HttpServletRequest对象，和一个代表响应的HttpServletResponse；
 
 - 如果要获取客户端请求过来的参数：找HttpServletRequest
 - 如果要给客户端响应一些信息：找HttpServletResponse
