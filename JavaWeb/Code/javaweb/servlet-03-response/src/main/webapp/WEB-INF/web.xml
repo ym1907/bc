@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>ImageServlet</servlet-name>
-        <servlet-class>com.harry.servlet.ImageServlet</servlet-class>
+        <servlet-class>com.harry.servlet.Demo02_ImageServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ImageServlet</servlet-name>
@@ -32,7 +32,7 @@
 
     <servlet>
         <servlet-name>RedirectServlet</servlet-name>
-        <servlet-class>com.harry.servlet.RedirectServlet</servlet-class>
+        <servlet-class>com.harry.servlet.Demo03_RedirectServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RedirectServlet</servlet-name>
@@ -41,7 +41,7 @@
 
     <servlet>
         <servlet-name>RequestServlet</servlet-name>
-        <servlet-class>com.harry.servlet.RequestServlet</servlet-class>
+        <servlet-class>com.harry.servlet.Demo04_RequestServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RequestServlet</servlet-name>

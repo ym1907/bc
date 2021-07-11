@@ -10,19 +10,19 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
 
-public class ImageServlet extends HttpServlet {
+public class Demo02_ImageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //让浏览器3秒自动刷新一次
-        resp.setHeader("refresh","0.5");
+        //让浏览器1.5秒自动刷新一次
+        resp.setHeader("refresh","1.5");
 
         //在内存中创建一个图片
         BufferedImage image = new BufferedImage(100, 20, BufferedImage.TYPE_INT_BGR);
-        //得到图片
+        //得到图片(图样2D)
         Graphics2D g = (Graphics2D) image.getGraphics();//笔
         //设置图片的背景颜色
         g.setColor(Color.white);
-        g.fillRect(0,0,100,30);
+        g.fillRect(0,0,100,30);//装满矩形
         //给图片写数据
         g.setColor(Color.BLUE);
         g.setFont(new Font(null,Font.BOLD,20));

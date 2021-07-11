@@ -14,10 +14,12 @@ public class Demo01_FileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1. 要获取下载文件的路径
-        String realPath = "D:\\bc\\JavaWeb\\Kuang\\javaweb-02-servlet\\servlet-03-response\\src\\main\\resources\\图片2.jpg";
+//        String realPath = "D:\\bc\\JavaWeb\\Code\\javaweb\\servlet-03-response\\src\\main\\resources\\图片2.jpg";
+        String realPath = "/Users/wuhaizhu/Desktop/bc/JavaWeb/Code/javaweb/servlet-03-response/src/main/resources/图片2.jpg";
         System.out.println("下载文件的路径：" + realPath);
         //2. 下载的文件名是啥？
-        String fileName = realPath.substring(realPath.lastIndexOf("\\") + 1);
+//        String fileName = realPath.substring(realPath.lastIndexOf("\\") + 1);
+        String fileName = realPath.substring(realPath.lastIndexOf("/") + 1);
         //3. 设置让浏览器能支持(Content-Disposition)下载所需的东西，中文文件名使用 URLEncoder.encode 编码，否则可能乱码
         resp.setHeader("Content-Disposition","attachment;filename=" + URLEncoder.encode(fileName,"UTF-8"));
         //4. 获取下载文件的输入流
