@@ -11,7 +11,6 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-
     <servlet>
         <servlet-name>fs</servlet-name>
         <servlet-class>com.harry.servlet.Demo01_FileServlet</servlet-class>

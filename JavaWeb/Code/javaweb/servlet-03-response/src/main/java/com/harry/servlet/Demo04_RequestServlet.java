@@ -14,6 +14,7 @@ public class Demo04_RequestServlet extends HttpServlet {
         System.out.println(userName+" : "+password);
 
         resp.sendRedirect("Success.jsp");
+
     }
 
     @Override
