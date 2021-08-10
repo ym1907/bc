@@ -22,10 +22,12 @@ public class LoginServlet extends HttpServlet {
         System.out.println(Arrays.toString(hobbies));
         System.out.println("=============================");
 
-        System.out.println(req.getContextPath());
+        System.out.println(req.getContextPath());   //" /servlet_04_request_war "
         //通过请求转发
         //这里的'/'代表的是当前的Web应用
         req.getRequestDispatcher("/success.jsp").forward(req,resp);
+        //或
+        req.getRequestDispatcher(req.getContextPath() + "success.jsp").forward(req,resp);
     }
 
     @Override
