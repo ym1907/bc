@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="servlet-05-Cookie-Session:war">
+    <output-path>$PROJECT_DIR$/servlet-05-Cookie-Session/target</output-path>
+    <root id="archive" name="servlet-05-Cookie-Session_war.war">
+      <element id="artifact" artifact-name="servlet-05-Cookie-Session:war exploded" />
+    </root>
+  </artifact>
+</component>

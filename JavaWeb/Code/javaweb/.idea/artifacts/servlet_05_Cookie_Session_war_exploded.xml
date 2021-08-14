@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="servlet-05-Cookie-Session:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/servlet_05_Cookie_Session_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/servlet-05-Cookie-Session/target/servlet-05-Cookie-Session-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

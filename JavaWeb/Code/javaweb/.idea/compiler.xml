@@ -14,7 +14,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="servlet-05-Cookie-Session" target="8" />
+      <module name="servlet-05-Cookie-Session" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
