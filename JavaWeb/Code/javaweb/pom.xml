@@ -15,9 +15,7 @@
         <module>servlet-02-ServletContext</module>
         <module>servlet-03-response</module>
         <module>servlet-04-request</module>
-        <module>servlet-05-session-cookie</module>
-        <module>sevlet-05-session-cookie</module>
-        <module>servlet-05-session-cookie</module>
+        <module>servlet-05-Cookie-Session</module>
     </modules>
 
     <dependencies>

@@ -19,6 +19,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/servlet-05-Cookie-Session/pom.xml" />
         <option value="$PROJECT_DIR$/servlet-05-session-cookie/pom.xml" />
       </set>
     </option>
