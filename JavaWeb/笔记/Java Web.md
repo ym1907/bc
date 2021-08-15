@@ -587,9 +587,14 @@ cookie：一般会保存在本地的 用户目录下 appdata；
 
 编码解码：
 
+```java
+URLEncoder.encode("秦疆","utf-8")
+URLDecoder.decode(cookie.getValue(),"UTF-8")
+```
 
 
 
+### Session（重点）
 
 
 

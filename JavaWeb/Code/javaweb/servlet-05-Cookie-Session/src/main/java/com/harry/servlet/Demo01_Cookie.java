@@ -18,7 +18,7 @@ public class Demo01_Cookie extends HttpServlet {
 
         //解决中文乱码问题
         req.setCharacterEncoding("UTF-8");
-        resp.setCharacterEncoding("utf-8");
+        resp.setContentType("text/html;charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
 
@@ -32,7 +32,7 @@ public class Demo01_Cookie extends HttpServlet {
 
             for (int i = 0; i < cookies.length; i++) {
                 Cookie cookie = cookies[i];
-                if(cookie.getName().equals("")){
+                if(cookie.getName().equals("lastLoginTime")){
                     long lastLoginTime = Long.parseLong(cookie.getValue());
                     Date date = new Date(lastLoginTime);
                     out.write(date.toLocaleString());
@@ -44,6 +44,8 @@ public class Demo01_Cookie extends HttpServlet {
         }
 
         Cookie cookie = new Cookie("lastLoginTime",System.currentTimeMillis()+"");
+        cookie.setMaxAge(24*60*60);//设置cookie的有效期
+
         resp.addCookie(cookie);
 
     }
