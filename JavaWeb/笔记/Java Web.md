@@ -549,9 +549,9 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 **session**
 
-- 服务器技术，利用这个技术，可以保存用户的会话信息？ 我们可以把信息或者数据放在Session中！
+- 服务器技术，利用这个技术，可以保存用户的会话信息？ 可以把信息或者数据放在Session中
 
-常见常见：网站登录之后，你下次不用再登录了，第二次访问直接就上去了！
+常见常见：网站登录之后，下次不用再登录了，第二次访问直接就上去了
 
 
 
@@ -588,7 +588,7 @@ cookie：一般会保存在本地的 用户目录下 appdata；
 编码解码：
 
 ```java
-URLEncoder.encode("秦疆","utf-8")
+URLEncoder.encode("中文内容","utf-8")
 URLDecoder.decode(cookie.getValue(),"UTF-8")
 ```
 
@@ -596,21 +596,108 @@ URLDecoder.decode(cookie.getValue(),"UTF-8")
 
 ### Session（重点）
 
+![image-20210817223434445](resources/Java%20Web.assets/image-20210817223434445.png)
+
+什么是Session：
+
+- 服务器会给每一个用户（浏览器）创建一个Seesion对象；
+- 一个Seesion独占一个浏览器，只要浏览器没有关闭，这个Session就存在；
+- 用户登录之后，整个网站它都可以访问！–> 保存用户的信息；保存购物车的信息……
+  …
+
+Session和cookie的区别：
+
+- Cookie是把用户的数据写给用户的浏览器，浏览器保存 （可以保存多个）
+- Session把用户的数据写到用户独占Session中，服务器端保存 （保存重要的信息，减少服务器资源的浪费）
+- Session对象服务器创建；
+
+使用场景：
+
+- 保存一个登录用户的信息；
+- 购物车信息；
+- 在整个网站中经常会使用的数据，我们将它保存在Session中；
+
+使用Session：
+
+```java
+@Override
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+  //解决乱码问题
+  req.setCharacterEncoding("UTF-8");
+  resp.setCharacterEncoding("UTF-8");
+  resp.setContentType("text/html;charset=utf-8");
+
+  //得到Session
+  HttpSession session = req.getSession();
+  //给Session中存东西
+  session.setAttribute("name",new Person("秦疆",1));
+  //获取Session的ID
+  String sessionId = session.getId();
+
+  //判断Session是不是新创建
+  if (session.isNew()){
+    resp.getWriter().write("session创建成功,ID:"+sessionId);
+  }else {
+    resp.getWriter().write("session以及在服务器中存在了,ID:"+sessionId);
+  }
+
+  //Session创建的时候做了什么事情；
+  //        Cookie cookie = new Cookie("JSESSIONID",sessionId);
+  //        resp.addCookie(cookie);
+}
+```
+
+```java
+//得到Session
+HttpSession session = req.getSession();
+
+Person person = (Person) session.getAttribute("name");
+
+System.out.println(person.toString());
+
+HttpSession session = req.getSession();
+session.removeAttribute("name");
+//手动注销Session
+session.invalidate();
+```
+
+**会话自动过期：web.xml配置**
+
+```xml
+<!--设置Session默认的失效时间-->
+<session-config>
+    <!--15分钟后Session自动失效，以分钟为单位-->
+    <session-timeout>15</session-timeout>
+</session-config>
+```
 
 
 
+## JSP
 
+**Java Server Pages** ： Java服务器端页面，也和Servlet一样，用于动态Web的技术
 
+最大的特点：
 
+- 写JSP就像在写HTML
+- 区别：
+  - HTML只给用户提供静态的数据
+  - JSP页面中可以嵌入JAVA代码，为用户提供动态数据；
 
+### JSP原理
 
+思路：JSP到底怎么执行的！
 
+​	代码层面没有任何问题
 
+​	服务器内部工作
 
+​	tomcat中有一个work目录；
 
+​	IDEA中使用Tomcat的会在IDEA的tomcat中生产一个work目录
 
-
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506184154282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
 
 
 

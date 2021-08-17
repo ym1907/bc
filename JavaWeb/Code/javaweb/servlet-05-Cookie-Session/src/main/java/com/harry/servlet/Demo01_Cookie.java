@@ -18,6 +18,7 @@ public class Demo01_Cookie extends HttpServlet {
 
         //解决中文乱码问题
         req.setCharacterEncoding("UTF-8");
+        resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
@@ -52,6 +53,6 @@ public class Demo01_Cookie extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        doGet(req, resp);
     }
 }

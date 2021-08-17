@@ -16,4 +16,48 @@
         <url-pattern>/Cookie01</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Cookie02</servlet-name>
+        <servlet-class>com.harry.servlet.Demo02_DeleteCookie</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cookie02</servlet-name>
+        <url-pattern>/DelCookie</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Cookie03</servlet-name>
+        <servlet-class>com.harry.servlet.Demo03_CookieEncoding</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cookie03</servlet-name>
+        <url-pattern>/CookieEncoding</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Session01</servlet-name>
+        <servlet-class>com.harry.servlet.Demo04_Session</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Session01</servlet-name>
+        <url-pattern>/Session01</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Session02</servlet-name>
+        <servlet-class>com.harry.servlet.Demo05_GetName</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Session02</servlet-name>
+        <url-pattern>/Session02</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Session03</servlet-name>
+        <servlet-class>com.harry.servlet.Demo06_DelSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Session03</servlet-name>
+        <url-pattern>/Session03</url-pattern>
+    </servlet-mapping>
 </web-app>
