@@ -87,9 +87,7 @@ git push的时候出现的异常
 git push --set-upstream origin master(可能会出现问题六)
 ```
 
-#### 六、master -> master(fetch first)   或   
-
-#### 		error: failed to push some refs to 'https://gitee.com/harry-wh/bc.git'
+#### 六、master -> master(fetch first)   或   error: failed to push some refs to 'https://gitee.com/harry-wh/bc.git'
 
 ![1625457281383](resources/Git.assets/1625457281383.png)
 
@@ -100,6 +98,45 @@ git push --set-upstream origin master(可能会出现问题六)
 git pull --rebase origin master
 git pull命令用于从另一个存储库或本地分支获取并集成(整合)，取回远程主机某个分支的更新，再与本地的指定分支合并。
 ```
+
+
+
+#### 七、Please, commit your changes or stash them before you can merge.
+
+其他人修改了xxx提交到版本库中去了，而你本地也修改了xxx，这时候进行git pull操作就出现冲突了。
+
+1、保留本地的修改 的改法
+
+1）直接commit本地的修改 ----**一般不用这种方法**
+
+ 2）通过git stash ---- **通常用这种方法** 
+
+```java
+git stash
+git pull
+git stash pop
+```
+
+通过git stash将工作区恢复到上次提交的内容，同时备份本地所做的修改，之后就可以正常git pull了，git pull完成后，执行git stash pop将之前本地做的修改应用到当前工作区。
+
+git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中。
+
+git stash pop: 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+
+git stash list: 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
+
+git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，原来stash的哪些节点都消失了。
+
+
+
+ 2、放弃本地修改 的改法 ----**这种方法会丢弃本地修改的代码，而且不可找回** 
+
+```java
+git reset --hard
+git pull
+```
+
+
 
 
 
