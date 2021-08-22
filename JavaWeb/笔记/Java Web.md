@@ -699,5 +699,96 @@ session.invalidate();
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506184154282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
 
+我电脑的地址：
+
+C:\Users\Administrator.IntelliJIdea2018.1\system\tomcat\Unnamed_javaweb-session-cookie\work\Catalina\localhost\ROOT\org\apache\jsp
+
+发现页面转变成了Java程序！
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506184204931.png)
+
+**浏览器向服务器发送请求，不管访问什么资源，其实都是在访问Servlet！**
+
+JSP最终也会被转换成为一个Java类！
+
+**JSP 本质上就是一个Servlet**
+
+```java
+//index_jsp.java文件中的方法
+//初始化
+public void _jspInit() {}
+//销毁
+public void _jspDestroy() {}
+//JSPService
+public void _jspService(HttpServletRequest request,HttpServletResponse response)
+```
+
+1. 判断请求
+2. 内置一些对象
+
+```java
+final javax.servlet.jsp.PageContext pageContext;  //页面上下文
+javax.servlet.http.HttpSession session = null;    //session
+final javax.servlet.ServletContext application;   //applicationContext
+final javax.servlet.ServletConfig config;         //config（配置）
+javax.servlet.jsp.JspWriter out = null;           //out
+final java.lang.Object page = this;               //page：当前
+HttpServletRequest request                        //请求
+HttpServletResponse response                      //响应
+```
+
+3. 输出页面前增加的代码
+
+```java
+response.setContentType("text/html");       //设置响应的页面类型
+pageContext = _jspxFactory.getPageContext(this, request, response,null, true, 8192, true);
+_jspx_page_context = pageContext;
+application = pageContext.getServletContext();
+config = pageContext.getServletConfig();
+session = pageContext.getSession();
+out = pageContext.getOut();
+_jspx_out = out;
+```
+
+以上的这些个对象我们可以在JSP页面中直接使用！
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506183804973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
+
+在JSP页面中；
+
+只要是 JAVA代码就会原封不动的输出；
+
+如果是HTML代码，就会被转换为：
+
+```java
+out.write("<html>\r\n");
+```
+
+这样的格式，输出到前端！
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
