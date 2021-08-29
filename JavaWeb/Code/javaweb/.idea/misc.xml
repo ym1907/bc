@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet-02-ServletContext" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-03-response" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-04-request" />
+    <file type="web" url="file://$PROJECT_DIR$/servlet-05-Cookie-Session" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-session-cookie" />
   </component>
   <component name="JavaScriptSettings">

@@ -16,6 +16,7 @@
         <module>servlet-03-response</module>
         <module>servlet-04-request</module>
         <module>servlet-05-Cookie-Session</module>
+        <module>servlet-06-jsp</module>
     </modules>
 
     <dependencies>

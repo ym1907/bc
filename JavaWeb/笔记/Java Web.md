@@ -685,7 +685,7 @@ session.invalidate();
   - HTML只给用户提供静态的数据
   - JSP页面中可以嵌入JAVA代码，为用户提供动态数据；
 
-### JSP原理
+### 原理
 
 思路：JSP到底怎么执行的！
 
@@ -766,7 +766,85 @@ out.write("<html>\r\n");
 
 这样的格式，输出到前端！
 
+### 基础语法
 
+任何语言都有自己的语法，JAVA中有,。 JSP 作为java技术的一种应用，它拥有一些自己扩充的语法（了解，知道即可！），Java所有语法都支持！
+
+**JSP表达式**
+
+```jsp
+<%--JSP表达式
+  作用：用来将程序的输出，输出到客户端
+  <%= 变量或者表达式%>
+--%>
+<%= new java.util.Date()%>
+```
+
+**jsp脚本片段**
+
+```jsp
+<%--jsp脚本片段--%>
+<%
+  int sum = 0;
+  for (int i = 1; i <=100 ; i++) {
+    sum+=i;
+  }
+	out.println("<h1>Sum="+sum+"</h1>");
+%>
+```
+
+**脚本片段的再实现**
+
+```jsp
+<%
+  int x = 10;
+  out.println(x);
+%>
+<p>这是一个JSP文档</p>
+<%
+  int y = 2;
+  out.println(y);
+%>
+<hr>
+<%--在代码嵌入HTML元素--%>
+<%
+	for (int i = 0; i < 5; i++) {
+%>
+	<h1>Hello,World  <%=i%> </h1>
+<%
+	}
+%>
+```
+
+**JSP声明**
+
+```jsp
+<%!
+  static {
+  	System.out.println("Loading Servlet!");
+  }
+
+  private int globalVar = 0;
+
+  public void kuang(){
+    System.out.println("进入了方法Kuang！");
+  }
+%>
+```
+
+JSP声明：会被编译到JSP生成Java的类中！其他的，就会被生成到_jspService方法中！
+
+在JSP，嵌入Java代码即可！
+
+```jsp
+<%%>		片段
+<%=%>		表达式输出值
+<%!%>		定义全局方法
+
+<%--注释--%>
+```
+
+JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 
 
 

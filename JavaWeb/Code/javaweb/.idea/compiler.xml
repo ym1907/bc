@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="servlet-03-response" />
-        <module name="servlet-04-request" />
         <module name="servlet-05-Cookie-Session" />
-        <module name="servlet-01" />
+        <module name="servlet-06-jsp" />
         <module name="servlet-02-ServletContext" />
+        <module name="servlet-01" />
+        <module name="servlet-04-request" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
