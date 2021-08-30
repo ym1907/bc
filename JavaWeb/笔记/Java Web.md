@@ -832,9 +832,7 @@ out.write("<html>\r\n");
 %>
 ```
 
-JSP声明：会被编译到JSP生成Java的类中！其他的，就会被生成到_jspService方法中！
-
-在JSP，嵌入Java代码即可！
+JSP声明会被编译到JSP生成Java的类中，其他的就会被生成到_jspService方法中。
 
 ```jsp
 <%%>		片段
@@ -846,31 +844,256 @@ JSP声明：会被编译到JSP生成Java的类中！其他的，就会被生成�
 
 JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 
+### 指令
+
+```jsp
+<%@page args.... %>
+<%@include file=""%>
+
+<%--@include会将两个页面合二为一--%>
+
+<%@include file="common/header.jsp"%>
+<h1>网页主体</h1>
+
+<%@include file="common/footer.jsp"%>
+
+<hr>
+
+
+<%--jSP标签
+    jsp:include：拼接页面，本质还是三个
+    --%>
+<jsp:include page="/common/header.jsp"/>
+<h1>网页主体</h1>
+<jsp:include page="/common/footer.jsp"/>
+```
+
+### 9大内置对象
+
+- PageContext 存东西
+- Request 存东西
+- Response
+- Session 存东西
+- Application 【SerlvetContext】 存东西
+- config 【SerlvetConfig】
+- out
+- page ，不用了解
+- exception
+
+```java
+pageContext.setAttribute("name1","秦疆1号"); //保存的数据只在一个页面中有效
+request.setAttribute("name2","秦疆2号"); //保存的数据只在一次请求中有效，请求转发会携带这个数据
+session.setAttribute("name3","秦疆3号"); //保存的数据只在一次会话中有效，从打开浏览器到关闭浏览器
+application.setAttribute("name4","秦疆4号");  //保存的数据只在服务器中有效，从打开服务器到关闭服务器
+```
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200507213158259.png)
+
+request：客户端向服务器发送请求，产生的数据，用户看完就没用了，比如：新闻，用户看完没用的！
+
+session：客户端向服务器发送请求，产生的数据，用户用完一会还有用，比如：购物车；
+
+application：客户端向服务器发送请求，产生的数据，一个用户用完了，其他用户还可能使用，比如：聊天数据；
+
+### JSP标签、JSTL标签、EL表达式
+
+```jsp
+<!-- JSTL表达式的依赖 -->
+<dependency>
+    <groupId>javax.servlet.jsp.jstl</groupId>
+    <artifactId>jstl-api</artifactId>
+    <version>1.2</version>
+</dependency>
+<!-- standard标签库 -->
+<dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>1.1.2</version>
+</dependency>
+```
+
+EL表达式： ${ }
+
+- **获取数据**
+- **执行运算**
+- **获取web开发的常用对象**
+
+**JSP标签**
+
+```jsp
+<%--jsp:include--%>
+
+<%--
+http://localhost:8080/jsptag.jsp?name=kuangshen&age=12
+--%>
+
+<jsp:forward page="/jsptag2.jsp">
+    <jsp:param name="name" value="kuangshen"></jsp:param>
+    <jsp:param name="age" value="12"></jsp:param>
+</jsp:forward>
+```
+
+**JSTL表达式**
+
+JSTL标签库的使用就是为了弥补HTML标签的不足；它自定义许多标签，可以供我们使用，标签的功能和Java代码一样！
+
+**格式化标签**
+
+**SQL标签**
+
+**XML 标签**
+
+**核心标签** （掌握部分）
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508152235704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
+
+**JSTL标签库使用步骤**
+
+- 引入对应的 taglib
+- 使用其中的方法
+- **在Tomcat 也需要引入 jstl的包，否则会报错：JSTL解析错误**
+
+**c：if**
+
+```jsp
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+
+<h4>if测试</h4>
+
+<hr>
+
+<form action="coreif.jsp" method="get">
+    <%--
+    EL表达式获取表单中的数据
+    ${param.参数名}
+    --%>
+    <input type="text" name="username" value="${param.username}">
+    <input type="submit" value="登录">
+</form>
+
+<%--判断如果提交的用户名是管理员，则登录成功--%>
+<c:if test="${param.username=='admin'}" var="isAdmin">
+    <c:out value="管理员欢迎您！"/>
+</c:if>
+
+<%--自闭合标签--%>
+<c:out value="${isAdmin}"/>
+
+</body>
+```
+
+**c:choose c:when**
+
+```jsp
+<body>
+
+<%--定义一个变量score，值为85--%>
+<c:set var="score" value="55"/>
+
+<c:choose>
+    <c:when test="${score>=90}">
+        你的成绩为优秀
+    </c:when>
+    <c:when test="${score>=80}">
+        你的成绩为一般
+    </c:when>
+    <c:when test="${score>=70}">
+        你的成绩为良好
+    </c:when>
+    <c:when test="${score<=60}">
+        你的成绩为不及格
+    </c:when>
+</c:choose>
+
+</body>
+```
+
+**c:forEach**
+
+```jsp
+<%
+    ArrayList<String> people = new ArrayList<>();
+    people.add(0,"张三");
+    people.add(1,"李四");
+    people.add(2,"王五");
+    people.add(3,"赵六");
+    people.add(4,"田六");
+    request.setAttribute("list",people);
+%>
+
+<%--
+var , 每一次遍历出来的变量
+items, 要遍历的对象
+begin,   哪里开始
+end,     到哪里
+step,   步长
+--%>
+<c:forEach var="people" items="${list}">
+    <c:out value="${people}"/> <br>
+</c:forEach>
+
+<hr>
+
+<c:forEach var="people" items="${list}" begin="1" end="3" step="1" >
+    <c:out value="${people}"/> <br>
+</c:forEach>
+```
 
 
 
+## JavaBean
+
+实体类
+
+JavaBean有特定的写法：
+
+- 必须要有一个无参构造
+- 属性必须私有化
+- 必须有对应的get/set方法；
+
+一般用来和数据库的字段做映射 ORM；
+
+ORM ：对象关系映射
+
+- 表—>类
+- 字段–>属性
+- 行记录---->对象
+
+**people表**
+
+| id   | name    | age  | address |
+| ---- | ------- | ---- | ------- |
+| 1    | 秦疆1号 | 3    | 西安    |
+| 2    | 秦疆2号 | 18   | 西安    |
+| 3    | 秦疆3号 | 100  | 西安    |
+
+```java
+class People{
+    private int id;
+    private String name;
+    private int id;
+    private String address;
+}
+
+class A{
+    new People(1,"秦疆1号",3，"西安");
+    new People(2,"秦疆2号",3，"西安");
+    new People(3,"秦疆3号",3，"西安");
+}
+```
+
+- 过滤器
+- 文件上传
+- 邮件发送
+- JDBC 复习 ： 如何使用JDBC , JDBC crud， jdbc 事务
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## MVC三层架构
 
 
 

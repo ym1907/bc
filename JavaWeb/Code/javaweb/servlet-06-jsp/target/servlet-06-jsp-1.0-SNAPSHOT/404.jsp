@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    <img src="<%=request.getContextPath() %>/img/404.jpg" alt="666">
+<img src="<%=request.getContextPath() %>/img/404.jpg" alt="666">
 </body>
 </html>

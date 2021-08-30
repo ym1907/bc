@@ -8,6 +8,7 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet-04-request" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-Cookie-Session" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-session-cookie" />
+    <file type="web" url="file://$PROJECT_DIR$/servlet-06-jsp" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
