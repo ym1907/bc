@@ -13,13 +13,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="servlet-06-jsp" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.3" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
-          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/servlet-06-jsp/target/servlet-06-jsp-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

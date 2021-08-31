@@ -844,6 +844,8 @@ JSP声明会被编译到JSP生成Java的类中，其他的就会被生成到_jsp
 
 JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 
+
+
 ### 指令
 
 ```jsp
@@ -851,30 +853,26 @@ JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 <%@include file=""%>
 
 <%--@include会将两个页面合二为一--%>
-
 <%@include file="common/header.jsp"%>
 <h1>网页主体</h1>
-
 <%@include file="common/footer.jsp"%>
 
-<hr>
-
-
-<%--jSP标签
-    jsp:include：拼接页面，本质还是三个
-    --%>
+<%--JSP标签
+    jsp:include	拼接页面，本质还是三个--%>
 <jsp:include page="/common/header.jsp"/>
 <h1>网页主体</h1>
 <jsp:include page="/common/footer.jsp"/>
 ```
 
+
+
 ### 9大内置对象
 
-- PageContext 存东西
-- Request 存东西
+- PageContext （存东西）
+- Request （存东西）
 - Response
-- Session 存东西
-- Application 【SerlvetContext】 存东西
+- Session （存东西）
+- Application 【SerlvetContext】 （存东西）
 - config 【SerlvetConfig】
 - out
 - page ，不用了解
@@ -894,6 +892,8 @@ request：客户端向服务器发送请求，产生的数据，用户看完就�
 session：客户端向服务器发送请求，产生的数据，用户用完一会还有用，比如：购物车；
 
 application：客户端向服务器发送请求，产生的数据，一个用户用完了，其他用户还可能使用，比如：聊天数据；
+
+
 
 ### JSP标签、JSTL标签、EL表达式
 
