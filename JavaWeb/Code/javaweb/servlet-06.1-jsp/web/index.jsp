@@ -1,18 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
-  User: wuhaizhu
-  Date: 2021/8/30
-  Time: 下午9:59
+  User: 10938
+  Date: 2021/8/31
+  Time: 11:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
+  <head>
     <title>$Title$</title>
-</head>
-<body>
-    <%= 1/0 %>
-</body>
+  </head>
+  <body>
+  $END$
+  </body>
 </html>
-
-

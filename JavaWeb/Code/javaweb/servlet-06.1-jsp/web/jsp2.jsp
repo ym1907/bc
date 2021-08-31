@@ -11,7 +11,7 @@
     <title>$Title$</title>
 </head>
 <body>
-    <%= 1/0 %>
+<%= 1/0 %>
 </body>
 </html>
 

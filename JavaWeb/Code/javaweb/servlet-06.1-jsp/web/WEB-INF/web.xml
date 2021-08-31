@@ -3,12 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-  <error-page>
-    <error-code>404</error-code>
-    <location>/WEB-INF/classes/404.jpg</location>
-  </error-page>
-  <error-page>
-    <error-code>500</error-code>
-    <location>/WEB-INF/classes/500.jpg</location>
-  </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/img/404.jpg</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/img/500.jpg</location>
+    </error-page>
 </web-app>
