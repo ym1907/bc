@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="servlet-06-jsp2:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/servlet_06_jsp2_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/servlet-06-jsp2/target/servlet-06-jsp2-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="servlet-06-jsp2/web/Web" />
       <element id="directory" name="WEB-INF">

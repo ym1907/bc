@@ -11,4 +11,9 @@
         <error-code>500</error-code>
         <location>/error/500.jsp</location>
     </error-page>
+
+<!--    &lt;!&ndash;配置初始化进入的页面&ndash;&gt;-->
+<!--    <welcome-file-list>-->
+<!--        <welcome-file>index.jsp</welcome-file>-->
+<!--    </welcome-file-list>-->
 </web-app>

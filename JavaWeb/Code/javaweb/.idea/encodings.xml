@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/servlet-01" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/servlet-01/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/servlet-03-response/src/main/java" charset="UTF-8" />
@@ -8,6 +8,6 @@
     <file url="file://$PROJECT_DIR$/servlet-04-request/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/servlet-05-Cookie-Session" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/servlet-06-jsp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/servlet-06-jsp" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
