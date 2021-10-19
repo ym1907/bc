@@ -67,7 +67,7 @@ Maven：项目架构管理工具
 
 web.xml中配置URL地址时，首位“/”必须加，否则会启动组件失败
 
-IEDA 的项目配置和 Web 部署：https://www.cnblogs.com/deng-cc/p/6416332.html
+**重点**：IEDA 的项目配置和 Web 部署，https://www.cnblogs.com/deng-cc/p/6416332.html
 
 servlet：请求+响应，是一个服务
 
