@@ -9,6 +9,7 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-Cookie-Session" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-session-cookie" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-06-jsp" />
+    <file type="web" url="file://$PROJECT_DIR$/servlet-06-jsp3" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -18,6 +19,11 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/servlet-06-jsp3/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">

@@ -95,6 +95,24 @@ IDEA中的Artifact，属于一种工具包
 
 
 
+不勾选自动创建，创建基础的maven项目后
+
+![1635950571601](resources/Java Web.assets/1635950571601.png)
+
+![1635950604227](resources/Java Web.assets/1635950604227.png)
+
+![1635950622341](resources/Java Web.assets/1635950622341.png)
+
+这样创建出来的web在项目下，而不是在src/main下面
+
+![1635951026516](resources/Java Web.assets/1635951026516.png)
+
+这样创建项目的好处是，会出现第一行和第二行，能够实现项目的热更新，更新JSP不用重启项目
+
+（ * - 更新项目及资源 - 项目重新发布 - 重启项目）
+
+
+
 ## Servlet
 
 开发两步骤： 编写一个类，实现Servlet接口，把开发好的Java类部署到web服务器中。 
@@ -421,7 +439,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 相同点：页面都会实现跳转
 不同点：请求转发的时候，url不会产生变化；307
-			   重定向时候，url地址栏会发生变化；302
+			   重定向时候，url地址栏会发生变化；302	
 
 实践：
 
@@ -699,9 +717,23 @@ session.invalidate();
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506184154282.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
 
-我电脑的地址：
+ Tomcat编译后的JSP文件（_jsp.class 和 _jsp.java）的存放地点 
 
-C:\Users\Administrator.IntelliJIdea2018.1\system\tomcat\Unnamed_javaweb-session-cookie\work\Catalina\localhost\ROOT\org\apache\jsp
+```t
+（一）一般存放在你安装的Tomcat目录下的work目录下
+
+C:\Program Files\Apache Software Foundation\Tomcat 8.0\apache-tomcat-8.5.32\work\Catalina\localhost
+
+（二）可能没有存放在Tomcat中，那么就是存放在你部署的编译器的workspace中，例如使用IntelliJ IDEA部署
+
+C:\Users\Administrator\.IntelliJIdea2018.2\system\tomcat\_Hello-World-JSP\work\Catalina\localhost\
+
+（三）使用Eclipse部署的Tomcat存放的JSP编译后文件
+
+\.metadata\.plugins\com.genuitec.eclipse.easie.tomcat.myeclipse\ tomcat\work\Catalina\localhost\
+```
+
+
 
 发现页面转变成了Java程序！
 
@@ -711,10 +743,17 @@ C:\Users\Administrator.IntelliJIdea2018.1\system\tomcat\Unnamed_javaweb-session-
 
 JSP最终也会被转换成为一个Java类！
 
-**JSP 本质上就是一个Servlet**
+```java
+生成的Java类index_jsp extends org.apache.jasper.runtime.HttpJspBase
+
+向上追溯 HttpJspBase extends HttpServlet
+```
+
+**所以，JSP 本质上就是一个Servlet ! !**
 
 ```java
-//index_jsp.java文件中的方法
+/*index_jsp.java文件中的方法*/
+
 //初始化
 public void _jspInit() {}
 //销毁
@@ -766,17 +805,18 @@ out.write("<html>\r\n");
 
 这样的格式，输出到前端！ 
 
+JSP 简化了 servlet 页面的编写
+
 ### 基础语法
 
-任何语言都有自己的语法，JAVA中有,。 JSP 作为java技术的一种应用，它拥有一些自己扩充的语法（了解，知道即可！），Java所有语法都支持！
+任何语言都有自己的语法，JAVA中有, JSP 作为java技术的一种应用，它拥有一些自己扩充的语法（了解，知道即可！），Java所有语法都支持！
 
 **JSP表达式**
 
 ```jsp
-<%--JSP表达式
-  作用：用来将程序的输出，输出到客户端
-  <%= 变量或者表达式%>
---%>
+<%= 变量或者表达式%>
+作用：将内容原封不动的输出到客户端
+
 <%= new java.util.Date()%>
 ```
 
@@ -911,6 +951,13 @@ application：客户端向服务器发送请求，产生的数据，一个用户
     <artifactId>standard</artifactId>
     <version>1.1.2</version>
 </dependency>
+
+<!-- 在项目中使用JSTL和EL表达式，必须要引入standard.jar和jstl.jar文件。MyEclipse中即使没有引入，那其自带的类库会自动倒入。其他工具不会 -->
+
+<!-- /standard/JSTL 1.0 的声明是：
+<%@ taglib prefix=“c” uri="http://java.sun.com/jstl/core " %>
+JSTL1.1以后 的声明是：
+<%@ taglib prefix=“c” uri=http://java.sun.com/jsp/jstl/core %> -->
 ```
 
 EL表达式： ${ }

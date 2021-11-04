@@ -16,6 +16,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="servlet-06-jsp3" target="1.7" />
       <module name="servlet-06.1-jsp" target="1.5" />
     </bytecodeTargetLevel>
   </component>
