@@ -13,6 +13,6 @@
 </head>
 <body>
 
-<img src="../img/500.jpg" alt="500">
+<img src="<%=request.getContextPath() %>/img/500.jpg" alt="500">
 </body>
 </html>
