@@ -823,7 +823,6 @@ JSP 简化了 servlet 页面的编写
 **jsp脚本片段**
 
 ```jsp
-<%--jsp脚本片段--%>
 <%
   int sum = 0;
   for (int i = 1; i <=100 ; i++) {
@@ -872,18 +871,18 @@ JSP 简化了 servlet 页面的编写
 %>
 ```
 
-JSP声明会被编译到JSP生成Java的类中，其他的就会被生成到_jspService方法中。
+JSP声明会被编译到JSP生成的Java类下面，成为全局方法或变量，其他的会被生成到_jspService方法中。
 
 ```jsp
 <%%>		片段
 <%=%>		表达式输出值
 <%!%>		定义全局方法
-${}			取值
+${}			取值（<%=不存在的变量%> 不会报错，会输出Null）
 
 <%--注释--%>
 ```
 
-JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
+JSP的注释，不会在客户端显示，但 HTML 的注释会显示（<!--HTML注释-->）
 
 
 
@@ -891,7 +890,7 @@ JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 
 ```jsp
 <%@page args.... %>
-<%@include file=""%>
+<%@include file="xxx.xxx"%>
 
 <%--@include会将两个页面合二为一--%>
 <%@include file="common/header.jsp"%>
@@ -899,7 +898,7 @@ JSP的注释，不会在客户端显示，HTML就会！（<!--HTML注释-->）
 <%@include file="common/footer.jsp"%>
 
 <%--JSP标签
-    jsp:include	拼接页面，本质还是三个--%>
+    jsp:include	拼接页面，本质还是三个(能够解决导入页面和当前页面变量重名问题)--%>
 <jsp:include page="/common/header.jsp"/>
 <h1>网页主体</h1>
 <jsp:include page="/common/footer.jsp"/>
@@ -924,9 +923,22 @@ pageContext.setAttribute("name1","秦疆1号"); //保存的数据只在一个页
 request.setAttribute("name2","秦疆2号"); //保存的数据只在一次请求中有效，请求转发会携带这个数据
 session.setAttribute("name3","秦疆3号"); //保存的数据只在一次会话中有效，从打开浏览器到关闭浏览器
 application.setAttribute("name4","秦疆4号");  //保存的数据只在服务器中有效，从打开服务器到关闭服务器
+
+pageContext.setAttribute("key","value",PageContext.SESSION_SCOPE)//第三个未int型，作用等价于上面第三行（一般不使用，仅做了解）
+    
+<%//  重定向的两种写法
+    //request.getRequestDispatcher("/index.jsp").forward(request,response);
+    pageContext.forward("/index.jsp");
+%>
 ```
 
+![1636114045663](resources/Java Web.assets/1636114045663.png)
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200507213158259.png)
+
+**双亲委派机制**
+
+![1636115154142](resources/Java Web.assets/1636115154142.png)
 
 request：客户端向服务器发送请求，产生的数据，用户看完就没用了，比如：新闻，用户看完没用的！
 
@@ -952,7 +964,7 @@ application：客户端向服务器发送请求，产生的数据，一个用户
     <version>1.1.2</version>
 </dependency>
 
-<!-- 在项目中使用JSTL和EL表达式，必须要引入standard.jar和jstl.jar文件。MyEclipse中即使没有引入，那其自带的类库会自动倒入。其他工具不会 -->
+<!-- 在项目中使用JSTL和EL表达式，必须要引入jstl.jar和standard.jar文件。MyEclipse中即使没有引入，那其自带的类库会自动倒入。其他工具不会 -->
 
 <!-- /standard/JSTL 1.0 的声明是：
 <%@ taglib prefix=“c” uri="http://java.sun.com/jstl/core " %>
@@ -970,11 +982,9 @@ EL表达式： ${ }
 
 ```jsp
 <%--jsp:include--%>
-
-<%--
+<%--携带参数进行请求转发
 http://localhost:8080/jsptag.jsp?name=kuangshen&age=12
 --%>
-
 <jsp:forward page="/jsptag2.jsp">
     <jsp:param name="name" value="kuangshen"></jsp:param>
     <jsp:param name="age" value="12"></jsp:param>
