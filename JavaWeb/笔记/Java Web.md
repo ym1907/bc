@@ -1317,7 +1317,6 @@ public class OnlineCountListener implements HttpSessionListener {
         }
 
         ctx.setAttribute("OnlineCount",onlineCount);
-
     }
 
     //销毁session监听
@@ -1483,13 +1482,17 @@ public class TestJdbc {
         String password = "123456";
 
         //1.加载驱动
+        //mysql 8.0之前使用com.mysql.jdbc，之后使用com.mysql.cj.jdbc
         Class.forName("com.mysql.jdbc.Driver");
         //2.连接数据库,代表数据库
         Connection connection = DriverManager.getConnection(url, username, password);
 
         //3.向数据库发送SQL的对象Statement,PreparedStatement : CRUD
-        Statement statement = connection.createStatement();
-
+        Statement statement = connection.createStatement();//不安全
+	    //connection.prepareStatement("sql");安全的，需要预编译
+        //增删改，返回值为int，表示受到影响的行数
+        //statement.executeUpdate("delete from people where user = '123';");
+        
         //4.编写SQL
         String sql = "select * from users";
 

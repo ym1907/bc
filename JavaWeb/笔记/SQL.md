@@ -25,6 +25,23 @@ select *, dense_rank() over (order by 成绩 desc) as dese_rank from 班级
 
 ## SQL Server
 
+sql server 字符串转成日期格式
+
+```html
+https://www.cnblogs.com/keepdoit/p/11769659.html
+```
+
+查询条件区分大小写
+
+```sql
+SELECT * FROM T1
+WHERE name LIKE 'A%' 
+COLLATE Chinese_PRC_CI_AS; --不区分大小写
+COLLATE Chinese_PRC_CS_AS; --区分大小写
+```
+
+
+
 查询结果排序
 select *, ROW_NUMBER() over(partition by 第一排序列 order by 第二排序列 desc) rn from &&&&
 from  order

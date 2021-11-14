@@ -18,9 +18,13 @@
         <module>servlet-05-Cookie-Session</module>
         <module>servlet-06-jsp</module>
         <module>servlet-06-jsp2</module>
+        <module>servlet-07-Filter</module>
+        <module>servlet-08-jdbc</module>
     </modules>
 
     <dependencies>
+        <!--servlet.jar             是servlet 3.0 及之前版本的地址
+            javax.servlet-api.jar   是servlet 3.0 版本之后的地址-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -50,6 +54,19 @@
             <groupId>taglibs</groupId>
             <artifactId>standard</artifactId>
             <version>1.1.2</version>
+        </dependency>
+        <!-- 连接数据库 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.18</version>
+        </dependency>
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-impl -->

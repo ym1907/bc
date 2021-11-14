@@ -9,6 +9,8 @@
         <module name="servlet-03-response" />
         <module name="servlet-05-Cookie-Session" />
         <module name="servlet-06-jsp2" />
+        <module name="servlet-07-Filter" />
+        <module name="servlet-08-jdbc" />
         <module name="servlet-06-jsp" />
         <module name="servlet-02-ServletContext" />
         <module name="servlet-01" />
