@@ -46,7 +46,7 @@ git push
 
 ### git异常
 
-#### 一、fatal: unable to access '...': OpenSSL SSL_read: Connection was reset, errno 10054
+#### 一、push报错: OpenSSL SSL_read: Connection was reset, errno 10054
 
 ```pro
 一般是这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错，解除ssl验证后，再次git即可
@@ -135,8 +135,6 @@ git stash clear: 清空Git栈。此时使用gitg等图形化工具会发现，�
 git reset --hard
 git pull
 ```
-
-
 
 
 
