@@ -193,6 +193,17 @@ https://Harry-wh:zwh13952737877@gitee.com
 （具体操作有待学习）
 ```
 
+回滚本地被覆盖的代码
+
+```java
+输入git reflog查看提交的记录  前面黄色的字是当时提交时候的ID，也就是当时的版本号
+然后再输入  git reset --hard  版本号  就回到当时的那个版本了
+```
+
+ ![img](https://img-blog.csdn.net/20180515133717336) 
+
+
+
 #### 杂
 
 ```pro
