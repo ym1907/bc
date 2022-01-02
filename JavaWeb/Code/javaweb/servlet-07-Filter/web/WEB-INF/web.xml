@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>ShowServlet</servlet-name>
+        <servlet-class>com.harry.servlet.ShowServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowServlet</servlet-name>
+        <url-pattern>/show</url-pattern>
+        <url-pattern>/servlet/show</url-pattern>
+    </servlet-mapping>
+
+    <filter>
+        <filter-name>CharacterFilter</filter-name>
+        <filter-class>com.harry.filter.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharacterFilter</filter-name>
+        <!--只要是 /servlet的任何请求，会经过这个过滤器-->
+        <url-pattern>/servlet/*</url-pattern>
+        <!--<url-pattern>/*</url-pattern>-->
+        <!-- 别偷懒写个 /* -->
+    </filter-mapping>
+
+    <!--注册监听器-->
+    <listener>
+        <listener-class>com.harry.listener.OnlineCountListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.harry.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/servlet/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutOutServlet</servlet-name>
+        <servlet-class>com.harry.servlet.LoginOutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logoutOutServlet</servlet-name>
+        <url-pattern>/servlet/loginOut</url-pattern>
+    </servlet-mapping>
+</web-app>
