@@ -99,7 +99,7 @@ public class Main {
 
 
 
-##### 对数器
+### 对数器
 
 对数器的概念和使用
 1，有一个你想要测的方法a
@@ -152,15 +152,29 @@ T(N) = a*T(N/b) + 0(N^d)
 
 
 
+##### 递归
+
+用递归方法找一个数组中的最大值
+
+master公式的使用 
+
+T(N) = a*T(N/b) + O(N^d) 
+1) log(b,a) > d -> 复杂度为O(N^log(b,a)) 
+2) log(b,a) = d -> 复杂度为O(N^d * log N) 
+3) log(b,a) < d -> 复杂度为O(N^d)
+
+补充阅读： [算法的复杂度与 Master 定理 · GoCalf Blog](https://blog.gocalf.com/algorithm-complexity-and-master-theorem) 
 
 
 
+##### 归并排序
 
+1）整体就是一个简单递归，左边排好序、右边排好序、让其整体有序 
+2）让其整体有序的过程里用了排外序方法 
+3）利用master公式来求解时间复杂度 
+4）归并排序的实质 
 
-
-
-
-
+时间复杂度O(N*log N)，额外空间复杂度O(N)
 
 
 
