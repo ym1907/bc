@@ -2,7 +2,7 @@ package DataBasics;
 
 import java.util.Arrays;
 
-//快速排序
+//递归排序
 public class Demo11QuickSort {
     public static void main(String[] args) {
         int[] arr = {9,18,7,16,5,14,3,12,1};
@@ -29,6 +29,7 @@ public class Demo11QuickSort {
                 arr[high] = arr[low];
             }
             arr[low] = standard;
+
             quickSort(arr,L,low-1);
             quickSort(arr,low+1,R);
         }
