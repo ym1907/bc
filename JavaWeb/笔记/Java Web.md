@@ -439,7 +439,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 相同点：页面都会实现跳转
 不同点：请求转发的时候，url不会产生变化；307
-			   重定向时候，url地址栏会发生变化；302	
+			   重定向时候，url地址栏会发生变化；302
 
 实践：
 
