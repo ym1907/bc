@@ -10,6 +10,8 @@
     <file type="web" url="file://$PROJECT_DIR$/servlet-05-session-cookie" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-06-jsp" />
     <file type="web" url="file://$PROJECT_DIR$/servlet-06-jsp3" />
+    <file type="web" url="file://$PROJECT_DIR$/servlet-09-SupermarketManage" />
+    <file type="web" url="file://$PROJECT_DIR$/SupermarketManage" />
   </component>
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
@@ -22,7 +24,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/SupermarketManage/pom.xml" />
         <option value="$PROJECT_DIR$/servlet-06-jsp3/pom.xml" />
+        <option value="$PROJECT_DIR$/servlet-09-SupermarketManage/pom.xml" />
       </set>
     </option>
   </component>

@@ -555,7 +555,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 一个网站，怎么证明你来过？
 
 - 服务端给客户端一个 信件，客户端下次访问服务端带上信件就可以了； cookie
-- 服务器登记你来过了，下次你来的时候我来匹配你； seesion
+- 服务器登记你来过了，下次你来的时候我来匹配你； session
 
 
 
@@ -567,7 +567,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 
 **session**
 
-- 服务器技术，利用这个技术，可以保存用户的会话信息？ 可以把信息或者数据放在Session中
+- 服务器技术，利用这个技术，可以保存用户的会话信息，可以把信息或者数据放在Session中
 
 常见常见：网站登录之后，下次不用再登录了，第二次访问直接就上去了
 
@@ -803,7 +803,7 @@ _jspx_out = out;
 out.write("<html>\r\n");
 ```
 
-这样的格式，输出到前端！ 
+这样的格式，输出到前端
 
 JSP 简化了 servlet 页面的编写
 
@@ -1219,7 +1219,7 @@ Filter：过滤器 ，用来过滤网站的数据；
 - 处理中文乱码
 - 登录验证….
 
-（比如用来过滤网上骂人的话，我***我自己 0-0）
+（比如用来过滤网上骂人的话）
 
  ![(img-QEq74VyV-1588757845420)(JavaWeb.assets/1568424858708.png)](https://img-blog.csdnimg.cn/20200508154536177.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
 
@@ -1589,6 +1589,31 @@ A(900)   --100-->   B(1100)
 </dependency>
 ```
 
+
+
+```jsp
+<!-- 导入时的问题：pom文件明明已经导入了Junit的依赖了，但还是用不了@Test注解。-->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- 原因 -->
+在添加依赖时还引入了<scope>标签，它主要是用来管理依赖的部署。目前<scope>可以使用的值有5个：
+compile ： 缺省值，适用于所有阶段，会随着项目一起发布
+provided ：类似于compile，期望jdk，容器或使用者会提供这个依赖，如servlet.jar。
+runtime ：只在运行时使用，如JDBC驱动，适用于运行和测试阶段。
+test ：只在测试时使用，用于编译和运行代码，不会随项目发布。
+system ： 类似于provided，需要显式提供包含依赖的jar包，Maven不会在Repository中查找它。
+<scope>test</scope>部署了Junit的可用范围，只能在src下的test文件夹下才能使用，而我是在工具类写好之后直接就在工具类中编写测试代码，所以用不了。
+    
+<!-- 解决方法 -->
+1.去掉<scope>test</scope>配置。
+2.为了规范代码，将测试方法写到test文件夹下的java类中。
+```
+
 简单使用
 
 @Test注解只有在方法上有效，只要加了这个注解的方法，就可以直接运行！
@@ -1681,13 +1706,9 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
 
 
 
-  **项目原理流程图：** ![img](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pLmxvbGkubmV0LzIwMjAvMDUvMTkvbUNhOGxCTW9kaXBKd1FoLnBuZw?x-oss-process=image/format,png) 
+  **项目原理流程图：**
 
-
-
-
-
-
+![1650204806102](resources/Java Web.assets/1650204806102.png)
 
 
 

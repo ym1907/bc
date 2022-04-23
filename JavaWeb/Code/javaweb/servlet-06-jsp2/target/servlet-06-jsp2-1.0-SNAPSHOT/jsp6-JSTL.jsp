@@ -23,14 +23,14 @@
 </form>
 
 <%--判断如果提交的用户名是管理员，则登录成功--%>
-<c:if test="${param.username=='admin'}" var="isAdmin">
+<c:if test="${param.username=='admin'}" var="value">
     <c:out value="管理员欢迎您！"/>
 </c:if>
 
 <%--自闭合标签--%>
-<c:out value="${isAdmin}"/>
+<c:out value="${value}"/>
 
-
+<hr/>
 <%--定义一个变量score，值为85--%>
 <c:set var="score" value="55"/>
 

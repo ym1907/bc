@@ -13,7 +13,7 @@ public class Demo03_Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = this.getServletContext();
 
-        //获取初始化参数
+        //获取初始化参数（web.xml中配置）
         String url = context.getInitParameter("url");
         resp.getWriter().print(url);
     }
