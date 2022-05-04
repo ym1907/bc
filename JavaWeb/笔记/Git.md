@@ -138,6 +138,31 @@ git pull
 
 
 
+#### 八、登录显示git@github.com: Permission denied (publickey)
+
+登录Github官网查看SSH Key是否存在，若不存在，则输入以下命令生成本机的SSH Key
+
+```java
+ssh-keygen -t rsa -C "Github的注册邮箱"
+```
+
+- 此处会提示 Enter file in which to save the key (/Users/shutong/.ssh/id_rsa): 这样一段内容,让我们输入文件名，
+  如果文件存在的话最好在这里修改一下文件名以防覆盖之前的内容；
+  如果文件不存在的话则直接按 enter 键就好了。
+
+- 之后会有提示你是否需要设置密码，如果设置了每次使用Git都会用到密码，一般都是直接不写为空，
+  直接 enter 就好了。
+
+- 上述操作执行完毕后，在 C/用户/.ssh/ 目录会生成 XXX-rsa (私钥)和 XXX-rsa.pub (公钥) 
+
+ 接下来登陆github，进入设置中点击SSH and GPG keys，点击New SSH key 
+
+ 将文本id_rsa.pub中的内容复制到key里面，再点击Add SSH Key完成增加，此时即可正常在cmd上登录了  
+
+
+
+
+
 ### 其他操作
 
 #### git网站打开慢

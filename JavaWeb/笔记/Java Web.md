@@ -1700,6 +1700,403 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
 
 ## SMBMS(超市管理项目)
 
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200516122458676.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
+
+ 数据库： 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200516122532275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
+
+**项目如何搭建？**
+考虑是不是用maven？ jar包，依赖
+
+### 搭建项目准备工作
+
+1. 搭建一个maven web 项目
+
+2. 配置Tomcat
+
+3. 测试项目是否能够跑起来
+
+4. 导入项目中需要的jar包;
+   jsp，Servlet，mysql驱动jstl，stand…
+
+5. 构建项目包结构 ![在这里插入图片描述](https://img-blog.csdnimg.cn/202005161230352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
+
+6. 编写[实体类](https://so.csdn.net/so/search?q=实体类&spm=1001.2101.3001.7020)
+   ROM映射:表-类映射
+
+7. 编写基础公共类
+   1、数据库配置文件（mysql5.xx和8.xx的编写有差异）
+
+   ```java
+   driver=com.mysql.jdbc.Driver
+   #在和mysql传递数据的过程中，使用unicode编码格式，并且字符集设置为utf-8
+   url=jdbc:mysql://127.0.0.1:3306/smbms?useSSL=false&useUnicode=true&characterEncoding=utf-8
+   user=root
+   password=root
+   ```
+
+   2、编写数据库的公共类 
+
+   ```java
+   package dao;
+   
+   import java.io.IOException;
+   import java.io.InputStream;
+   import java.sql.Connection;
+   import java.sql.DriverManager;
+   import java.sql.PreparedStatement;
+   import java.sql.ResultSet;
+   import java.sql.SQLException;
+   import java.util.Properties;
+   
+   /**
+    * 操作数据库的基类--静态类
+    * @author Administrator
+    *
+    */
+   public class BaseDao {
+   	
+   	static{//静态代码块,在类加载的时候执行
+   		init();
+   	}
+   	
+   	private static String driver;
+   	private static String url;
+   	private static String user;
+   	private static String password;
+   	
+   	//初始化连接参数,从配置文件里获得
+   	public static void init(){
+   		Properties params=new Properties();
+   		String configFile = "database.properties";
+   		InputStream is=BaseDao.class.getClassLoader().getResourceAsStream(configFile);
+   		try {
+   			params.load(is);
+   		} catch (IOException e) {
+   			e.printStackTrace();
+   		}
+   		driver=params.getProperty("driver");
+   		url=params.getProperty("url");
+   		user=params.getProperty("user");
+   		password=params.getProperty("password");
+   
+   	}   
+   	
+   	
+   	/**
+   	 * 获取数据库连接
+   	 * @return
+   	 */
+   	public static Connection getConnection(){
+   		Connection connection = null;
+   		try {
+   			Class.forName(driver);
+   			connection = DriverManager.getConnection(url, user, password);
+   		} catch (Exception e) {
+   			// TODO Auto-generated catch block
+   			e.printStackTrace();
+   		}
+   		
+   		return connection;
+   	}
+   	/**
+   	 * 查询操作
+   	 * @param connection
+   	 * @param pstm
+   	 * @param rs
+   	 * @param sql
+   	 * @param params
+   	 * @return
+   	 */
+   	public static ResultSet execute(Connection connection,PreparedStatement pstm,ResultSet rs,
+   			String sql,Object[] params) throws Exception{
+   		pstm = connection.prepareStatement(sql);
+   		for(int i = 0; i < params.length; i++){
+   			pstm.setObject(i+1, params[i]);
+   		}
+   		rs = pstm.executeQuery();
+   		return rs;
+   	}
+   	/**
+   	 * 更新操作
+   	 * @param connection
+   	 * @param pstm
+   	 * @param sql
+   	 * @param params
+   	 * @return
+   	 * @throws Exception
+   	 */
+   	public static int execute(Connection connection,PreparedStatement pstm,
+   			String sql,Object[] params) throws Exception{
+   		int updateRows = 0;
+   		pstm = connection.prepareStatement(sql);
+   		for(int i = 0; i < params.length; i++){
+   			pstm.setObject(i+1, params[i]);
+   		}
+   		updateRows = pstm.executeUpdate();
+   		return updateRows;
+   	}
+   	
+   	/**
+   	 * 释放资源
+   	 * @param connection
+   	 * @param pstm
+   	 * @param rs
+   	 * @return
+   	 */
+   	public static boolean closeResource(Connection connection,PreparedStatement pstm,ResultSet rs){
+   		boolean flag = true;
+   		if(rs != null){
+   			try {
+   				rs.close();
+   				rs = null;//GC回收
+   			} catch (SQLException e) {
+   				// TODO Auto-generated catch block
+   				e.printStackTrace();
+   				flag = false;
+   			}
+   		}
+   		if(pstm != null){
+   			try {
+   				pstm.close();
+   				pstm = null;//GC回收
+   			} catch (SQLException e) {
+   				// TODO Auto-generated catch block
+   				e.printStackTrace();
+   				flag = false;
+   			}
+   		}
+   		if(connection != null){
+   			try {
+   				connection.close();
+   				connection = null;//GC回收
+   			} catch (SQLException e) {
+   				// TODO Auto-generated catch block
+   				e.printStackTrace();
+   				flag = false;
+   			}
+   		}
+   		
+   		return flag;
+   	}
+   }
+   ```
+
+     3、编写字符编码过滤器 
+
+8. 导入静态资源
+
+### 登录功能实现
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200516125301633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
+
+1. 编写前端页面
+2. 设置首页
+   1.设置欢迎首页
+
+```html
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+```
+
+​	3. 编写dao层登录用户登录的接口
+
+```java
+public User getLoginUser(Connection connection, String userCode) throws Exception;
+```
+
+	4. 编写dao层接口的实现类
+
+```java
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import dao.BaseDao;
+import pojo.User;
+
+public class UserDaoImpl implements UserDao{
+	//持久层只做查询数据库的内容
+	public User getLoginUser(Connection connection, String userCode) throws Exception{
+		//准备三个对象
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		User user = null;
+		//判断是否连接成功
+		if(null != connection){
+			String sql = "select * from smbms_user where userCode=?";
+			Object[] params = {userCode};
+			rs = BaseDao.execute(connection, pstm, rs, sql, params);
+			if(rs.next()){
+				user = new User();
+				user.setId(rs.getInt("id"));
+				user.setUserCode(rs.getString("userCode"));
+				user.setUserName(rs.getString("userName"));
+				user.setUserPassword(rs.getString("userPassword"));
+				user.setGender(rs.getInt("gender"));
+				user.setBirthday(rs.getDate("birthday"));
+				user.setPhone(rs.getString("phone"));
+				user.setAddress(rs.getString("address"));
+				user.setUserRole(rs.getInt("userRole"));
+				user.setCreatedBy(rs.getInt("createdBy"));
+				user.setCreationDate(rs.getTimestamp("creationDate"));
+				user.setModifyBy(rs.getInt("modifyBy"));
+				user.setModifyDate(rs.getTimestamp("modifyDate"));
+			}
+			BaseDao.closeResource(null, pstm, rs);
+		}
+		return user;
+	}	
+}
+```
+
+5. 业务层接口
+
+```java
+//用户登录
+public User login(String userCode, String userPassword);
+```
+
+6. 业务层实现类
+
+```java
+import java.sql.Connection;
+
+//import org.junit.Test;
+
+import dao.BaseDao;
+import dao.user.UserDao;
+import dao.user.UserDaoImpl;
+import pojo.User;
+
+public class UserServiceImpl implements UserService{
+	//业务层都会调用dao层.所以我们要引入Dao层（重点）
+	//只处理对应业务
+	
+	private UserDao userDao;
+	public UserServiceImpl(){
+		userDao = new UserDaoImpl();
+	}
+	
+	public User login(String userCode,String userPassword) {
+		// TODO Auto-generated method stub
+		Connection connection = null;
+		//通过业务层调用对应的具体数据库操作
+		User user = null;
+		try {
+			connection = BaseDao.getConnection();
+			user = userDao.getLoginUser(connection, userCode);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			BaseDao.closeResource(connection, null, null);
+		}
+		return user;
+	}
+	
+	/*@Test
+	public void test() {
+		UserServiceImpl userService = new UserServiceImpl();
+		String userCode = "admin";
+		String userPassword = "12345678";
+		User admin = userService.login(userCode, userPassword);
+		System.out.println(admin.getUserPassword());
+
+	}
+	*/
+}
+```
+
+7. 编写Servlet
+
+```java
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pojo.User;
+import util.Constants;
+import service.user.UserService;
+import service.user.UserServiceImpl;
+
+@SuppressWarnings("serial")
+public class LoginServlet extends HttpServlet{
+	//接受用户参数、调用业务层、转发视图
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO 自动生成的方法存根
+		
+		System.out.println("login ============ " );
+		//获取用户名和密码
+		String userCode = req.getParameter("userCode");
+		String userPassword = req.getParameter("userPassword");
+		//调用service方法，进行用户匹配
+		UserService userService = new UserServiceImpl();
+		User user = userService.login(userCode,userPassword);
+		if(null != user){//登录成功
+			//放入session
+			req.getSession().setAttribute(Constants.USER_SESSION,user);
+			//页面跳转（frame.jsp）
+			resp.sendRedirect("jsp/frame.jsp");
+		}else{
+			//页面跳转（login.jsp）带出提示信息--转发
+			req.setAttribute("error", "用户名或密码不正确");
+			req.getRequestDispatcher("login.jsp").forward(req,resp);
+		}
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO 自动生成的方法存根
+		doGet(req, resp);
+	}
+}
+```
+
+8. 注册Servlet
+
+```html
+<servlet>
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>com.kuang.servlet.user.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>/login.do</url-pattern>
+</servlet-mapping>
+```
+
+9. 测试访问,保证以上功能可以成功
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
