@@ -1934,7 +1934,7 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
 public User getLoginUser(Connection connection, String userCode) throws Exception;
 ```
 
-	4. 编写dao层接口的实现类
+4. 编写dao层接口的实现类
 
 ```java
 import java.sql.Connection;
