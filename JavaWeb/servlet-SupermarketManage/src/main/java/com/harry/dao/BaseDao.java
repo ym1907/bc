@@ -69,7 +69,8 @@ public class BaseDao {
         if(rs != null){
             try {
                 rs.close();
-                rs = null;//GC回收
+                //GC回收
+                rs = null;
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -79,7 +80,8 @@ public class BaseDao {
         if(pstm != null){
             try {
                 pstm.close();
-                pstm = null;//GC回收
+                //GC回收
+                pstm = null;
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -89,7 +91,8 @@ public class BaseDao {
         if(connection != null){
             try {
                 connection.close();
-                connection = null;//GC回收
+                //GC回收
+                connection = null;
             } catch (SQLException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
