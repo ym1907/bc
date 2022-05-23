@@ -1463,7 +1463,7 @@ SELECT	* FROM users;
 
  ![[(img-XErw4ElS-1588757845423)(JavaWeb.assets/1568440926845.png)]](https://img-blog.csdnimg.cn/20200508154638633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
 
-**JDBC 固定步骤：**
+### **JDBC 固定步骤**
 
 1. 加载驱动
 2. 连接数据库,代表数据库
@@ -1576,7 +1576,7 @@ B:1000
 A(900)   --100-->   B(1100) 
 ```
 
-**Junit单元测试**
+### **Junit单元测试**
 
 依赖
 
@@ -1722,11 +1722,13 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
 
 5. 构建项目包结构 ![在这里插入图片描述](https://img-blog.csdnimg.cn/202005161230352.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
 
-6. 编写[实体类](https://so.csdn.net/so/search?q=实体类&spm=1001.2101.3001.7020)
+6. 编写实体类
    ROM映射:表-类映射
 
+   参考代码： [src/main/java/cn/smbms · 霸波儿奔/订单管理系统 smbms 狂神说Java - 码云 - 开源中国 (gitee.com)](https://gitee.com/git_baboben/smbms/tree/master/src/main/java/cn/smbms) 
+   
 7. 编写基础公共类
-   1、数据库配置文件（mysql5.xx和8.xx的编写有差异）
+   ①、数据库配置文件（mysql5.xx和8.xx的编写有差异）
 
    ```java
    driver=com.mysql.jdbc.Driver
@@ -1736,7 +1738,7 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
    password=root
    ```
 
-   2、编写数据库的公共类 
+   ②、编写数据库的公共类 
 
    ```java
    package dao;
@@ -1883,9 +1885,34 @@ INSERT INTO account(`name`,money) VALUES('C',1000);
    }
    ```
 
-     3、编写字符编码过滤器 
+     ③、编写字符编码过滤器 
+
+   ```java
+   package com.harry.filter;
+   import javax.servlet.*;
+   import java.io.IOException;
+   
+   public class CharacterEncodingFilter implements Filter {
+       public void init(FilterConfig filterConfig) throws ServletException {
+       }
+   
+       public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+           request.setCharacterEncoding("utf-8");
+           response.setCharacterEncoding("utf-8");
+   
+           chain.doFilter(request,response);
+       }
+   
+       public void destroy() {
+       }
+   }
+   ```
+
+   
 
 8. 导入静态资源
+
+
 
 ### 登录功能实现
 

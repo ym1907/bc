@@ -18,7 +18,6 @@ public class User {
     private Date modifyDate;   //更新时间
 
     private Integer age;//年龄
-
     private String userRoleName;    //用户角色名称
 
 
