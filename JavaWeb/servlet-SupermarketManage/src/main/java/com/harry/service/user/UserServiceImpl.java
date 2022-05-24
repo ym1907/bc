@@ -11,7 +11,7 @@ public class UserServiceImpl implements UserService {
     //业务层都会调用dao层.所以我们要引入Dao层（重点）
     //只处理对应业务
 
-    private UserDao userDao;
+    private final UserDao userDao;
     public UserServiceImpl(){
         userDao = new UserDaoImpl();
     }
