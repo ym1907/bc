@@ -138,55 +138,9 @@ git pull
 
 
 
-#### 八、登录显示git@github.com: Permission denied (publickey)
+#### 八、git pull gitee的时候报 “You asked to pull from the remote 'xxx'...”
 
-登录Github官网查看SSH Key是否存在，若不存在，则输入以下命令生成本机的SSH Key
-
-```java
-ssh-keygen -t rsa -C "Github的注册邮箱"
-```
-
-- 此处会提示 Enter file in which to save the key (/Users/shutong/.ssh/id_rsa): 这样一段内容,让我们输入文件名，
-  如果文件存在的话最好在这里修改一下文件名以防覆盖之前的内容；
-  如果文件不存在的话则直接按 enter 键就好了。
-
-- 之后会有提示你是否需要设置密码，如果设置了每次使用Git都会用到密码，一般都是直接不写为空，
-  直接 enter 就好了。
-
-- 上述操作执行完毕后，在 C/用户/.ssh/ 目录会生成 XXX-rsa (私钥)和 XXX-rsa.pub (公钥) 
-
- 接下来登陆github，进入设置中点击SSH and GPG keys，点击New SSH key 
-
- 将文本id_rsa.pub中的内容复制到key里面，再点击Add SSH Key完成增加，此时即可正常在cmd上登录了  
-
-
-
-#### 九、git add . 显示”warning: LF will be replaced by CRLF”
-
-**原因：**由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交，造成麻烦。虽然这是小问题，但它会极大地扰乱跨平台协作。其实，这是因为在文本处理中，CR（CarriageReturn），LF（LineFeed），CR/LF是不同操作系统上使用的换行符，具体如下：
-换行符‘\n’和回车符‘\r’
-回车符就是回到一行的开头，用符号r表示，十进制ASCII代码是13，十六进制代码为0x0D，回车（return）；换行符就是另起一行，用n符号表示，ASCII代码是10，十六制为0x0A， 换行（newline）。所以我们平时编写文件的回车符应该确切来说叫做回车换行符。
-Dos和Windows平台： 使用回车（CR）和换行（LF）两个字符来结束一行，回车+换行(CR+LF)，即“\r\n”；Mac 和 Linux平台：只使用换行（LF）一个字符来结束一行，即“\n”；最早Mac每行结尾是回车CR 即’\r’，后mac os x 也投奔了 unix。
-许多 Windows 上的编辑器会悄悄把行尾的换行（LF）字符转换成回车（CR）和换行（LF），或在用户按下 Enter 键时，插入回车（CR）和换行（LF）两个字符。
-
-**解决方法：**
-
-```xml
-#在检出代码时，换行会被转换成回车和换行
-git config --global core.autocrlf true
-    
-#取消此功能，把回车保留在版本库中
-git config --global core.autocrlf false
-    
-#拒绝提交包含混合换行符的文件
-git config --global core.safecrlf true   
-
-#允许提交包含混合换行符的文件
-git config --global core.safecrlf false   
-
-#提交包含混合换行符的文件时给出警告
-git config --global core.safecrlf warn
-```
+未指定分支名，在gitee后面加上master分支名即可。
 
 
 
