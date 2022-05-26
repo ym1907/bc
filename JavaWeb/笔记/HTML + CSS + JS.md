@@ -2347,6 +2347,103 @@ JSON字符串和js对象转化
 - jQuery封装好的方法$(#name).ajax("")
 - axios请求
 
+使用jQuery需要导入jQuery的js文件，使用Vue导入Vue，两个都用，自己原生态实现
+
+**三步曲:**
+
+1、编写对应处理的Controller，返回消息或者字符串或者json格式的数据;
+
+2、编写ajax请求
+
+- 1.url : Controller请求
+- 2.data:键值对
+- 3.success:回调函数
+
+3、给Ajax绑定事件，点击.click，失去焦点onblur，键盘弹起keyup
+
+Demo
+
+1、 Controller 
+
+```java
+@RequestMapping("/a3")
+public String ajax3(String name,String pwd){
+   String msg = "";
+   //模拟数据库中存在数据
+   if (name!=null){
+       if ("admin".equals(name)){
+           msg = "OK";
+      }else {
+           msg = "用户名输入错误";
+      }
+  }
+   if (pwd!=null){
+       if ("123456".equals(pwd)){
+           msg = "OK";
+      }else {
+           msg = "密码输入有误";
+      }
+  }
+   return msg; //由于@RestController注解，将msg转成json格式返回
+}
+```
+
+ 2、login.jsp 
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+   <title>ajax</title>
+   <script src="${pageContext.request.contextPath}/statics/js/jquery-3.1.1.min.js"></script>
+   <script>
+       function a1(){
+           $.post({
+               url:"${pageContext.request.contextPath}/a3",
+               data:{'name':$("#name").val()},
+               success:function (data) {
+                   if (data.toString()=='OK'){
+                       $("#userInfo").css("color","green");
+                  }else {
+                       $("#userInfo").css("color","red");
+                  }
+                   $("#userInfo").html(data);
+              }
+          });
+      }
+       function a2(){
+           $.post({
+               url:"${pageContext.request.contextPath}/a3",
+               data:{'pwd':$("#pwd").val()},
+               success:function (data) {
+                   if (data.toString()=='OK'){
+                       $("#pwdInfo").css("color","green");
+                  }else {
+                       $("#pwdInfo").css("color","red");
+                  }
+                   $("#pwdInfo").html(data);
+              }
+          });
+      }
+   </script>
+</head>
+<body>
+<p>
+  用户名:<input type="text" id="name" onblur="a1()"/>
+   <span id="userInfo"></span>
+</p>
+<p>
+  密码:<input type="text" id="pwd" onblur="a2()"/>
+   <span id="pwdInfo"></span>
+</p>
+</body>
+</html>
+```
+
+3、测试
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200908152454624.png#pic_center) 
+
 
 
 ### 面向对象编程

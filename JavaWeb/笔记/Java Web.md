@@ -606,6 +606,7 @@ cookie：一般会保存在本地的 用户目录下 appdata；
 编码解码：
 
 ```java
+//案例位置：Demo03_CookieEncoding
 URLEncoder.encode("中文内容","utf-8")
 URLDecoder.decode(cookie.getValue(),"UTF-8")
 ```
@@ -2100,13 +2101,254 @@ public class LoginServlet extends HttpServlet{
 
 9. 测试访问,保证以上功能可以成功
 
+   
+
+### 登录功能优化
+
+注销功能
+思路：移除session，返回登录页面
+
+```java
+public class LogoutServlet extends HttpServlet {
+
+	public void doPOST(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//清除session
+		request.getSession().removeAttribute(Constants.USER_SESSION);
+		response.sendRedirect(request.getContextPath()+"/login.jsp");//返回登录页面
+	}
+
+}
+```
+
+ 注册xml
+
+```xml
+<servlet>
+	<servlet-name>LogoutServlet</servlet-name>
+	<servlet-class>servlet.user.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>LogoutServlet</servlet-name>
+	<url-pattern>/jsp/logout.do</url-pattern>
+</servlet-mapping>
+```
 
 
 
+### 登录拦截优化
+
+编写一个过滤器，并注册
+
+```java
+import java.io.IOException;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import pojo.User;
+import util.Constants;
+
+public class SysFilter implements Filter{
+	public void init(FilterConfig filterConfig) throws ServletException{
+		
+	}
+
+	@Override
+	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
+			throws IOException, ServletException {
+		// TODO 自动生成的方法存根
+		HttpServletRequest request =  (HttpServletRequest)req;
+		HttpServletResponse response = (HttpServletResponse)resp;
+		
+		//过滤器，从session中获取用户
+		User user = (User)request.getSession().getAttribute(Constants.USER_SESSION);
+		if(user == null){//已经被移除或者注销了，或者未登录
+			response.sendRedirect("/smbms/error.jsp");
+		}else {
+			chain.doFilter(req, resp);
+		}
+	}
+
+	@Override
+	public void destroy() {
+		// TODO 自动生成的方法存根
+		
+	}
+}
+```
+
+注册XML
+
+```xml
+<!-- 用户登录过滤器 -->
+<filter>
+	<filter-name>SysFilter</filter-name>
+	<filter-class>filter.SysFilter</filter-class>
+</filter> 
+<filter-mapping>
+	<filter-name>SysFilter</filter-name>
+	<url-pattern>/jsp/*</url-pattern>
+</filter-mapping>
+```
+
+测试，登录，注销，权限，都要保证OK
 
 
 
+### 密码修改
 
+​	1、导入前端素材
+
+```jsp
+<li><a href="${pageContext.request.contextPath }/jsp/pwdmodify.jsp">密码修改</a></li>
+```
+
+ 	2、写项目，建议从底层向上写 
+
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200516180913135.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70) 
+
+3、UserDao接口
+
+```java
+//修改当前用户密码
+public int updatePwd(Connection connection,int id,int password)throws SQLException, Exception;
+```
+
+4、UserDao接口实现类
+
+```java
+@Override//修改当前密码
+public int updatePwd(Connection connection, int id, int password) throws Exception {
+    // TODO 自动生成的方法存根
+    PreparedStatement pstm = null;
+    int execute =0;
+    if(connection!=null) {
+        String sql = "update smbms_user set = userPassword = ? where id = ?";
+        Object[] params = {password,id};
+        execute = BaseDao.execute(connection, pstm, sql, params);
+        BaseDao.closeResource(null, pstm, null);
+    }
+    return execute;			
+}
+```
+
+5、UserService层
+
+```java
+public boolean updatePwd(int id,int password)throws SQLException, Exception;
+```
+
+6、UserService实现类
+
+```java
+public boolean updatePwd(int id, int password) throws SQLException, Exception {
+    // TODO 自动生成的方法存根
+    Connection connection = null;
+    boolean flag = false;
+    //修改密码
+    try {
+        connection = BaseDao.getConnection();
+        if(userDao.updatePwd(connection, id, password)>0) {
+            flag = true;
+        }
+    } catch (SQLException e) {
+        // TODO 自动生成的 catch 块
+        e.printStackTrace();
+    } finally {
+        BaseDao.closeResource(connection, null, null);
+
+    }
+    return flag;
+}
+```
+
+7、servlet记得实现复用，要提取出方法！
+在 **dao层** 和 **service层** 自己写映射类和实现类
+下面是 **servlet层** 的主体
+
+```java
+public class UserServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO 自动生成的方法存根
+		String method = req.getParameter("method");
+		if (method != "savepwd" && method != null) {
+			this.updatePwd(req, resp);
+		}
+		//实现复用~~~~~~
+		// 想添加新的增删改查，直接用if(method != "savepwd" && method != null);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// TODO 自动生成的方法存根
+		doGet(req, resp);
+	}
+
+	public void updatePwd(HttpServletRequest req, HttpServletResponse resp) {
+		// 通过session获得用户id
+		Object o = req.getSession().getAttribute(Constants.USER_SESSION);
+		String newpassword = req.getParameter("newpassword");
+		boolean flag = false;
+		if (o != null && newpassword != null) {
+			UserService userService = new UserServiceImpl();
+
+			try {
+				flag = userService.updatePwd(((User) o).getId(), newpassword);
+			} catch (SQLException e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO 自动生成的 catch 块
+				e.printStackTrace();
+			}
+			if (flag) {
+				req.setAttribute("message", "密码修改成功，请退出，使用新密码登录");
+				// 密码修改成功,移除session(移除后不能再次修改密码,建议不移除)
+				req.getSession().removeAttribute(Constants.USER_SESSION);
+			} else {
+				// 密码修改失败
+				req.setAttribute("message", "密码修改失败");
+			}
+
+		} else {
+			// 密码修改有问题
+			req.setAttribute("message", "新密码有问题");
+		}
+		try {
+			req.getRequestDispatcher("/jsp/pwdmodify.jsp").forward(req, resp);
+		} catch (ServletException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO 自动生成的 catch 块
+			e.printStackTrace();
+		}
+	}
+}
+```
+
+ 注册xml 
+
+```xml
+<servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>servlet.user.UserServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/jsp/user.do</url-pattern>
+</servlet-mapping>
+```
+
+8、测试
 
 
 
