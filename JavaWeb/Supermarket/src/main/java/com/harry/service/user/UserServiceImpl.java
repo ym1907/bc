@@ -6,6 +6,7 @@ import com.harry.dao.user.UserDaoImpl;
 import com.harry.pojo.User;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class UserServiceImpl implements UserService {
     //业务层都会调用dao层.所以我们要引入Dao层（重点）
@@ -31,6 +32,26 @@ public class UserServiceImpl implements UserService {
             BaseDao.closeResource(connection, null, null);
         }
         return user;
+    }
+
+    public boolean updatePwd(int id, int password) throws SQLException, Exception {
+        // TODO 自动生成的方法存根
+        Connection connection = null;
+        boolean flag = false;
+        //修改密码
+        try {
+            connection = BaseDao.getConnection();
+            if(userDao.updatePwd(connection, id, password)>0) {
+                flag = true;
+            }
+        } catch (SQLException e) {
+            // TODO 自动生成的 catch 块
+            e.printStackTrace();
+        } finally {
+            BaseDao.closeResource(connection, null, null);
+
+        }
+        return flag;
     }
 
 	/*@Test

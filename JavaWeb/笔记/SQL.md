@@ -1,6 +1,8 @@
 ## MySQL
 
-### 排名问题  
+自带数据库介绍： https://www.csdn.net/tags/NtDaYg1sNjk4MjAtYmxvZwO0O0OO0O0O.html
+
+### 排序  
 
 #### 窗口函数
 

@@ -212,6 +212,57 @@ https://Harry-wh:zwh13952737877@gitee.com
 
 
 
+#### 置多个Git
+
+**清空全局的邮箱和用户名称**
+
+```java
+git config --global --list //查看你之前是否设置
+
+//删除之前的配置
+git config --global --unset user.name "你的名字" //删除之前的名字配置
+git config --global --unset user.email "你的邮箱"//删除之前的名字配置
+```
+
+**生成公钥私钥并上传到git**
+
+```java
+ssh-keygen -t rsa -C "one@email.com"
+ssh-keygen -t rsa -C "two@email.com"
+```
+
+**注：**第一次提示Enter file in which to save the key的时候对ssh文件进行重命名（idrsaone和idrsatwo），这样就会生成两套公钥私钥。
+
+在~/.ssh目录下**创建一个config文件**（创建一个config.config，再删除文件名钟的.config）
+
+```java
+#个人Git
+Host harry							#登录时用的别名
+Hostname github.com					 #真实地址
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa			  #私钥地址
+User git							#会和真实地址拼接 ==> git@github.com
+
+#Git2
+Host sottop
+Hostname github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa_sottop
+User harry2
+```
+
+**测试**
+
+```java
+ssh –T harry
+```
+
+
+
+
+
+
+
 #### 杂
 
 ```pro
