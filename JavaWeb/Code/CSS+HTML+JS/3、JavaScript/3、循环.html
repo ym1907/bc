@@ -45,6 +45,17 @@
 
         var xiaoming = new Student("xiaoming");
         var xiaohong = new XiaoStudent("xiaohong",1);
+
+
+        function qj() {
+            var x = 1;
+            function qj2() {
+                var x = 'A';
+                console.log( 'inner'+x);
+            }
+            console.log( 'outer'+x);
+        }
+
     </script>
 
 </head>

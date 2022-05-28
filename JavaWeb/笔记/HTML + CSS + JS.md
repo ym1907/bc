@@ -2296,7 +2296,8 @@ this是无法指向的，是默认指向调用它的那个对象的；
 > apply
 
 在js中可以控制this指向（主动调用）
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508233222629.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
+
+![1653746900045](resources/HTML + CSS + JS.assets/1653746900045.png)
 
 
 
@@ -2341,7 +2342,9 @@ JSON字符串和js对象转化
 
 
 
-##### AJAX
+##### **AJAX**
+
+全文地址： https://blog.csdn.net/qq_33369905/article/details/106647322
 
 - 原生的js写法 xhr异步请求
 - jQuery封装好的方法$(#name).ajax("")
