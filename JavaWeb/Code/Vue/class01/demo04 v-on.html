@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>狂神说Java</p>
+
+<!--view层 模板-->
+<div id="app">
+    <button v-on:click="sayHi">Click Me</button>
+</div>
+</body>
+
+<!--导入js-->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "你点我干嘛？"
+        },
+        methods: {
+            //方法必须绑定在Vue的Methods对象中，v-on:事件
+            sayHi: (function (event) {
+                alert(this.message)
+            })
+        }
+    })
+</script>
+</html>
