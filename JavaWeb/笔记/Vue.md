@@ -730,7 +730,41 @@ GitHub: https://github.com/ axios/axios
 
 
 
+# 第一个vue-cli项目
 
+**1、什么是vue-cli**
+
+ vue-cli 官方提供的一个脚手架,用于快速生成一个 vue 的项目模板;
+
+ 预先定义好的目录结构及基础代码，就好比咱们在创建 Maven 项目时可以选择创建一个骨架项目，这个骨架项目就是脚手架,我们的开发更加的快速;
+
+ **主要功能：**
+
+- 统一的目录结构
+- 本地调试
+- 热部署
+- 单元测试
+- 集成打包上线
+
+
+
+**2、需要的环境**
+
+Node.js : http://nodejs.cn/download/
+
+安装就无脑下一步就好,安装在自己的环境目录下
+
+Git : https://git-scm.com/downloads
+镜像:https://npm.taobao.org/mirrors/git-for-windows/
+
+**确认nodejs安装成功:**
+
+- cmd 下输入 node -v，查看是否能够正确打印出版本号即可!
+- cmd 下输入 npm-v，查看是否能够正确打印出版本号即可!
+
+这个npm,就是一个软件包管理工具,就和linux下的apt软件安装差不多!
+
+*npm* 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 *npm* 可以安装、共享、分发代码,管理项目依赖关系。
 
 
 

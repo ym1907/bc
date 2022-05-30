@@ -7,8 +7,8 @@
 <div id="app">
     <todo>
         <todo-title slot="todo-title" v-bind:name="title"></todo-title>
-        <todo-items slot="todo-items" v-for="(item,index) in todoItems" v-bind:item="item"
-                    v-bind:index2="index" v-on:remove2="removeItems(index)"></todo-items>
+        <todo-items slot="todo-items" v-for="(item11,index11) in todoItems" v-bind:item="item11"
+                    v-bind:index2="index11" v-on:remove2="removeItems(index11)"></todo-items>
     </todo>
 </div>
 
@@ -34,9 +34,9 @@
         props: ['item','index2'],
         template: '<li>{{index2}}---{{item}} <button @click="remove">删除</button></li>',
         methods: {
-            remove: function (index) {
+            remove: function (index55) {
                 // this.$emit 自定义事件分发
-                this.$emit('remove2',index)
+                this.$emit('remove2',index55)
             }
         }
     });
@@ -49,9 +49,9 @@
             todoItems: ['三国演义', '红楼梦', '西游记', '水浒传']
         },
         methods: {
-            removeItems: function (index) {
-                console.log("删除了"+this.todoItems[index]+"OK");
-                this.todoItems.splice(index,1);
+            removeItems: function (index23) {
+                console.log("删除了"+this.todoItems[index23]+"OK");
+                this.todoItems.splice(index23,1);
             }
         }
     });
