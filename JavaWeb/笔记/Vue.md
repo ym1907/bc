@@ -710,11 +710,23 @@ GitHub: https://github.com/ axios/axios
 
 
 
+### 入门总结
 
+常用的属性：
 
+- v-if
+- v-else-if
+- v-else
+- v-for
+- v-on绑定事件，简写为 @
+- v-model数据双向绑定
+- v-bind给组件绑定参数，简写为 ：
 
+组件化：
 
-
+- 组合组件slot插槽
+- 组件内部绑定事件需要使用到 `this.$emit("事件名",参数);`
+- 计算属性的特色，缓存计算数据
 
 
 

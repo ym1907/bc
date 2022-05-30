@@ -8,7 +8,7 @@
     <todo>
         <todo-title slot="todo-title" v-bind:name="title"></todo-title>
         <todo-items slot="todo-items" v-for="(item,index) in todoItems" v-bind:item="item"
-                    v-bind:index="index" v-on:remove="removeItems(index)"></todo-items>
+                    v-bind:index2="index" v-on:remove2="removeItems(index)"></todo-items>
     </todo>
 </div>
 
@@ -31,12 +31,12 @@
         template: '<div>{{name}}</div>'
     });
     Vue.component("todo-items", {
-        props: ['item','index'],
-        template: '<li>{{index}}---{{item}} <button @click="remove">删除</button></li>',
+        props: ['item','index2'],
+        template: '<li>{{index2}}---{{item}} <button @click="remove">删除</button></li>',
         methods: {
             remove: function (index) {
                 // this.$emit 自定义事件分发
-                this.$emit('remove',index)
+                this.$emit('remove2',index)
             }
         }
     });
