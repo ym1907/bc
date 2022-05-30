@@ -289,19 +289,19 @@ MVVM模式和MVC模式一样，主要目的是分离视图(View)和模型(Model)
 
 ### Vue双向绑定  v-model
 
-#### **1、什么是双向绑定**
+**1、什么是双向绑定**
 
 Vue.js是一个MVVM框架，即数据双向绑定,即当数据发生变化的时候,视图也就发生变化，当视图发生变化的时候，数据也会跟着同步变化。这也算是Vue.js的精髓之处了。
 
 值得注意的是，我们所说的数据双向绑定，一定是对于UI控件来说的，非UI控件不会涉及到数据双向绑定。单向数据绑定是使用状态管理工具的前提。如果我们使用vuex，那么数据流也是单项的，这时就会和双向数据绑定有冲突。
 
-#### **2、为什么要实现数据的双向绑定**
+**2、为什么要实现数据的双向绑定**
 
 在Vue.js 中，如果使用vuex ，实际上数据还是单向的，之所以说是数据双向绑定，这是用的UI控件来说，对于我们处理表单，Vue.js的双向数据绑定用起来就特别舒服了。即两者并不互斥，在全局性数据流使用单项,方便跟踪;局部性数据流使用双向，简单易操作。
 
-#### **3、在表单中使用双向数据绑定**
+**3、在表单中使用双向数据绑定**
 
-你可以用v-model指令在表单 <input>、<textarea> 及<select> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但v-model本质上不过是语法糖。它负责监听户的输入事件以更新数据，并对一些极端场景进行一些特殊处理。
+你可以用v-model指令在表单 \<input>、\<textarea> 及 \<select> 元素上创建双向数据绑定。它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但v-model本质上不过是语法糖。它负责监听户的输入事件以更新数据，并对一些极端场景进行一些特殊处理。
 
 
 
@@ -475,10 +475,17 @@ GitHub: https://github.com/ axios/axios
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- v-cloak：解决闪烁问题 -->
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <!--view层 模板-->
-<div id="vue">
+<div id="vue" v-cloak>
     <div>{{info.name}}</div>
     <a v-bind:href="info.url">点我进入</a>
 </div>
@@ -526,15 +533,180 @@ GitHub: https://github.com/ axios/axios
 
 #### 3、Vue计算属性
 
-计算属性的重点突出在`属性`两个字上(属性是名词)，首先它是个`属性`其次这个属性有`计算`的能力(计算是动词)，这里的计算就是个函数;简单点说，它就是一个能够将计算结果缓存起来的属性(将行为转化成了静态的属性)，仅此而已;可以想象为**缓存**！
+计算属性的重点突出在`属性`两个字上(属性是名词)，首先它是个`属性`其次这个属性有`计算`的能力(计算是动词)，这里的计算就是个函数；简单点说，它就是一个能够将计算结果缓存起来的属性(将行为转化成了静态的属性)，仅此而已;可以想象为**缓存**！
+
+```vue
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--view层 模板-->
+<div id="app">
+    <div>currentTime1: {{currentTime1()}}</div>
+    <div>currentTime2: {{currentTime2}}</div>
+</div>
+</body>
+
+<!--导入js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "hello,world!"
+        },
+        methods: {
+            currentTime1: function () {
+                return Date.now(); // 返回一个时间戳
+            }
+        },
+        computed: {
+            //计算属性：methods，computed 方法名不能重名，重名字后，只会调用methods的方法
+            currentTime2: function () {
+                this.message;
+                // 返回一个时间戳
+                return Date.now();
+            }
+        }
+    })
+</script>
+</html>
+```
+
+ **结论:**
+ 调用方法时，每次都需要进行计算，既然有计算过程则必定产生系统开销，那如果这个结果是不经常变化的呢?此时就可以考虑将这个结果缓存起来，采用计算属性可以很方便的做到这一点，**计算属性的主要特性就是为了将不经常变化的计算结果进行缓存，以节约我们的系统开销;** 
 
 
 
+### 内容分发 slot
+
+在Vue.js中我们使用 元素作为承载分发内容的出口，作者称其为插槽，可以应用在组合组件的场景中;
+
+```vue
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="app">
+    <todo>
+        <todo-title slot="todo-title" v-bind:name="title"></todo-title>
+        <todo-items slot="todo-items" v-for="item in todoItems" v-bind:item="item"></todo-items>
+    </todo>
+</div>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    //slot 插槽 这个组件要定义在前面不然出不来数据
+    Vue.component("todo", {
+        template: 
+        '<div>\
+            <slot name="todo-title"></slot>\
+            <ul>\
+                <slot name="todo-items"></slot>\
+            </ul>\
+        <div>'
+    });
+    Vue.component("todo-title", {
+        //属性
+        props: ['name'],
+        template: '<div>{{name}}</div>'
+    });
+    Vue.component("todo-items", {
+        props: ['item'],
+        template: '<li>{{item}}</li>'
+    });
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            //标题
+            title: "图书馆系列图书",
+            //列表
+            todoItems: ['三国演义', '红楼梦', '西游记', '水浒传']
+        }
+    });
+</script>
+</body>
+</html>
+```
 
 
 
+### 自定义事件内容分发
 
+通过以上代码不难发现，数据项在Vue的实例中，但删除操作要在组件中完成，那么组件如何才能删除Vue实例中的数据呢?此时就涉及到参数传递与事件分发了，Vue为我们提供了自定义事件的功能很好的帮助我们解决了这个问题；
 
+ 使用 this.$emit (‘自定义事件名’,参数)
+
+![1653898264496](resources/Vue.assets/1653898264496.png)
+
+```vue
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="app">
+    <todo>
+        <todo-title slot="todo-title" v-bind:name="title"></todo-title>
+        <todo-items slot="todo-items" v-for="(item,index) in todoItems" v-bind:item="item"
+                    v-bind:index="index" v-on:remove="removeItems(index)"></todo-items>
+    </todo>
+</div>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    //slot 插槽 这个组件要定义在前面不然出不来数据
+    Vue.component("todo", {
+        template: '<div>\
+                <slot name="todo-title"></slot>\
+                <ul>\
+                <slot name="todo-items"></slot>\
+                </ul>\
+                <div>'
+    });
+    Vue.component("todo-title", {
+        //属性
+        props: ['name'],
+        template: '<div>{{name}}</div>'
+    });
+    Vue.component("todo-items", {
+        props: ['item','index'],
+        template: '<li>{{index}}---{{item}} <button @click="remove">删除</button></li>',
+        methods: {
+            remove: function (index) {
+                // this.$emit 自定义事件分发
+                this.$emit('remove',index)
+            }
+        }
+    });
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            //标题
+            title: "图书馆系列图书",
+            //列表
+            todoItems: ['三国演义', '红楼梦', '西游记', '水浒传']
+        },
+        methods: {
+            removeItems: function (index) {
+                console.log("删除了"+this.todoItems[index]+"OK");
+                this.todoItems.splice(index,1);
+            }
+        }
+    });
+</script>
+</body>
+</html>
+```
 
 
 

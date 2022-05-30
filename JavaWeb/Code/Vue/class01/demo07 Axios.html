@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- v-cloak：解决闪烁问题 -->
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<!--view层 模板-->
+<div id="vue" v-cloak>
+    <div>{{info.name}}</div>
+    <a v-bind:href="info.url">点我进入</a>
+</div>
+</body>
+
+<!--1.导入vue.js-->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<!--导入axios-->
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+
+    var vm = new Vue({
+        el: "#vue",
+        data: {
+            items: ['Java','Python','Php']
+        },
+        //data:vm的属性
+        //data():vm方法
+        data(){
+            return{
+                //请求的返回参数,必须和json字符串一样
+                info:{
+                    name: null,
+                    age: null,
+                    sex: null,
+                    url: null,
+                    address: {
+                        street: null,
+                        city: null,
+                        country: null
+                    }
+                }
+            }
+        },
+        //钩子函数，链式编程，ES6新特性
+        mounted(){
+            axios.get("../data.json").then(res => (this.info=res.data))
+        }
+    })
+</script>
+</html>

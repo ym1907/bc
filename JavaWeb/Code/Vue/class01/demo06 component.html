@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--view层 模板-->
+<div id="app">
+    <!-- 把组件想象成一个函数，props为入参，template为要执行的方法，v-bind:xxxx=""就相当于参数赋值 -->
+    <qinjiang v-for="item in items" v-bind:qin="item"></qinjiang>
+</div>
+</body>
+
+<!--导入js-->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    Vue.component("qinjiang",{
+        props: ['qin'],
+        template: '<li>{{qin}}</li>'
+    })
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items: ['Java','Python','Php']
+        }
+    })
+</script>
+</html>

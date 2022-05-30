@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--view层 模板-->
+<div id="app">
+    <div>currentTime1: {{currentTime1()}}</div>
+    <div>currentTime2: {{currentTime2}}</div>
+</div>
+</body>
+
+<!--导入js-->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            message: "hello,world!"
+        },
+        methods: {
+            currentTime1: function () {
+                return Date.now(); // 返回一个时间戳
+            }
+        },
+        computed: {
+            //计算属性：methods，computed 方法名不能重名，重名字后，只会调用methods的方法
+            currentTime2: function () {
+                this.message;
+                // 返回一个时间戳
+                return Date.now();
+            }
+        }
+    })
+</script>
+</html>
