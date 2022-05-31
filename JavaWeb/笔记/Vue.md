@@ -810,6 +810,20 @@ vue list
 vue init webpack myvue
 ```
 
+ 一路都选择no即可;
+
+ 初始化并运行
+
+  ```java
+cd myvue
+npm install
+npm run dev
+  ```
+
+执行完成后,目录多了很多依赖 
+
+ ![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-y4pwU8CT-1595254922314)(D:\我\MyBlog\狂神说 VUE 笔记.assets\image-20200719103326926.png)]](https://img-blog.csdnimg.cn/20200720222444717.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0RERERlbmdf,size_16,color_FFFFFF,t_70) 
+
 
 
 
