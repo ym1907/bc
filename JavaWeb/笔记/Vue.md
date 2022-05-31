@@ -766,15 +766,49 @@ Git : https://git-scm.com/downloads
 
 *npm* 是 JavaScript 世界的包管理工具,并且是 Node.js 平台的默认包管理工具。通过 *npm* 可以安装、共享、分发代码,管理项目依赖关系。
 
+**安装 Node.js 淘宝镜像加速器（cnpm）**
+
+这样子的话,下载会快很多~
+
+```java
+# -g 就是全局安装
+npm install cnpm -g
+
+# 若安装失败，则将源npm源换成淘宝镜像
+# 因为npm安装插件是从国外服务器下载，受网络影响大
+npm config set registry https://registry.npm.taobao.org
+
+# 然后再执行
+npm install cnpm -g
+```
+
+ 安装的位置:C:\Users\Administrator\AppData\Roaming\npm 
 
 
 
+**3、安装vue-cli**
+
+```java
+#在命令台输入
+cnpm install vue-cli -g
+#查看是否安装成功
+vue list
+```
 
 
 
+**4、第一个 vue-cli 应用程序**
 
+创建一个Vue项目,我们随便建立一个空的文件夹在电脑上。
 
+我这里在D盘下新建一个目录D:\Project\vue-study;
 
+创建一个基于 webpack 模板的 vue 应用程序
+
+```java
+# 这里的 myvue 是项目名称，可以根据自己的需求起名
+vue init webpack myvue
+```
 
 
 
