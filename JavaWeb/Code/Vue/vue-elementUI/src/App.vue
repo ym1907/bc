@@ -1,15 +1,13 @@
 <template>
   <div id="app">
 
-    <h1>Harry</h1>
-
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'App'
+  name: 'App',
 }
 </script>
 
