@@ -1,11 +1,18 @@
 import Vue from 'vue'
 import App from './App'
 
-Vue.config.productionTip = false
+//扫描路由配置
+import router from './router'
+//导入elementUI
+import ElementUI from "element-ui"
+//导入element css
+import 'element-ui/lib/theme-chalk/index.css'
 
-/* eslint-disable no-new */
+Vue.use(router)
+Vue.use(ElementUI)
+
 new Vue({
   el: '#app',
-  components: { App },
-  template: '<App/>'
+  router,
+  render: h => h(App),//ElementUI规定这样使用
 })
