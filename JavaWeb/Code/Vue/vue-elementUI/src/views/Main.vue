@@ -9,7 +9,7 @@
               <el-menu-item index="1-1">
                 <!--插入的地方-->
                 <!--name：传组件名 params：传递参数，需要绑定对象：v-bind-->
-                <router-link v-bind:to="{name: 'UserProfile', params: {id: 1}}">个人信息</router-link>
+                <router-link v-bind:to="{name: 'UserProfile', params: {id: '自定义内容'}}">个人信息</router-link>
               </el-menu-item>
               <el-menu-item index="1-2">
                 <!--插入的地方-->
