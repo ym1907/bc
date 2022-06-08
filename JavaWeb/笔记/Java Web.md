@@ -71,7 +71,7 @@ web.xml中配置URL地址时，首位“/”必须加，否则会启动组件失
 
 servlet：请求+响应，是一个服务
 
-Session、Cookie：会话和缓存机制
+Session、Cookie：会话和缓存机制 
 
 JSP：html+java
 
