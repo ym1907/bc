@@ -113,7 +113,7 @@ MVVM模式和MVC模式一样，主要目的是分离视图(View)和模型(Model)
 
 - View : 视图层,在这里表示DOM (HTML操作的元素)
 
-- ViewModel : 连接视图和数据的中间件，Vue.js就是MVVM中的ViewModel层的实现者在MVVM架构中，是不允许数据和视图直接通信的，只能通过ViewModel来通信，而ViewModel就是定义了一个Observer观察者
+- ViewModel : 连接视图和数据的中间件，Vue.js就是MVVM中的ViewModel层的实现者。在MVVM架构中，是不允许数据和视图直接通信的，只能通过ViewModel来通信，而ViewModel就是定义了一个Observer观察者
 
 - ViewModel 能够观察到数据的变化，并对视图对应的内容进行更新
 
@@ -425,7 +425,6 @@ Axios是一个开源的可以用在浏览器端和`NodeJS`的异步通信框架�
 
 - 客户端支持防御XSRF (跨站请求伪造)
 
-
 GitHub: https://github.com/ axios/axios
 中文文档: http://www.axios-js.com/
 
@@ -446,16 +445,13 @@ GitHub: https://github.com/ axios/axios
     "city": "苏州",
     "country": "中国"
   },
-  "links": [
-    {
+  "links": [{
       "name": "bilibili",
       "url": "https://www.bilibili.com"
-    },
-    {
+    },{
       "name": "baidu",
       "url": "https://www.baidu.com"
-    },
-    {
+    },{
       "name": "cqh video",
       "url": "https://www.4399.com"
     }
